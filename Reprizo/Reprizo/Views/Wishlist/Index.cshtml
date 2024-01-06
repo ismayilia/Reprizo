@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section css{
+    <link rel="stylesheet" href="~/assets/css/wishlist.css">
+}
+
+<main>
+
+    <!-- Banners -->
+
+    <section id="banner">
+        <div class="banner-all" style="background-image: url(/assets/img/banner.jpg);">
+            <h1>Your Wishlist</h1>
+        </div>
+    </section>
+
+    <!-- Wishlist -->
+
+    <section id="wishlists">
+        <div class="container">
+            <div class="wishlist-all">
+                <div class="empty">
+                    <h1>Your Wishlist</h1>
+                    <p>Your wishlist is currently empty.</p>
+                    <a asp-controller="Shop" asp-action="Index">CONTINUE SHOPPING</a>
+                </div>
+
+                <div class="wishlist-table d-none">
+                    <h1>Your Wishlist</h1>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Add to Cart</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img src="~/assets/img/product/fast1.jpg">
+                                </td>
+                                <td>Saat1</td>
+                                <td>$110.00</td>
+                                <td><i class="fa-solid fa-cart-shopping"></i></td>
+                                <td>
+                                    <button type="submit" class="btn btn-outline-danger delete-basket-item">Delete</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+@section script{
+    <script src="~/assets/js/wishlist.js"></script>
+}
+

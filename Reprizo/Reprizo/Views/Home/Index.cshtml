@@ -1,0 +1,353 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<main>
+
+    <!-- Slider -->
+    <section id="slider">
+        <div class="container">
+            <div class="slider">
+                <div id="carouselExampleDark" class="carousel carousel-dark slide">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active slider-image" data-bs-interval="10000">
+                            <div class="image">
+                                <img src="~/assets/img/slider/slider1.jpg" class="d-block w-100 firefly" alt="...">
+
+                            </div>
+                            <div class="text">
+                                <h1>World`s Designs</h1>
+
+                            </div>
+                        </div>
+                        <div class="carousel-item slider-image" data-bs-interval="2000">
+                            <div class="image">
+                                <img src="~/assets/img/slider/slider2.jpg" class="d-block w-100 firefly" alt="...">
+
+                            </div>
+                            <div class="text">
+                                <h1>Newest Models</h1>
+
+                            </div>
+                        </div>
+                        <div class="carousel-item slider-image">
+                            <div class="image">
+                                <img src="~/assets/img/slider/slider3.jpg" class="d-block w-100 firefly" alt="...">
+
+                            </div>
+                            <div class="text">
+                                <h1>Luxury Brands</h1>
+
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- Lawson Collection -->
+
+    <section id="collection">
+        <div class="container">
+            <div class="lawson-collection">
+                <h1>The Lawson Collection</h1>
+                <p>
+                    We are happy to introduce the new Lawson Collection. These are three quartz models designed with
+                    simplicity and elegance kept in mind. They come in different sizes and colors, and all feature a
+                    stainless steel back — leaving enough space for a personalized engraving. The engraving service
+                    is complimentary with any watch from the Lawson series.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Start -->
+
+    <section id="products">
+        <div class="container">
+            <div class="product-all">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="product">
+                            <div class="product-icons">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart d-none"></i>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            <div class="product-image">
+                                <a asp-controller="Shop" asp-action="ProductDetail">
+                                    <img src="~/assets/img/product/rep1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h6>REPRIZO GOLD DIAL WATCH</h6>
+                                <h6>$500.00</h6>
+                                <a asp-controller="Shop" asp-action="ProductDetail">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="product">
+                            <div class="product-icons">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart d-none"></i>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            <div class="product-image">
+                                <a href="productdetail.html">
+                                    <img src="~/assets/img/product/fast1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h6>FASTRACK MEN’S WATCH</h6>
+                                <h6>$400.00</h6>
+                                <a href="productdetail.html">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="product">
+                            <div class="product-icons">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart d-none"></i>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            <div class="product-image">
+                                <a href="productdetail.html">
+                                    <img src="~/assets/img/product/lawson1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h6>LAWSON FRANKLIN 44 MEN’S WATCH</h6>
+                                <h6>$290.00</h6>
+                                <a href="productdetail.html">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Swiss Essence -->
+
+    <section id="swiss">
+        <div class="container">
+            <div class="swiss-all">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12 col-md-12">
+                        <div class="text">
+                            <h1>Swiss Essence</h1>
+                            <p>
+                                The first association that comes to one’s mind with the phrase “a good wristwatch” is
+                                naturally one made somewhere in Switzerland. Do you want to know what makes Swiss
+                                watches stand out?
+                            </p>
+                            <a asp-controller="Shop" asp-action="Index">LEARN MORE</a>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6 col-sm-12 col-md-12">
+                        <div class="image">
+                            <img src="~/assets/img/swiss.jpg" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured -->
+
+    <section id="featured">
+        <div class="container">
+            <div class="featured-all">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="left">
+                            <h6>01</h6>
+                            <h2>Sapphire Crystal</h2>
+                            <p>
+                                Known for obtaining a remarkable hardness (nearly as hard as a diamond). Has a high
+                                scratch resistance which makes it a perfect material for wristwatches. Run by the
+                                vibration of a quartz crystal (32,786 times per second) under current to keep
+                                accurate time. Known for obtaining a remarkable hardness (nearly as hard as a
+                                diamond). Has a high scratch resistance which.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="middle">
+                            <img src="~/assets/img/featured.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="right">
+                            <h6>02</h6>
+                            <h2>316L Stainless Steel</h2>
+                            <p>
+                                The watch case is made of extra low carbon steel that is often used in surgical
+                                instruments and marine appliances thanks to its high corrosion resistance. The band
+                                is made of high-grade Italian eco-leather with a soft nubuck lining for extra
+                                comfort. Obtains excellent wearing qualities. The watch case is made of extra low
+                                carbon steel that is often used in surgical.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Swiss Essence--2 -->
+
+    <section id="swiss">
+        <div class="container">
+            <div class="swiss-all">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12 col-md-12">
+                        <div class="image">
+                            <img src="~/assets/img/swiss.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 col-md-12">
+                        <div class="text" style="margin-left: 70px;">
+                            <h1 style="width: 77%; font-size: 44px;">Designed for Those Who Evade Limits</h1>
+                            <p style="width: 93%;">
+                                Attention to details is always a good feature. We couldn’t think
+                                of any better present for our 5th anniversary than a pair of exclusive watches from
+                                the Lawson collection. Every time I look at my watch I think of her and feel she
+                                thinks of me.
+                            </p>
+                            <a href="shop.html">LEARN MORE</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Best seller  -->
+
+    <section id="products">
+        <div class="container">
+            <h1>Our Bestsellers</h1>
+            <div class="product-all">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="product">
+                            <div class="product-icons">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart d-none"></i>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            <div class="product-image">
+                                <a href="productdetail.html">
+                                    <img src="~/assets/img/product/rep1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h6>REPRIZO GOLD DIAL WATCH</h6>
+                                <h6>$500.00</h6>
+                                <a href="productdetail.html">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="product">
+                            <div class="product-icons">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart d-none"></i>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            <div class="product-image">
+                                <a href="productdetail.html">
+                                    <img src="~/assets/img/product/fast1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h6>FASTRACK MEN’S WATCH</h6>
+                                <h6>$400.00</h6>
+                                <a href="productdetail.html">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="product">
+                            <div class="product-icons">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart d-none"></i>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            <div class="product-image">
+                                <a href="productdetail.html">
+                                    <img src="~/assets/img/product/lawson1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h6>LAWSON FRANKLIN 44 MEN’S WATCH</h6>
+                                <h6>$290.00</h6>
+                                <a href="productdetail.html">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="product">
+                            <div class="product-icons">
+                                <i class="fa-regular fa-heart"></i>
+                                <i class="fa-solid fa-heart d-none"></i>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            <div class="product-image">
+                                <a href="productdetail.html">
+                                    <img src="~/assets/img/product/skmei1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h6>SKMEI WOMAN’S WATCH</h6>
+                                <h6>$250.00</h6>
+                                <a href="productdetail.html">VIEW MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button">
+                <a asp-controller="Shop" asp-action="Index">Show all</a>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+</main>

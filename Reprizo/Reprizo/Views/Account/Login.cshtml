@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+@section css{
+    <link rel="stylesheet" href="~/assets/css/login.css">
+}
+
+
+<main>
+    <!-- Banners -->
+
+    <section id="banner">
+        <div class="banner-all" style="background-image: url(/assets/img/banner.jpg);">
+            <h1>Login</h1>
+        </div>
+    </section>
+
+
+    <!-- Login -->
+
+    <section id="login">
+        <div class="container">
+            <div class="login-all">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                        <div class="card bg-white text-black" style="border-radius: 1rem;height:440px">
+                            <div class="card-body p-5 text-center">
+
+                                <div class="mb-md-2 mt-md-2 pb-1">
+
+                                    <h2 class="fw-bold mb-3 text-uppercase">Login</h2>
+                                    <div style="color:red" ; asp-validation-summary="All"></div>
+                                    <form method="post" asp-controller="Account" asp-action="Login">
+
+                                        <div class="form-outline form-white mb-2">
+                                            <label @*asp-for="Email"*@>Email:</label>
+                                            <input class="form-control form-control-sm" @*asp-for="Email"*@>
+                                            <span style="color:red; margin-bottom:10px"
+                                                  @*asp-validation-for="Email"*@></span>
+                                        </div>
+
+                                        <div class="form-outline form-white mb-4">
+                                            <label @*asp-for="Password"*@>Password:</label>
+                                            <input class="form-control form-control-sm" @*asp-for="Password"*@>
+                                            <span style="color:red; margin-bottom:10px"
+                                                  @*asp-validation-for="Password"*@></span>
+                                        </div>
+
+                                        <div class="logins">
+                                            <div class="login-button">
+                                                <button class="btn bg-dark btn-outline-light btn-sm mt-5 px-5"
+                                                        type="submit">
+                                                    Login
+                                                </button>
+                                            </div>
+                                            <div class="form-check mt-2" style="margin-right: 27px;">
+                                                <input type="checkbox" id="remember_me" />
+                                                <label style="color:gray" class="form-check-label"
+                                                       for="form2Example31"> Remember me </label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div>
+                                    <p class="mb-0 mt-1">
+                                        Don't have an account? <a asp-action="Register"
+                                                                  class="text-dark-50 fw-bold">Register</a>
+                                    </p>
+                                    <p>
+                                        Forgot your password? <a asp-action="ForgotPassword" class="text-dark-50 fw-bold">Click here</a>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+
+<script src="~/assets/js/login.js"></script>
+

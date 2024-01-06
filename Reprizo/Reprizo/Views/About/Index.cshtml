@@ -1,0 +1,141 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section css{
+    <link rel="stylesheet" href="~/assets/css/about.css">
+}
+<main>
+    <!-- Banners -->
+
+    <section id="banner">
+        <div class="banner-all" style="background-image: url(/assets/img/banner.jpg);">
+            <h1>About</h1>
+        </div>
+    </section>
+
+
+    <!-- Watch Service -->
+
+    <section id="service">
+        <div class="container">
+            <div class="service-all">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12 col-md-12">
+                        <div class="text">
+                            <h1>Professional Watch Repair Services</h1>
+                            <p>
+                                Reprizo is a family-owned professional watch and jewelry repair store chain located
+                                in NewYork. We are experts in fixing and repairing watches from world-renowned
+                                brands including Rolex, Breitling, Bell & Ross, and many other brands. We offer a
+                                wi...
+                            </p>
+                            <a asp-controller="Contact" asp-action="Index">CONTACT US</a>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6 col-sm-12 col-md-12">
+                        <div class="image">
+                            <img src="~/assets/img/service.jpg" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client count -->
+    <section id="clients">
+        <div class="container">
+            <div class="client-all">
+                <div class="client">
+                    <span>2,568</span>
+                    <h6>CLIENTS</h6>
+                </div>
+                <div class="client">
+                    <span>38</span>
+                    <h6>STORES</h6>
+                </div>
+                <div class="client">
+                    <span>11,587</span>
+                    <h6>ITEMS FIXED</h6>
+                </div>
+                <div class="client">
+                    <span>58</span>
+                    <h6>PROFESSIONALS</h6>
+                </div>
+                <div class="client">
+                    <span>4</span>
+                    <h6>LOCATIONS</h6>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Teams -->
+
+    <section id="teams">
+        <div class="container">
+            <div class="title">
+                <h1>The Best of Professionals</h1>
+                <p>
+                    Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies
+                    nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="team-all">
+
+                        <div class="image">
+                            <img src="~/assets/img/about/team1.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <h6>REPAIR MASTER</h6>
+                            <h1>David Perkins</h1>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="team-all">
+
+                        <div class="image">
+                            <img src="~/assets/img/about/team2.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <h6>JEWELRY DESIGNER</h6>
+                            <h1>Arnold Stevens</h1>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="team-all">
+
+                        <div class="image">
+                            <img src="~/assets/img/about/team3.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <h6>REPAIR MASTER</h6>
+                            <h1>Mike Peterson</h1>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+</main>
+
+
+
+@section script{
+    <script src="~/assets/js/about.js"></script>
+}

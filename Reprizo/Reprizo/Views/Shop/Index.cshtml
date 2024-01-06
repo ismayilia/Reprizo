@@ -1,0 +1,335 @@
+﻿@{
+	ViewData["Title"] = "Index";
+}
+
+
+@section css{
+	
+	<link rel="stylesheet" href="~/assets/css/shop.css">
+
+}
+
+
+<main>
+
+	<!-- Banners -->
+
+	<section id="banner">
+		<div class="banner-all" style="background-image: url(/assets/img/banner.jpg);">
+			<h1>Shop</h1>
+		</div>
+	</section>
+
+
+	<section id="shops">
+		<div class="container">
+			<div class="shop-all">
+				<div class="row">
+					<div class="col-lg-8 col-md-12 col-sm-12">
+						<div class="shop-left">
+							<div class="category-image d-none"
+								 style="background-image: url(/assets/img/category/aff.jpg);">
+							</div>
+							<div class="sort-tool">
+								<div class="sortt">
+
+									<div class="dropdown">
+										<select class="form-select" aria-label="Default select example">
+											<option selected>Sorting</option>
+											<option value="1">Alphabetically, A-Z</option>
+											<option value="2">Alphabetically, Z-A</option>
+											<option value="3">Price, low to high</option>
+											<option value="4">Price, high to low</option>
+										</select>
+									</div>
+
+								</div>
+								<div class="product-count">
+									<span>4 products</span>
+								</div>
+							</div>
+							<div class="product-all">
+								<div class="row">
+									<div class="col-lg-6 col-md-12 col-sm-12">
+										<div class="product">
+											<div class="product-icons">
+												<i class="fa-regular fa-heart"></i>
+												<i class="fa-solid fa-heart d-none"></i>
+												<i class="fa-solid fa-cart-shopping"></i>
+											</div>
+											<div class="product-image">
+												<a asp-controller="Shop" asp-action="ProductDetail">
+													<img src="~/assets/img/product/rep1.jpg" alt="">
+												</a>
+											</div>
+											<div class="product-content">
+												<h6>REPRIZO GOLD DIAL WATCH</h6>
+												<h6>$500.00</h6>
+												<a asp-controller="Shop" asp-action="ProductDetail">VIEW MORE</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-12 col-sm-12">
+										<div class="product">
+											<div class="product-icons">
+												<i class="fa-regular fa-heart"></i>
+												<i class="fa-solid fa-heart d-none"></i>
+												<i class="fa-solid fa-cart-shopping"></i>
+											</div>
+											<div class="product-image">
+												<a href="productdetail.html">
+													<img src="~/assets/img/product/fast1.jpg" alt="">
+												</a>
+											</div>
+											<div class="product-content">
+												<h6>FASTRACK MEN’S WATCH</h6>
+												<h6>$400.00</h6>
+												<a href="productdetail.html">VIEW MORE</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-12 col-sm-12">
+										<div class="product">
+											<div class="product-icons">
+												<i class="fa-regular fa-heart"></i>
+												<i class="fa-solid fa-heart d-none"></i>
+												<i class="fa-solid fa-cart-shopping"></i>
+											</div>
+											<div class="product-image">
+												<a href="productdetail.html">
+													<img src="~/assets/img/product/lawson1.jpg" alt="">
+												</a>
+											</div>
+											<div class="product-content">
+												<h6>LAWSON FRANKLIN 44 MEN’S WATCH</h6>
+												<h6>$290.00</h6>
+												<a href="productdetail.html">VIEW MORE</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-12 col-sm-12">
+										<div class="product">
+											<div class="product-icons">
+												<i class="fa-regular fa-heart"></i>
+												<i class="fa-solid fa-heart d-none"></i>
+												<i class="fa-solid fa-cart-shopping"></i>
+											</div>
+											<div class="product-image">
+												<a href="productdetail.html">
+													<img src="~/assets/img/product/skmei1.jpg" alt="">
+												</a>
+											</div>
+											<div class="product-content">
+												<h6>SKMEI WOMAN’S WATCH</h6>
+												<h6>$250.00</h6>
+												<a href="productdetail.html">VIEW MORE</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-12 col-sm-12">
+										<div class="product">
+											<div class="product-icons">
+												<i class="fa-regular fa-heart"></i>
+												<i class="fa-solid fa-heart d-none"></i>
+												<i class="fa-solid fa-cart-shopping"></i>
+											</div>
+											<div class="product-image">
+												<a href="productdetail.html">
+													<img src="~/assets/img/product/espoir1.jpg" alt="">
+												</a>
+											</div>
+											<div class="product-content">
+												<h6>Espoir Analog Dial Women’s Watch</h6>
+												<h6>$190.00</h6>
+												<a href="productdetail.html">VIEW MORE</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-12 col-sm-12">
+										<div class="product">
+											<div class="product-icons">
+												<i class="fa-regular fa-heart"></i>
+												<i class="fa-solid fa-heart d-none"></i>
+												<i class="fa-solid fa-cart-shopping"></i>
+											</div>
+											<div class="product-image">
+												<a href="productdetail.html">
+													<img src="~/assets/img/product/fogg1.jpg" alt="">
+												</a>
+											</div>
+											<div class="product-content">
+												<h6>Fogg Women’s Watch</h6>
+												<h6>$115.00</h6>
+												<a href="productdetail.html">VIEW MORE</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-12 col-sm-12">
+										<div class="product">
+											<div class="product-icons">
+												<i class="fa-regular fa-heart"></i>
+												<i class="fa-solid fa-heart d-none"></i>
+												<i class="fa-solid fa-cart-shopping"></i>
+											</div>
+											<div class="product-image">
+												<a href="productdetail.html">
+													<img src="~/assets/img/product/leather1.jpg" alt="">
+												</a>
+											</div>
+											<div class="product-content">
+												<h6>Black-leather Men’s Watch Black Band</h6>
+												<h6>$115.00</h6>
+												<a href="productdetail.html">VIEW MORE</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-12 col-sm-12">
+										<div class="product">
+											<div class="product-icons">
+												<i class="fa-regular fa-heart"></i>
+												<i class="fa-solid fa-heart d-none"></i>
+												<i class="fa-solid fa-cart-shopping"></i>
+											</div>
+											<div class="product-image">
+												<a href="productdetail.html">
+													<img src="~/assets/img/product/giani1.jpg" alt="">
+												</a>
+											</div>
+											<div class="product-content">
+												<h6>Giani Bernardi Men’s Watch</h6>
+												<h6>$150.00</h6>
+												<a href="productdetail.html">VIEW MORE</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-12 col-sm-12">
+										<div class="product">
+											<div class="product-icons">
+												<i class="fa-regular fa-heart"></i>
+												<i class="fa-solid fa-heart d-none"></i>
+												<i class="fa-solid fa-cart-shopping"></i>
+											</div>
+											<div class="product-image">
+												<a href="productdetail.html">
+													<img src="~/assets/img/product/fossil1.jpg" alt="">
+												</a>
+											</div>
+											<div class="product-content">
+												<h6>Fossil Explorist Men’s Watch</h6>
+												<h6>$300.00</h6>
+												<a href="productdetail.html">VIEW MORE</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-12 col-sm-12">
+										<div class="product">
+											<div class="product-icons">
+												<i class="fa-regular fa-heart"></i>
+												<i class="fa-solid fa-heart d-none"></i>
+												<i class="fa-solid fa-cart-shopping"></i>
+											</div>
+											<div class="product-image">
+												<a href="productdetail.html">
+													<img src="~/assets/img/product/elegant.jpg" alt="">
+												</a>
+											</div>
+											<div class="product-content">
+												<h6>Gold Elegant Women’s Watch</h6>
+												<h6>$118.00</h6>
+												<a href="productdetail.html">VIEW MORE</a>
+											</div>
+										</div>
+									</div>
+									<hr>
+									<div class="pagination-area mt-4">
+										<nav aria-label="...">
+											<ul class="pagination">
+												<li class="page-item disabled">
+													<a class="page-link" href="#" tabindex="-1">
+														<i class="fa-solid fa-angle-left"></i>
+													</a>
+												</li>
+												<li class="page-item active">
+													<a class="page-link" href="#">1</a>
+												</li>
+												<li class="page-item">
+													<a class="page-link" href="#">
+														2 <span class="sr-only">(current)</span>
+													</a>
+												</li>
+
+												<li class="page-item">
+													<a class="page-link" href="#">
+														<i class="fa-solid fa-angle-right"></i>
+													</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="shop-right">
+							<div class="search-bar">
+								<h1>Search</h1>
+								<form action="">
+									<input type="text" placeholder="Search">
+									<button><i class="fa-solid fa-magnifying-glass"></i></button>
+								</form>
+							</div>
+
+							<div class="category-bar">
+								<h1>Categories</h1>
+								<div class="category-all">
+									<a href="shop.html"><i class="fa-regular fa-window-minimize"></i> ALL</a>
+									<a href=""><i class="fa-regular fa-window-minimize"></i> AFFORDABLE WATCHES</a>
+									<a href=""><i class="fa-regular fa-window-minimize"></i> GOLD WATCHES</a>
+									<a href=""><i class="fa-regular fa-window-minimize"></i> LIMITED EDITION WATCHES</a>
+									<a href=""><i class="fa-regular fa-window-minimize"></i> MECHANICAL WATCHES</a>
+									<a href=""><i class="fa-regular fa-window-minimize"></i> SWISS WATCHES</a>
+								</div>
+							</div>
+
+							<div class="filters-bar">
+								<h2>Filter by price</h2>
+								<div class="filter-price">
+									<div class="range-slider">
+										<span style="color: gray;">
+											Price:
+											<input style="border: none;font-size: 15px;" type="number" value="0"
+												   min="0" max="120000" />
+											<span style="margin-left: -50px;">-</span>
+											<input style="border: none;font-size: 15px;" type="number" value="999"
+												   min="0" max="120000" />
+										</span>
+										<div class="filterBtn">
+											<button>Filter</button>
+										</div>
+
+										<input value="0" min="0" max="999" step="1" type="range" />
+										<input value="999" min="0" max="999" step="1" type="range" />
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+</main>
+
+
+@section script{
+	
+	<script src="~/assets/js/shop.js"></script>
+}
