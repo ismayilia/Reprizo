@@ -79,12 +79,9 @@
     <section id="collection">
         <div class="container">
             <div class="lawson-collection">
-                <h1>The Lawson Collection</h1>
+                <h1>@Model.Collection.Title</h1>
                 <p>
-                    We are happy to introduce the new Lawson Collection. These are three quartz models designed with
-                    simplicity and elegance kept in mind. They come in different sizes and colors, and all feature a
-                    stainless steel back — leaving enough space for a personalized engraving. The engraving service
-                    is complimentary with any watch from the Lawson series.
+                    @Model.Collection.Description
                 </p>
             </div>
         </div>
@@ -96,63 +93,30 @@
         <div class="container">
             <div class="product-all">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <div class="product">
-                            <div class="product-icons">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart d-none"></i>
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </div>
-                            <div class="product-image">
-                                <a asp-controller="Shop" asp-action="ProductDetail">
-                                    <img src="~/assets/img/product/rep1.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <h6>REPRIZO GOLD DIAL WATCH</h6>
-                                <h6>$500.00</h6>
-                                <a asp-controller="Shop" asp-action="ProductDetail">VIEW MORE</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <div class="product">
-                            <div class="product-icons">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart d-none"></i>
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </div>
-                            <div class="product-image">
-                                <a href="productdetail.html">
-                                    <img src="~/assets/img/product/fast1.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <h6>FASTRACK MEN’S WATCH</h6>
-                                <h6>$400.00</h6>
-                                <a href="productdetail.html">VIEW MORE</a>
+                    @foreach (var product in Model.Products)
+                    {
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="product">
+                                <div class="product-icons">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <i class="fa-solid fa-heart d-none"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div class="product-image">
+                                    <a asp-controller="Shop" asp-action="ProductDetail" asp-route-id="@product.Id">
+                                        <img src="~/assets/img/product/@product.Image" alt="">
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h6>@product.Name</h6>
+                                    <h6>$@product.Price</h6>
+                                    <a asp-controller="Shop" asp-action="ProductDetail" asp-route-id="@product.Id">VIEW MORE</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <div class="product">
-                            <div class="product-icons">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart d-none"></i>
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </div>
-                            <div class="product-image">
-                                <a href="productdetail.html">
-                                    <img src="~/assets/img/product/lawson1.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <h6>LAWSON FRANKLIN 44 MEN’S WATCH</h6>
-                                <h6>$290.00</h6>
-                                <a href="productdetail.html">VIEW MORE</a>
-                            </div>
-                        </div>
-                    </div>
+
+                    }
+                    
                 </div>
             </div>
         </div>

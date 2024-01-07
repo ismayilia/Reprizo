@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gfsm0sne5mTFLIdPKFq/srLiTMYj8A/8h/kXb670U98=",
+  "Hash": "6jykXS5Bp2jFS+RkSquzMjRanu6uFhPO9eZ1RCuzxuM=",
   "Source": "Reprizo",
   "BasePath": "_content/Reprizo",
   "Mode": "Default",
@@ -15589,6 +15589,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\category\\aff.jpg"
     },
     {
+      "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\category\\gold.jpg",
+      "SourceId": "Reprizo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\",
+      "BasePath": "_content/Reprizo",
+      "RelativePath": "assets/img/category/gold.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\category\\gold.jpg"
+    },
+    {
       "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\category\\limited.jpg",
       "SourceId": "Reprizo",
       "SourceType": "Discovered",
@@ -15638,23 +15655,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\category\\swiss.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\category\\vintage.jpg",
-      "SourceId": "Reprizo",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\",
-      "BasePath": "_content/Reprizo",
-      "RelativePath": "assets/img/category/vintage.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\category\\vintage.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\featured.jpg",

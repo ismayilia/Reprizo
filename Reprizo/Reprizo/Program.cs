@@ -20,6 +20,8 @@ builder.Services.AddIdentity<AppUser, IdentityRole>()
                 .AddDefaultTokenProviders();
 
 builder.Services.AddScoped<ISliderService, SliderService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICollectionService, CollectionService>();
 
 var app = builder.Build();
 

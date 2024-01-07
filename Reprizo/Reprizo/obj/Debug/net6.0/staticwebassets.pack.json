@@ -3661,6 +3661,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\category\\aff.jpg"
     },
     {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\category\\gold.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\category\\gold.jpg"
+    },
+    {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\category\\limited.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\category\\limited.jpg"
     },
@@ -3671,10 +3675,6 @@
     {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\category\\swiss.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\category\\swiss.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\category\\vintage.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\category\\vintage.jpg"
     },
     {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\featured.jpg",
