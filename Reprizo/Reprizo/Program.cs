@@ -1,7 +1,25 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Reprizo.Data;
+using Reprizo.Models;
+using Reprizo.Services.Interfaces;
+using Reprizo.Services;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAutoMapper(typeof(Program));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddIdentity<AppUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddDefaultTokenProviders();
+
+builder.Services.AddScoped<ISliderService, SliderService>();
 
 var app = builder.Build();
 
@@ -18,6 +36,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
@@ -28,7 +47,6 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
 
 
 app.Run();

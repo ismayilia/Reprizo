@@ -1,4 +1,4 @@
-﻿
+﻿@model HomeVM
 @{
     ViewData["Title"] = "Index";
 }
@@ -20,17 +20,23 @@
                                 aria-label="Slide 3"></button>
                     </div>
                     <div class="carousel-inner">
-                        <div class="carousel-item active slider-image" data-bs-interval="10000">
-                            <div class="image">
-                                <img src="~/assets/img/slider/slider1.jpg" class="d-block w-100 firefly" alt="...">
+                        @foreach (var item in Model.Sliders)
+                        {
 
-                            </div>
-                            <div class="text">
-                                <h1>World`s Designs</h1>
+                            <div class="carousel-item @(item.IsMain ? "active" : "") slider-image" data-bs-interval="10000">
 
+                                <div class="image">
+                                    <img src="~/assets/img/slider/@item.Image" class="d-block w-100 firefly" alt="...">
+
+                                </div>
+                                <div class="text">
+                                    <h1>@item.Title</h1>
+
+                                </div>
                             </div>
-                        </div>
-                        <div class="carousel-item slider-image" data-bs-interval="2000">
+                        }
+                        
+                        @*<div class="carousel-item slider-image" data-bs-interval="2000">
                             <div class="image">
                                 <img src="~/assets/img/slider/slider2.jpg" class="d-block w-100 firefly" alt="...">
 
@@ -49,7 +55,7 @@
                                 <h1>Luxury Brands</h1>
 
                             </div>
-                        </div>
+                        </div>*@
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
                             data-bs-slide="prev">
