@@ -26,6 +26,7 @@ builder.Services.AddScoped<IEssenceService, EssenceService>();
 builder.Services.AddScoped<IFeatureService, FeatureService>();
 builder.Services.AddScoped<ILayoutService, LayoutService>();
 builder.Services.AddScoped<ISettingService, SettingService>();
+builder.Services.AddScoped<IBlogService, BlogService>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 

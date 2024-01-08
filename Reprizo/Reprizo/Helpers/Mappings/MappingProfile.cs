@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Reprizo.Areas.Admin.ViewModels.Blog;
 using Reprizo.Areas.Admin.ViewModels.Collection;
 using Reprizo.Areas.Admin.ViewModels.Essence;
 using Reprizo.Areas.Admin.ViewModels.Feature;
@@ -16,6 +17,7 @@ namespace Reprizo.Helpers.Mappings
             CreateMap<Collection, CollectionVM>();
             CreateMap<Essence, EssenceVM>();
             CreateMap<Feature, FeatureVM>();
+            CreateMap<Blog, BlogVM>();
 
             CreateMap<Product, ProductVM>().ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.Name))
                                            .ForMember(dest => dest.Image, opt => opt.MapFrom(src => src.Images.FirstOrDefault(m => m.IsMain).Image));
