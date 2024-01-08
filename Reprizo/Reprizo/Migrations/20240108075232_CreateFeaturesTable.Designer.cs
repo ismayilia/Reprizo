@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Reprizo.Data;
 
@@ -11,9 +12,10 @@ using Reprizo.Data;
 namespace Reprizo.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240108075232_CreateFeaturesTable")]
+    partial class CreateFeaturesTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -327,10 +329,7 @@ namespace Reprizo.Migrations
                     b.Property<bool>("SoftDelete")
                         .HasColumnType("bit");
 
-                    b.Property<string>("TitleLeft")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TitleRight")
+                    b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

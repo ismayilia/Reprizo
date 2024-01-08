@@ -23,6 +23,7 @@ builder.Services.AddScoped<ISliderService, SliderService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICollectionService, CollectionService>();
 builder.Services.AddScoped<IEssenceService, EssenceService>();
+builder.Services.AddScoped<IFeatureService, FeatureService>();
 
 var app = builder.Build();
 

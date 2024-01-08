@@ -18,11 +18,11 @@ namespace Reprizo.Services
             _context = context;
             _mapper = mapper;
         }
-        public async Task<List<ProductVM>> GetByTakeWithIncludes(int take)
+        public async Task<List<ProductVM>> GetAllAsync()
         {
             return _mapper.Map<List<ProductVM>>(await _context.Products.Include(m => m.Category)
                                                                        .Include(m => m.Images)
-                                                                       .Take(take).ToListAsync());
+                                                                       .ToListAsync());
         }
     }
 }

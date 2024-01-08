@@ -4,6 +4,6 @@ namespace Reprizo.Services.Interfaces
 {
     public interface IProductService
     {
-        Task<List<ProductVM>> GetByTakeWithIncludes(int take);
+        Task<List<ProductVM>> GetAllAsync();
     }
 }

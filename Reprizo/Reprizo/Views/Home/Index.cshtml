@@ -93,7 +93,7 @@
         <div class="container">
             <div class="product-all">
                 <div class="row">
-                    @foreach (var product in Model.Products)
+                    @foreach (var product in Model.Products.Take(3))
                     {
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="product">
@@ -151,38 +151,30 @@
 
     <!-- Featured -->
 
-    <section id="featured">
+    <section id="featured" style="margin:9rem 0 !important">
         <div class="container">
             <div class="featured-all">
                 <div class="row">
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="left">
                             <h6>01</h6>
-                            <h2>Sapphire Crystal</h2>
+                            <h2>@Model.Feature.TitleLeft</h2>
                             <p>
-                                Known for obtaining a remarkable hardness (nearly as hard as a diamond). Has a high
-                                scratch resistance which makes it a perfect material for wristwatches. Run by the
-                                vibration of a quartz crystal (32,786 times per second) under current to keep
-                                accurate time. Known for obtaining a remarkable hardness (nearly as hard as a
-                                diamond). Has a high scratch resistance which.
+                                @Model.Feature.DescriptionLeft
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="middle">
-                            <img src="~/assets/img/featured.jpg" alt="">
+                            <img src="~/assets/img/@Model.Feature.Image" alt="">
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="right">
                             <h6>02</h6>
-                            <h2>316L Stainless Steel</h2>
+                            <h2>@Model.Feature.TitleRight</h2>
                             <p>
-                                The watch case is made of extra low carbon steel that is often used in surgical
-                                instruments and marine appliances thanks to its high corrosion resistance. The band
-                                is made of high-grade Italian eco-leather with a soft nubuck lining for extra
-                                comfort. Obtains excellent wearing qualities. The watch case is made of extra low
-                                carbon steel that is often used in surgical.
+                                @Model.Feature.DescriptionRight
                             </p>
                         </div>
                     </div>
@@ -225,82 +217,30 @@
             <h1>Our Bestsellers</h1>
             <div class="product-all">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="product">
-                            <div class="product-icons">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart d-none"></i>
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </div>
-                            <div class="product-image">
-                                <a href="productdetail.html">
-                                    <img src="~/assets/img/product/rep1.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <h6>REPRIZO GOLD DIAL WATCH</h6>
-                                <h6>$500.00</h6>
-                                <a href="productdetail.html">VIEW MORE</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="product">
-                            <div class="product-icons">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart d-none"></i>
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </div>
-                            <div class="product-image">
-                                <a href="productdetail.html">
-                                    <img src="~/assets/img/product/fast1.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <h6>FASTRACK MEN’S WATCH</h6>
-                                <h6>$400.00</h6>
-                                <a href="productdetail.html">VIEW MORE</a>
+                    @foreach (var product in Model.Products.Take(4))
+                    {
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="product">
+                                <div class="product-icons">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <i class="fa-solid fa-heart d-none"></i>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div class="product-image">
+                                    <a asp-controller="Shop" asp-action="ProductDetail" asp-route-id="@product.Id">
+                                        <img src="~/assets/img/product/@product.Image" alt="">
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h6>@product.Name</h6>
+                                    <h6>$@product.Price</h6>
+                                    <a asp-controller="Shop" asp-action="ProductDetail" asp-route-id="@product.Id">VIEW MORE</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="product">
-                            <div class="product-icons">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart d-none"></i>
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </div>
-                            <div class="product-image">
-                                <a href="productdetail.html">
-                                    <img src="~/assets/img/product/lawson1.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <h6>LAWSON FRANKLIN 44 MEN’S WATCH</h6>
-                                <h6>$290.00</h6>
-                                <a href="productdetail.html">VIEW MORE</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="product">
-                            <div class="product-icons">
-                                <i class="fa-regular fa-heart"></i>
-                                <i class="fa-solid fa-heart d-none"></i>
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </div>
-                            <div class="product-image">
-                                <a href="productdetail.html">
-                                    <img src="~/assets/img/product/skmei1.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="product-content">
-                                <h6>SKMEI WOMAN’S WATCH</h6>
-                                <h6>$250.00</h6>
-                                <a href="productdetail.html">VIEW MORE</a>
-                            </div>
-                        </div>
-                    </div>
+
+                    }
+                    
                 </div>
             </div>
             <div class="button">
