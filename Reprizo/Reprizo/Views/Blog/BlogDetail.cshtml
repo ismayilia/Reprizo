@@ -1,0 +1,56 @@
+﻿@model BlogVM
+@{
+    ViewData["Title"] = "BlogDetail";
+}
+
+@section css{
+    <link rel="stylesheet" href="~/assets/css/blogdetail.css">
+}
+
+<main>
+    <!-- Banners Blog Detail-->
+
+    <section id="banner">
+        <div class="banner-all" style="background-image: url(/assets/img/@ViewBag.BlogDetailBanner);">
+            <h1>Blog Detail</h1>
+        </div>
+    </section>
+
+
+
+    <section id="blog-detail">
+        <div class="container">
+            <div class="blog-all">
+                <div class="blog">
+                    <div class="image">
+                        <img src="~/assets/img/blog/@Model.Image" alt="">
+                    </div>
+                    <div class="title">
+                        <span>@Model.CreateDate.ToString("MMMM ,d yyyy")</span>
+                        <span>BY @Model.Writer</span>
+                        <h1>@Model.Title</h1>
+                    </div>
+                    <div class="content">
+                        <p>
+                            @Model.Description
+                        </p>
+                    </div>
+
+                    <div class="social">
+                        <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=966242223397117&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fsharer.php%3Fu%3Dhttps%253A%252F%252Fnew-reprizo.shopify.axiomthemes.com%252Fblogs%252Fwatches%252Fwhat-type-of-metal-will-you-choose&cancel_url=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Fclose_window%2F%3Fapp_id%3D966242223397117%26connect%3D0%23_%3D_&display=popup&locale=en_US"><i class="fa-brands fa-square-facebook"></i> SHARE</a>
+                        <a href="https://twitter.com/intent/tweet?text=What%20Type%20of%20Metal%20Will%20You%20Choose%3F&url=https%3A%2F%2Fnew-reprizo.shopify.axiomthemes.com%2Fblogs%2Fwatches%2Fwhat-type-of-metal-will-you-choose"><i class="fa-brands fa-twitter"></i> TWEET</a>
+                        <a href="https://www.pinterest.com/pin/create/button/?url=https://new-reprizo.shopify.axiomthemes.com/blogs/watches/what-type-of-metal-will-you-choose&media=//new-reprizo.shopify.axiomthemes.com/cdn/shop/articles/image-2-copyright_1024x1024.jpg?v=1624457678&description=What%20Type%20of%20Metal%20Will%20You%20Choose?"><i class="fa-brands fa-pinterest"></i> PIN IT</a>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+@section script{
+    <script src="~/assets/js/blog.js"></script>
+}
+

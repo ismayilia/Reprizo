@@ -5,6 +5,7 @@ using Reprizo.Areas.Admin.ViewModels.Product;
 using Reprizo.Data;
 using Reprizo.Models;
 using Reprizo.Services.Interfaces;
+using System.Reflection.Metadata;
 
 namespace Reprizo.Services
 {
@@ -28,6 +29,12 @@ namespace Reprizo.Services
             var datas = await _context.Blogs.ToListAsync();
 
             return _mapper.Map<List<BlogVM>>(datas);
+        }
+
+        public async Task<BlogVM> GetByIdAsync(int id)
+        {
+            Blog data = await _context.Blogs.FirstOrDefaultAsync(m => m.Id == id);
+            return _mapper.Map<BlogVM>(data);
         }
 
         public async Task<int> GetCountAsync()

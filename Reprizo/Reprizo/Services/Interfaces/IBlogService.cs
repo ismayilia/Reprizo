@@ -8,5 +8,6 @@ namespace Reprizo.Services.Interfaces
         Task<List<BlogVM>> GetPaginatedDatasAsync(int page, int take);
         Task<List<BlogVM>> GetAllAsync();
         Task<int> GetCountAsync();
+        Task<BlogVM> GetByIdAsync(int id);
     }
 }

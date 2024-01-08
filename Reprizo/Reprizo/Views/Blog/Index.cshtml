@@ -38,7 +38,7 @@
                                         @blog.Description.Substring(0, (int)Math.Ceiling(blog.Description.Length * 0.1)) .....
 
                                     </p>
-                                    <a href="blogdetail.html"><span></span> READ MORE</a>
+                                    <a asp-action="BlogDetail" asp-route-id="@blog.Id"><span></span> READ MORE</a>
                                 </div>
                                 <hr>
                             </div>
@@ -115,6 +115,6 @@
 </main>
 
 @section script{
-    <script src="~/assets/js/blog.js"></script>
+    <script src="~/assets/js/blogdetail.js"></script>
 }
 

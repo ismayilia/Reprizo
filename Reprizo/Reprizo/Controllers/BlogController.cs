@@ -43,5 +43,15 @@ namespace Reprizo.Controllers
 
             return (int)Math.Ceiling((decimal)(productCount) / take);
         }
+
+        public async Task<IActionResult> BlogDetail(int id)
+        {
+            BlogVM blog = await _blogService.GetByIdAsync(id);
+            Dictionary<string, string> settingDatas = _settingService.GetSettings();
+
+            ViewBag.BlogDetailBanner = settingDatas["BlogDetailBanner"];
+
+            return View(blog);
+        }
     }
 }
