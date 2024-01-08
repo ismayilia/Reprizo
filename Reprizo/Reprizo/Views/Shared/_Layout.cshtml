@@ -15,44 +15,7 @@
 <body>
 
 	<!-- Header -->
-
-	<header>
-		<div class="container">
-			<div class="header-top">
-				<div class="row align-items-center nese">
-					<div class="col-lg-5">
-						<nav>
-							<a asp-controller="Home" asp-action="Index">Home</a>
-							<a asp-controller="Shop" asp-action="Index">Shop</a>
-							<a asp-controller="Blog" asp-action="Index">Blog</a>
-							<a asp-controller="About" asp-action="Index">About</a>
-							<a asp-controller="Contact" asp-action="Index">Contact</a>
-						</nav>
-					</div>
-					<div class="col-lg-2">
-						<div class="logo">
-							<a asp-controller="Home" asp-action="Index"><img class="logo w-100" src="~/assets/img/logo.png" alt=""></a>
-
-						</div>
-					</div>
-					<div class="col-lg-5">
-						<div class="header-right">
-							<a href="#" class="d-none">Ismayil Afandizada</a>
-							<form asp-controller="Account" asp-action="Logout" class="d-none" style="display: inline;">
-								<input type="submit" value="Logout" style="background-color:brown; color:white;border:none" />
-							</form>
-							<a asp-controller="Account" asp-action="Login">Login</a>
-							<a asp-controller="Account" asp-action="Register">Register</a>
-							<a asp-controller="Wishlist" asp-action="Index"><i class="fa-regular fa-heart"></i> Wishlist</a>
-							<a asp-controller="Cart" asp-action="Index"><i class="fa-solid fa-cart-shopping"></i> Cart <span>(0)</span></a>
-						</div>
-					</div>
-				</div>
-				<hr>
-
-			</div>
-		</div>
-	</header>
+	@(await Component.InvokeAsync("Header"));
 
 	
 
@@ -61,71 +24,7 @@
 	
 
 	<!-- Footer -->
-
-	<footer>
-		<div class="container">
-			<div class="footer-top">
-				<div class="row">
-					<div class="col-lg-6 col-md-12 col-sm-12">
-						<div class="left">
-							<p>
-								Sign up for our newsletter to receive special offers, news and great sales notifications.
-							</p>
-							<form action="">
-								<div class="email-subs">
-									<input type="text" placeholder="Email address">
-									<button>Subscribe</button>
-								</div>
-							</form>
-
-						</div>
-					</div>
-
-					<div class="col-lg-6 col-md-12 col-sm-12">
-						<div class="right">
-							<div class="row">
-								<div class="information-footer col-lg-4">
-									<h6>PAGES</h6>
-									<a asp-controller="Home" asp-action="Index">HOME</a>
-									<a asp-controller="Shop" asp-action="Index">SHOP</a>
-								</div>
-								<div class="account-footer col-lg-4">
-									<h6>ABOUT US</h6>
-									<a asp-controller="Blog" asp-action="Index">BLOG</a>
-									<a asp-controller="About" asp-action="Index">ABOUT</a>
-									<a asp-controller="Contact" asp-action="Index">CONTACT</a>
-
-								</div>
-								<div class="shop-footer col-lg-4">
-									<h6>SOCIALS</h6>
-									<a href="https://business.facebook.com/" target="_blank">
-										<i class="fa-brands fa-square-facebook"></i> FACEBOOK
-									</a>
-									<a href="https://www.pinterest.com/themerex0063/" target="_blank">
-										<i class="fa-brands fa-square-pinterest"></i> PINTEREST
-									</a>
-									<a href="https://www.instagram.com/themerex_net/" target="_blank">
-										<i class="fa-brands fa-square-instagram"></i> INSTAGRAM
-									</a>
-									<a href="https://www.youtube.com/channel/UCnFisBimrK2aIE-hnY70kCA" target="_blank">
-										<i class="fa-brands fa-square-youtube"></i> YOUTUBE
-									</a>
-								</div>
-							</div>
-
-						</div>
-					</div>
-
-				</div>
-			</div>
-			<hr>
-			<div class="col-12 footer-down">
-				<h6>Reprizo © 2023, Powered by Ismayil Afandizada</h6>
-			</div>
-
-
-		</div>
-	</footer>
+	@(await Component.InvokeAsync("Footer"));
 
 
 
