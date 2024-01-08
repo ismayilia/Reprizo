@@ -130,11 +130,9 @@
                 <div class="row">
                     <div class="col-lg-6 col-sm-12 col-md-12">
                         <div class="text">
-                            <h1>Swiss Essence</h1>
+                            <h1>@Model.Essences.FirstOrDefault().Title</h1>
                             <p>
-                                The first association that comes to one’s mind with the phrase “a good wristwatch” is
-                                naturally one made somewhere in Switzerland. Do you want to know what makes Swiss
-                                watches stand out?
+                                @Model.Essences.FirstOrDefault().Description
                             </p>
                             <a asp-controller="Shop" asp-action="Index">LEARN MORE</a>
                         </div>
@@ -142,7 +140,7 @@
                     </div>
                     <div class="col-lg-6 col-sm-12 col-md-12">
                         <div class="image">
-                            <img src="~/assets/img/swiss.jpg" alt="">
+                            <img src="~/assets/img/@Model.Essences.FirstOrDefault().Image" alt="">
                         </div>
 
                     </div>
@@ -202,19 +200,16 @@
                 <div class="row">
                     <div class="col-lg-6 col-sm-12 col-md-12">
                         <div class="image">
-                            <img src="~/assets/img/swiss.jpg" alt="">
+                            <img src="~/assets/img/@Model.Essences.LastOrDefault().Image" alt="">
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12 col-md-12">
                         <div class="text" style="margin-left: 70px;">
-                            <h1 style="width: 77%; font-size: 44px;">Designed for Those Who Evade Limits</h1>
+                            <h1 style="width: 77%; font-size: 44px;">@Model.Essences.LastOrDefault().Title</h1>
                             <p style="width: 93%;">
-                                Attention to details is always a good feature. We couldn’t think
-                                of any better present for our 5th anniversary than a pair of exclusive watches from
-                                the Lawson collection. Every time I look at my watch I think of her and feel she
-                                thinks of me.
+                                @Model.Essences.LastOrDefault().Description
                             </p>
-                            <a href="shop.html">LEARN MORE</a>
+                            <a asp-controller="Shop" asp-action="Index">LEARN MORE</a>
                         </div>
 
                     </div>

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Reprizo.Areas.Admin.ViewModels.Collection;
+using Reprizo.Areas.Admin.ViewModels.Essence;
 using Reprizo.Areas.Admin.ViewModels.Home;
 using Reprizo.Areas.Admin.ViewModels.Product;
 using Reprizo.Areas.Admin.ViewModels.Slider;
@@ -14,18 +15,22 @@ namespace Reprizo.Controllers
         private readonly ISliderService _sliderService;
         private readonly IProductService _productService;
         private readonly ICollectionService _collectionService;
+        private readonly IEssenceService _essenceService;
+
 
 
 
         public HomeController(AppDbContext context, 
                                 ISliderService sliderService, 
                                 IProductService productService,
-                                ICollectionService collectionService)
+                                ICollectionService collectionService,
+                                IEssenceService essenceService)
         {
             _context = context;
             _sliderService = sliderService;
             _productService = productService;
             _collectionService = collectionService;
+            _essenceService = essenceService;
 
         }
         public async Task<IActionResult> Index()
@@ -33,12 +38,16 @@ namespace Reprizo.Controllers
             List<SliderVM> sliders = await _sliderService.GetAllAsync();
             List<ProductVM> products = await _productService.GetByTakeWithIncludes(3);
             CollectionVM collection = await _collectionService.GetDataAsync();
+            List<EssenceVM> essences = await _essenceService.GetAllAsync();
+
+
 
             HomeVM model = new()
             {
                 Sliders = sliders,
                 Products = products,
-                Collection = collection
+                Collection = collection,
+                Essences = essences
 
             };
 

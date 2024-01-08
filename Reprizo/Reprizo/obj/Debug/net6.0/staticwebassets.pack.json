@@ -3677,6 +3677,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\category\\swiss.jpg"
     },
     {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\evade.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\evade.jpg"
+    },
+    {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\featured.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\featured.jpg"
     },

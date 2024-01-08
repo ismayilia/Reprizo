@@ -14,6 +14,7 @@ namespace Reprizo.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<Collection> Collections { get; set; }
+        public DbSet<Essence> Essences { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
