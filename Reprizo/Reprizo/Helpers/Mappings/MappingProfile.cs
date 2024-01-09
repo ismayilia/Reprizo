@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Reprizo.Areas.Admin.ViewModels.BestWorker;
 using Reprizo.Areas.Admin.ViewModels.Blog;
 using Reprizo.Areas.Admin.ViewModels.Collection;
 using Reprizo.Areas.Admin.ViewModels.Essence;
@@ -6,6 +7,7 @@ using Reprizo.Areas.Admin.ViewModels.Feature;
 using Reprizo.Areas.Admin.ViewModels.Product;
 using Reprizo.Areas.Admin.ViewModels.Repair;
 using Reprizo.Areas.Admin.ViewModels.Slider;
+using Reprizo.Areas.Admin.ViewModels.Team;
 using Reprizo.Models;
 
 namespace Reprizo.Helpers.Mappings
@@ -20,6 +22,9 @@ namespace Reprizo.Helpers.Mappings
             CreateMap<Feature, FeatureVM>();
             CreateMap<Blog, BlogVM>();
             CreateMap<Repair, RepairVM>();
+            CreateMap<Team, TeamVM>();
+            CreateMap<BestWorker, BestWorkerVM>();
+
 
             CreateMap<Product, ProductVM>().ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.Name))
                                            .ForMember(dest => dest.Image, opt => opt.MapFrom(src => src.Images.FirstOrDefault(m => m.IsMain).Image));

@@ -19,6 +19,8 @@ namespace Reprizo.Data
         public DbSet<Setting> Settings { get; set; }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Repair> Repairs { get; set; }
+        public DbSet<BestWorker> BestWorkers { get; set; }
+        public DbSet<Team> Teams { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

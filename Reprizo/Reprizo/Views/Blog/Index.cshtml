@@ -61,7 +61,7 @@
                                         </div>
                                         <div class="col-6">
                                             <div class="content">
-                                                <a href="blogdetail.html">@latest.Title</a>
+                                                <a asp-action="BlogDetail" asp-route-id="@latest.Id">@latest.Title</a>
                                                 <p>@latest.CreateDate.ToString("MMMM ,d yyyy")</p>
                                             </div>
                                         </div>

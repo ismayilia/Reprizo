@@ -4,6 +4,7 @@ using Reprizo.Data;
 using Reprizo.Models;
 using Reprizo.Services.Interfaces;
 using Reprizo.Services;
+using Reprizo.Areas.Admin.ViewModels.BestWorker;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,8 @@ builder.Services.AddScoped<ILayoutService, LayoutService>();
 builder.Services.AddScoped<ISettingService, SettingService>();
 builder.Services.AddScoped<IBlogService, BlogService>();
 builder.Services.AddScoped<IRepairService, RepairService>();
+builder.Services.AddScoped<ITeamService, TeamService>();
+builder.Services.AddScoped<IBestWorkerService, BestWorkerService>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 

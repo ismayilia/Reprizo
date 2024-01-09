@@ -77,52 +77,31 @@
     <section id="teams">
         <div class="container">
             <div class="title">
-                <h1>The Best of Professionals</h1>
+                <h1>@Model.Best.Title</h1>
                 <p>
-                    Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies
-                    nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus
+                    @Model.Best.Description
                 </p>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="team-all">
 
-                        <div class="image">
-                            <img src="~/assets/img/about/team1.jpg" alt="">
+                @foreach (var team in Model.Teams)
+                {
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="team-all">
+
+                            <div class="image">
+                                <img src="~/assets/img/about/@team.Image" alt="">
+                            </div>
+                            <div class="text">
+                                <h6>@team.Position</h6>
+                                <h1>@team.FullName</h1>
+                            </div>
                         </div>
-                        <div class="text">
-                            <h6>REPAIR MASTER</h6>
-                            <h1>David Perkins</h1>
-                        </div>
+
                     </div>
 
-                </div>
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="team-all">
-
-                        <div class="image">
-                            <img src="~/assets/img/about/team2.jpg" alt="">
-                        </div>
-                        <div class="text">
-                            <h6>JEWELRY DESIGNER</h6>
-                            <h1>Arnold Stevens</h1>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    <div class="team-all">
-
-                        <div class="image">
-                            <img src="~/assets/img/about/team3.jpg" alt="">
-                        </div>
-                        <div class="text">
-                            <h6>REPAIR MASTER</h6>
-                            <h1>Mike Peterson</h1>
-                        </div>
-                    </div>
-
-                </div>
+                }
+                
             </div>
 
 
