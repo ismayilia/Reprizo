@@ -27,12 +27,14 @@ namespace Reprizo.Controllers
         public async Task<IActionResult> Index(int page = 1, int take = 2)
         {
             List<BlogVM> dbPaginatedDatas = await _blogService.GetPaginatedDatasAsync(page, take);
+            List<BlogVM> blogs = await _blogService.GetAllAsync();
             int pageCount = await GetPageCountAsync(take);
             Dictionary<string, string> settingDatas = _settingService.GetSettings();
 
-            string blogBanner = settingDatas["BlogBanner"];
+            ViewBag.BlogBanner= settingDatas["BlogBanner"];
+            ViewBag.Blogs= blogs.OrderByDescending(m=>m.Id).Take(2);
 
-            Paginate<BlogVM> paginatedDatas = new(dbPaginatedDatas, page, pageCount, blogBanner);
+            Paginate<BlogVM> paginatedDatas = new(dbPaginatedDatas, page, pageCount);
 
             return View(paginatedDatas);
         }

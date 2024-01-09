@@ -1,4 +1,4 @@
-﻿
+﻿@model AboutVM
 @{
     ViewData["Title"] = "Index";
 }
@@ -10,7 +10,7 @@
     <!-- Banners -->
 
     <section id="banner">
-        <div class="banner-all" style="background-image: url(/assets/img/banner.jpg);">
+        <div class="banner-all" style="background-image: url(/assets/img/@ViewBag.AboutBanner);">
             <h1>About</h1>
         </div>
     </section>
@@ -24,12 +24,9 @@
                 <div class="row">
                     <div class="col-lg-6 col-sm-12 col-md-12">
                         <div class="text">
-                            <h1>Professional Watch Repair Services</h1>
+                            <h1>@Model.Repair.Title</h1>
                             <p>
-                                Reprizo is a family-owned professional watch and jewelry repair store chain located
-                                in NewYork. We are experts in fixing and repairing watches from world-renowned
-                                brands including Rolex, Breitling, Bell & Ross, and many other brands. We offer a
-                                wi...
+                                @Model.Repair.Description
                             </p>
                             <a asp-controller="Contact" asp-action="Index">CONTACT US</a>
                         </div>
@@ -37,7 +34,7 @@
                     </div>
                     <div class="col-lg-6 col-sm-12 col-md-12">
                         <div class="image">
-                            <img src="~/assets/img/service.jpg" alt="">
+                            <img src="~/assets/img/@Model.Repair.Image" alt="">
                         </div>
 
                     </div>

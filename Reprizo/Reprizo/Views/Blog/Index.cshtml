@@ -12,7 +12,7 @@
     <!-- Banners -->
 
     <section id="banner">
-        <div class="banner-all" style="background-image: url(/assets/img/@Model.BlogBanner);">
+        <div class="banner-all" style="background-image: url(/assets/img/@ViewBag.BlogBanner);">
             <h1>Blogs</h1>
         </div>
     </section>
@@ -49,38 +49,28 @@
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="latest-post">
                             <h3>Latest posts</h3>
-                            <div class="posts">
-                                <div class="row">
+                            @foreach (var latest in ViewBag.Blogs)
+                            {
+                                <div class="posts">
+                                    <div class="row">
 
-                                    <div class="col-6">
-                                        <div class="image">
-                                            <img src="~/assets/img/bloglates1.jpg" alt="">
+                                        <div class="col-6">
+                                            <div class="image">
+                                                <img src="~/assets/img/blog/@latest.Image" alt="" style="width:100%">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="content">
-                                            <a href="blogdetail.html">What Type of Metal Will You Choose?</a>
-                                            <p>JUNE 23,2023</p>
+                                        <div class="col-6">
+                                            <div class="content">
+                                                <a href="blogdetail.html">@latest.Title</a>
+                                                <p>@latest.CreateDate.ToString("MMMM ,d yyyy")</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="posts">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="image">
-                                            <img src="~/assets/img/bloglates2.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="content">
-                                            <a href="blogdetail.html">What Type of Metal Will You Choose?</a>
-                                            <p>JUNE 23,2023</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            }
+
+                            
 
                         </div>
                     </div>
