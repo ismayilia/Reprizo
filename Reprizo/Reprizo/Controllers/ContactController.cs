@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Reprizo.Areas.Admin.ViewModels.Contact;
 using Reprizo.Areas.Admin.ViewModels.Repair;
 using Reprizo.Services.Interfaces;
@@ -7,20 +8,27 @@ namespace Reprizo.Controllers
 {
     public class ContactController : Controller
     {
-        //private readonly IRepairService _repairService;
-        //public ContactController(IRepairService repairService)
-        //{
-        //    _repairService = repairService;
-        //}
+        private readonly ISettingService _settingService;
+        public ContactController(ISettingService settingService)
+        {
+            _settingService = settingService;
+        }
         public IActionResult Index()
         {
-            //RepairVM repair = await _repairService.GetDataAsync();
+            Dictionary<string,string> settingDatas = _settingService.GetSettings();
 
-            //ContactVM model = new()
-            //{
-            //    Repair = repair
-            //};
-            return View();
+            ContactVM model = new()
+            {
+                MailOne = settingDatas["MailOne"],
+                MailTwo = settingDatas["MailTwo"],
+                PhoneOne = settingDatas["PhoneOne"],
+                PhoneTwo = settingDatas["PhoneTwo"],
+                WeekDays = settingDatas["WeekDays"],
+                Weekends = settingDatas["Weekends"],
+                Address = settingDatas["Address"],
+                ContactBanner = settingDatas["ContactBanner"]
+            };
+            return View(model);
         }
     }
 }

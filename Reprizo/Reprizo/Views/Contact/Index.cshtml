@@ -1,4 +1,4 @@
-﻿
+﻿@model ContactVM
 
 @{
 	ViewData["Title"] = "Index";
@@ -13,7 +13,7 @@
 	<!-- Banners -->
 
 	<section id="banner">
-		<div class="banner-all" style="background-image: url(/assets/img/banner.jpg);">
+		<div class="banner-all" style="background-image: url(/assets/img/@Model.ContactBanner);">
 			<h1>Contacts</h1>
 		</div>
 	</section>
@@ -28,29 +28,29 @@
 						<div class="contact">
 							<h1>Address</h1>
 							<p style="width: 60%;margin: 0 auto;line-height: 34px;">
-								12 Van Dyke St, Brooklyn, NY 11231
+								@Model.Address
 							</p>
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-6 col-sm-12">
 						<div class="contact">
 							<h1>Phone</h1>
-							<p><a href="tel:1(800)1234567">1 (800) 123-4567</a></p>
-							<p><a href="tel:18001234568">1 (800) 123-4568</a></p>
+							<p><a href="tel:1(800)1234567">@Model.PhoneOne</a></p>
+							<p><a href="tel:18001234568">@Model.PhoneTwo</a></p>
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-6 col-sm-12">
 						<div class="contact">
 							<h1>Mail</h1>
-							<p><a href="mailto:sales@yoursite.com">sales@yoursite.com</a></p>
-							<p><a href="mailto:hr@yoursite.com">hr@yoursite.com</a></p>
+							<p><a href="mailto:sales@yoursite.com">@Model.MailOne</a></p>
+							<p><a href="mailto:hr@yoursite.com">@Model.MailTwo</a></p>
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-6 col-sm-12">
 						<div class="contact">
 							<h1>Hours</h1>
-							<p>Mon - Fri: 8 AM - 6 PM</p>
-							<p>Sat: 9 AM - 4 PM</p>
+							<p>@Model.WeekDays</p>
+							<p>@Model.Weekends</p>
 						</div>
 					</div>
 				</div>

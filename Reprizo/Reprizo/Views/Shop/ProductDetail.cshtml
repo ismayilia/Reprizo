@@ -1,4 +1,4 @@
-﻿
+﻿@model ProductVM
 @{
     ViewData["Title"] = "ProductDetail";
 }
@@ -13,7 +13,7 @@
     <!-- Banner -->
 
     <section id="banner">
-        <div class="banner-all" style="background-image: url(/assets/img/banner.jpg);">
+        <div class="banner-all" style="background-image: url(/assets/img/@ViewBag.ProductDetailBanner);">
             <h1>Product Detail</h1>
         </div>
     </section>
@@ -26,24 +26,17 @@
                 <div class="col-lg-6 col-sm-12 col-md-12">
                     <div class="detail">
                         <div class="image">
-                            <img src="~/assets/img/product/fast1.jpg" alt="">
+                            <img src="~/assets/img/product/@Model.Image" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-sm-12 col-md-12">
                     <div class="detail">
                         <div class="title">
-                            <h1>Fastrack Men’s Watch</h1>
-                            <h6>$420.00</h6>
+                            <h1>@Model.Name</h1>
+                            <h6>$@Model.Price</h6>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                                euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
-                                minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
-                                aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
-                                vulputate velit esse molestie consequat, vel illum dolore eu feugiati.ut laoreet
-                                dolore magna aliquam erat volutpat. Ut wisi enim ad
-                                minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
-                                aliquip ex ea commodo consequat.
+                                @Model.Description
                             </p>
                         </div>
                         <div class="cart">
@@ -77,12 +70,7 @@
             <div class="description">
                 <h1>Description</h1>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
-                    ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
-                    tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum
-                    iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
-                    feugiati.ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                    nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                    @Model.Description
                 </p>
 
             </div>
