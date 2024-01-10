@@ -79,19 +79,19 @@
                         <nav aria-label="...">
                             <ul class="pagination">
                                 <li class="page-item @(Model.HasPrevios ? "" : "disabled")">
-                                    <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage-1)" tabindex="-1">
+                                    <a class="page-link" style="outline:none!important;box-shadow:none!important" asp-action="Index" asp-route-page="@(Model.CurrentPage-1)" tabindex="-1">
                                         <i class="fa-solid fa-angle-left"></i>
                                     </a>
                                 </li>
                                 @for (int i = 1; i <= Model.TotalPage; i++)
                                 {
                                     <li class="page-item  @(Model.CurrentPage==i ? "active" : "")">
-                                        <a class="page-link" asp-action="Index" asp-route-page="@i">@i <span class="sr-only">(current)</span></a>
+                                        <a class="page-link" style="outline:none!important;box-shadow:none!important" asp-action="Index" asp-route-page="@i">@i <span class="sr-only">(current)</span></a>
                                     </li>
                                 }
 
                                 <li class="page-item @(Model.HasNext ? "" : "disabled")">
-                                    <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage + 1)"><i class="fa-solid fa-angle-right"></i></a>
+                                    <a class="page-link" style="outline:none!important;box-shadow:none!important" asp-action="Index" asp-route-page="@(Model.CurrentPage + 1)"><i class="fa-solid fa-angle-right"></i></a>
                                 </li>
                             </ul>
                         </nav>

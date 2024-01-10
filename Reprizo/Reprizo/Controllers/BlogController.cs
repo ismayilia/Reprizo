@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Reprizo.Areas.Admin.ViewModels.Blog;
+using Reprizo.Areas.Admin.ViewModels.Category;
 using Reprizo.Areas.Admin.ViewModels.Product;
 using Reprizo.Data;
 using Reprizo.Helpers;
@@ -46,9 +47,20 @@ namespace Reprizo.Controllers
             return (int)Math.Ceiling((decimal)(blogCount) / take);
         }
 
-        public async Task<IActionResult> BlogDetail(int id)
+        public async Task<IActionResult> BlogDetail(int? id)
         {
-            BlogVM blog = await _blogService.GetByIdAsync(id);
+			if (id is null)
+			{
+				return BadRequest();
+			}
+
+			BlogVM existBlog = await _blogService.GetByIdAsync((int)id);
+
+			if (existBlog == null)
+			{
+				return NotFound();
+			}
+			BlogVM blog = await _blogService.GetByIdAsync((int)id);
             Dictionary<string, string> settingDatas = _settingService.GetSettings();
 
             ViewBag.BlogDetailBanner = settingDatas["BlogDetailBanner"];

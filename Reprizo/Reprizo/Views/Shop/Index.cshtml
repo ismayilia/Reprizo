@@ -16,7 +16,7 @@
 	<!-- Banners -->
 
 	<section id="banner">
-		<div class="banner-all" style="background-image: url(/assets/img/banner.jpg);">
+		<div class="banner-all" style="background-image: url(/assets/img/@ViewBag.ShopBanner);">
 			<h1>Shop</h1>
 		</div>
 	</section>
@@ -46,7 +46,7 @@
 
 								</div>
 								<div class="product-count">
-									<span>4 products</span>
+									<span>@Model.Paginate.Datas.Count() products</span>
 								</div>
 							</div>
 							<div class="product-all">
@@ -59,19 +59,19 @@
 										<nav aria-label="...">
 											<ul class="pagination">
 												<li class="page-item @(Model.Paginate.HasPrevios ? "" : "disabled")">
-													<a class="page-link" asp-action="Index" asp-route-page="@(Model.Paginate.CurrentPage-1)" tabindex="-1">
+													<a class="page-link" style="outline:none!important;box-shadow:none!important" asp-action="Index" asp-route-page="@(Model.Paginate.CurrentPage-1)" tabindex="-1">
 														<i class="fa-solid fa-angle-left"></i>
 													</a>
 												</li>
 												@for (int i = 1; i <= Model.Paginate.TotalPage; i++)
 												{
 													<li class="page-item  @(Model.Paginate.CurrentPage==i ? "active" : "")">
-														<a class="page-link" asp-action="Index" asp-route-page="@i">@i <span class="sr-only">(current)</span></a>
+														<a class="page-link" style="outline:none!important;box-shadow:none!important" asp-action="Index" asp-route-page="@i">@i <span class="sr-only">(current)</span></a>
 													</li>
 												}
 
 												<li class="page-item @(Model.Paginate.HasNext ? "" : "disabled")">
-													<a class="page-link" asp-action="Index" asp-route-page="@(Model.Paginate.CurrentPage + 1)"><i class="fa-solid fa-angle-right"></i></a>
+													<a class="page-link" asp-action="Index" asp-route-page="@(Model.Paginate.CurrentPage + 1)" style="outline:none!important;box-shadow:none!important"><i class="fa-solid fa-angle-right"></i></a>
 												</li>
 											</ul>
 										</nav>
@@ -99,7 +99,7 @@
 									<a asp-action="Index"><i class="fa-regular fa-window-minimize"></i> ALL</a>
 									@foreach (var category in Model.Categories)
 									{
-										<a href=""><i class="fa-regular fa-window-minimize"></i> @category.Name</a>
+										<a asp-action="GetProductsByCatgeory" asp-route-id="@category.Id"><i class="fa-regular fa-window-minimize"></i> @category.Name</a>
 
 									}
 									

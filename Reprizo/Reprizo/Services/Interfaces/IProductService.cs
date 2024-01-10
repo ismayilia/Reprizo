@@ -7,7 +7,9 @@ namespace Reprizo.Services.Interfaces
     {
         Task<List<ProductVM>> GetAllAsync();
         Task<ProductVM> GetByIdWithIncludesAsync(int id);
+        Task<List<ProductVM>> GetPaginatedDatasByCategory(int id,int page, int take);
         Task<List<ProductVM>> GetPaginatedDatasAsync(int page, int take);
         Task<int> GetCountAsync();
+
     }
 }

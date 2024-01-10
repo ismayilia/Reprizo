@@ -24,5 +24,11 @@ namespace Reprizo.Services
 
             return _mapper.Map<List<CategoryVM>>(datas);
         }
-    }
+
+		public async Task<CategoryVM> GetByIdAsync(int id)
+		{
+            Category data = await _context.Categories.FirstOrDefaultAsync(m => m.Id == id);
+            return _mapper.Map<CategoryVM>(data);
+		}
+	}
 }

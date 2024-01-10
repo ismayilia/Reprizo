@@ -8,5 +8,6 @@ namespace Reprizo.Areas.Admin.ViewModels.Shop
     {
         public List<CategoryVM> Categories { get; set; }
         public Paginate<ProductVM> Paginate { get; set; }
+        public int CategoryId { get; set; }
     }
 }

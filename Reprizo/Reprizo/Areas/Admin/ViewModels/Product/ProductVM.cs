@@ -1,4 +1,6 @@
-﻿namespace Reprizo.Areas.Admin.ViewModels.Product
+﻿using Reprizo.Models;
+
+namespace Reprizo.Areas.Admin.ViewModels.Product
 {
     public class ProductVM
     {
@@ -8,5 +10,6 @@
         public decimal Price { get; set; }
         public string Image { get; set; }
         public string CategoryName { get; set; }
+
     }
 }
