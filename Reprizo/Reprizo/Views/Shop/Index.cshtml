@@ -1,4 +1,5 @@
-﻿@{
+﻿@model	ShopVM
+@{
 	ViewData["Title"] = "Index";
 }
 
@@ -50,218 +51,27 @@
 							</div>
 							<div class="product-all">
 								<div class="row">
-									<div class="col-lg-6 col-md-12 col-sm-12">
-										<div class="product">
-											<div class="product-icons">
-												<i class="fa-regular fa-heart"></i>
-												<i class="fa-solid fa-heart d-none"></i>
-												<i class="fa-solid fa-cart-shopping"></i>
-											</div>
-											<div class="product-image">
-												<a asp-controller="Shop" asp-action="ProductDetail">
-													<img src="~/assets/img/product/rep1.jpg" alt="">
-												</a>
-											</div>
-											<div class="product-content">
-												<h6>REPRIZO GOLD DIAL WATCH</h6>
-												<h6>$500.00</h6>
-												<a asp-controller="Shop" asp-action="ProductDetail">VIEW MORE</a>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-12 col-sm-12">
-										<div class="product">
-											<div class="product-icons">
-												<i class="fa-regular fa-heart"></i>
-												<i class="fa-solid fa-heart d-none"></i>
-												<i class="fa-solid fa-cart-shopping"></i>
-											</div>
-											<div class="product-image">
-												<a href="productdetail.html">
-													<img src="~/assets/img/product/fast1.jpg" alt="">
-												</a>
-											</div>
-											<div class="product-content">
-												<h6>FASTRACK MEN’S WATCH</h6>
-												<h6>$400.00</h6>
-												<a href="productdetail.html">VIEW MORE</a>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-12 col-sm-12">
-										<div class="product">
-											<div class="product-icons">
-												<i class="fa-regular fa-heart"></i>
-												<i class="fa-solid fa-heart d-none"></i>
-												<i class="fa-solid fa-cart-shopping"></i>
-											</div>
-											<div class="product-image">
-												<a href="productdetail.html">
-													<img src="~/assets/img/product/lawson1.jpg" alt="">
-												</a>
-											</div>
-											<div class="product-content">
-												<h6>LAWSON FRANKLIN 44 MEN’S WATCH</h6>
-												<h6>$290.00</h6>
-												<a href="productdetail.html">VIEW MORE</a>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-12 col-sm-12">
-										<div class="product">
-											<div class="product-icons">
-												<i class="fa-regular fa-heart"></i>
-												<i class="fa-solid fa-heart d-none"></i>
-												<i class="fa-solid fa-cart-shopping"></i>
-											</div>
-											<div class="product-image">
-												<a href="productdetail.html">
-													<img src="~/assets/img/product/skmei1.jpg" alt="">
-												</a>
-											</div>
-											<div class="product-content">
-												<h6>SKMEI WOMAN’S WATCH</h6>
-												<h6>$250.00</h6>
-												<a href="productdetail.html">VIEW MORE</a>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-12 col-sm-12">
-										<div class="product">
-											<div class="product-icons">
-												<i class="fa-regular fa-heart"></i>
-												<i class="fa-solid fa-heart d-none"></i>
-												<i class="fa-solid fa-cart-shopping"></i>
-											</div>
-											<div class="product-image">
-												<a href="productdetail.html">
-													<img src="~/assets/img/product/espoir1.jpg" alt="">
-												</a>
-											</div>
-											<div class="product-content">
-												<h6>Espoir Analog Dial Women’s Watch</h6>
-												<h6>$190.00</h6>
-												<a href="productdetail.html">VIEW MORE</a>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-12 col-sm-12">
-										<div class="product">
-											<div class="product-icons">
-												<i class="fa-regular fa-heart"></i>
-												<i class="fa-solid fa-heart d-none"></i>
-												<i class="fa-solid fa-cart-shopping"></i>
-											</div>
-											<div class="product-image">
-												<a href="productdetail.html">
-													<img src="~/assets/img/product/fogg1.jpg" alt="">
-												</a>
-											</div>
-											<div class="product-content">
-												<h6>Fogg Women’s Watch</h6>
-												<h6>$115.00</h6>
-												<a href="productdetail.html">VIEW MORE</a>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-12 col-sm-12">
-										<div class="product">
-											<div class="product-icons">
-												<i class="fa-regular fa-heart"></i>
-												<i class="fa-solid fa-heart d-none"></i>
-												<i class="fa-solid fa-cart-shopping"></i>
-											</div>
-											<div class="product-image">
-												<a href="productdetail.html">
-													<img src="~/assets/img/product/leather1.jpg" alt="">
-												</a>
-											</div>
-											<div class="product-content">
-												<h6>Black-leather Men’s Watch Black Band</h6>
-												<h6>$115.00</h6>
-												<a href="productdetail.html">VIEW MORE</a>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-12 col-sm-12">
-										<div class="product">
-											<div class="product-icons">
-												<i class="fa-regular fa-heart"></i>
-												<i class="fa-solid fa-heart d-none"></i>
-												<i class="fa-solid fa-cart-shopping"></i>
-											</div>
-											<div class="product-image">
-												<a href="productdetail.html">
-													<img src="~/assets/img/product/giani1.jpg" alt="">
-												</a>
-											</div>
-											<div class="product-content">
-												<h6>Giani Bernardi Men’s Watch</h6>
-												<h6>$150.00</h6>
-												<a href="productdetail.html">VIEW MORE</a>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-12 col-sm-12">
-										<div class="product">
-											<div class="product-icons">
-												<i class="fa-regular fa-heart"></i>
-												<i class="fa-solid fa-heart d-none"></i>
-												<i class="fa-solid fa-cart-shopping"></i>
-											</div>
-											<div class="product-image">
-												<a href="productdetail.html">
-													<img src="~/assets/img/product/fossil1.jpg" alt="">
-												</a>
-											</div>
-											<div class="product-content">
-												<h6>Fossil Explorist Men’s Watch</h6>
-												<h6>$300.00</h6>
-												<a href="productdetail.html">VIEW MORE</a>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-6 col-md-12 col-sm-12">
-										<div class="product">
-											<div class="product-icons">
-												<i class="fa-regular fa-heart"></i>
-												<i class="fa-solid fa-heart d-none"></i>
-												<i class="fa-solid fa-cart-shopping"></i>
-											</div>
-											<div class="product-image">
-												<a href="productdetail.html">
-													<img src="~/assets/img/product/elegant.jpg" alt="">
-												</a>
-											</div>
-											<div class="product-content">
-												<h6>Gold Elegant Women’s Watch</h6>
-												<h6>$118.00</h6>
-												<a href="productdetail.html">VIEW MORE</a>
-											</div>
-										</div>
-									</div>
+									
+									<partial name="_ProductsPartial" model="@Model.Paginate.Datas" />
+									
 									<hr>
 									<div class="pagination-area mt-4">
 										<nav aria-label="...">
 											<ul class="pagination">
-												<li class="page-item disabled">
-													<a class="page-link" href="#" tabindex="-1">
+												<li class="page-item @(Model.Paginate.HasPrevios ? "" : "disabled")">
+													<a class="page-link" asp-action="Index" asp-route-page="@(Model.Paginate.CurrentPage-1)" tabindex="-1">
 														<i class="fa-solid fa-angle-left"></i>
 													</a>
 												</li>
-												<li class="page-item active">
-													<a class="page-link" href="#">1</a>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">
-														2 <span class="sr-only">(current)</span>
-													</a>
-												</li>
+												@for (int i = 1; i <= Model.Paginate.TotalPage; i++)
+												{
+													<li class="page-item  @(Model.Paginate.CurrentPage==i ? "active" : "")">
+														<a class="page-link" asp-action="Index" asp-route-page="@i">@i <span class="sr-only">(current)</span></a>
+													</li>
+												}
 
-												<li class="page-item">
-													<a class="page-link" href="#">
-														<i class="fa-solid fa-angle-right"></i>
-													</a>
+												<li class="page-item @(Model.Paginate.HasNext ? "" : "disabled")">
+													<a class="page-link" asp-action="Index" asp-route-page="@(Model.Paginate.CurrentPage + 1)"><i class="fa-solid fa-angle-right"></i></a>
 												</li>
 											</ul>
 										</nav>
@@ -286,12 +96,13 @@
 							<div class="category-bar">
 								<h1>Categories</h1>
 								<div class="category-all">
-									<a href="shop.html"><i class="fa-regular fa-window-minimize"></i> ALL</a>
-									<a href=""><i class="fa-regular fa-window-minimize"></i> AFFORDABLE WATCHES</a>
-									<a href=""><i class="fa-regular fa-window-minimize"></i> GOLD WATCHES</a>
-									<a href=""><i class="fa-regular fa-window-minimize"></i> LIMITED EDITION WATCHES</a>
-									<a href=""><i class="fa-regular fa-window-minimize"></i> MECHANICAL WATCHES</a>
-									<a href=""><i class="fa-regular fa-window-minimize"></i> SWISS WATCHES</a>
+									<a asp-action="Index"><i class="fa-regular fa-window-minimize"></i> ALL</a>
+									@foreach (var category in Model.Categories)
+									{
+										<a href=""><i class="fa-regular fa-window-minimize"></i> @category.Name</a>
+
+									}
+									
 								</div>
 							</div>
 

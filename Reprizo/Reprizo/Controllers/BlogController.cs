@@ -41,9 +41,9 @@ namespace Reprizo.Controllers
 
         private async Task<int> GetPageCountAsync(int take)
         {
-            int productCount = await _blogService.GetCountAsync();
+            int blogCount = await _blogService.GetCountAsync();
 
-            return (int)Math.Ceiling((decimal)(productCount) / take);
+            return (int)Math.Ceiling((decimal)(blogCount) / take);
         }
 
         public async Task<IActionResult> BlogDetail(int id)

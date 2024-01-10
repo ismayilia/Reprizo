@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Reprizo.Areas.Admin.ViewModels.BestWorker;
 using Reprizo.Areas.Admin.ViewModels.Blog;
+using Reprizo.Areas.Admin.ViewModels.Category;
 using Reprizo.Areas.Admin.ViewModels.Collection;
 using Reprizo.Areas.Admin.ViewModels.Essence;
 using Reprizo.Areas.Admin.ViewModels.Feature;
@@ -24,6 +25,7 @@ namespace Reprizo.Helpers.Mappings
             CreateMap<Repair, RepairVM>();
             CreateMap<Team, TeamVM>();
             CreateMap<BestWorker, BestWorkerVM>();
+            CreateMap<Category, CategoryVM>();
 
 
             CreateMap<Product, ProductVM>().ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.Name))
