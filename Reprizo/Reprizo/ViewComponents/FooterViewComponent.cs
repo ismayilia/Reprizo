@@ -3,12 +3,15 @@ using Reprizo.Areas.Admin.ViewModels.Layout;
 
 namespace Reprizo.ViewComponents
 {
-	public class FooterViewComponent :ViewComponent
+    public class FooterViewComponent :ViewComponent
 	{
-		public async Task<IViewComponentResult> InvokeAsync()
+        
+        public async Task<IViewComponentResult> InvokeAsync()
 		{
-
-			return await Task.FromResult(View());
+            FooterVM model = new FooterVM();
+			return await Task.FromResult(View(model));
 		}
-	}
+
+        
+    }
 }

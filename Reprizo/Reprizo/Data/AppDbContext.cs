@@ -21,6 +21,7 @@ namespace Reprizo.Data
         public DbSet<Repair> Repairs { get; set; }
         public DbSet<BestWorker> BestWorkers { get; set; }
         public DbSet<Team> Teams { get; set; }
+        public DbSet<Subscribe> Subscribes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -36,6 +37,7 @@ namespace Reprizo.Data
             modelBuilder.Entity<Setting>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<Blog>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<Blog>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Subscribe>().HasQueryFilter(m => !m.SoftDelete);
         }
     }
 }

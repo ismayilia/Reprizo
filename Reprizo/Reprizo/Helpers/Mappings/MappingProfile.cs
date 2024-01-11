@@ -8,6 +8,7 @@ using Reprizo.Areas.Admin.ViewModels.Feature;
 using Reprizo.Areas.Admin.ViewModels.Product;
 using Reprizo.Areas.Admin.ViewModels.Repair;
 using Reprizo.Areas.Admin.ViewModels.Slider;
+using Reprizo.Areas.Admin.ViewModels.Subscribe;
 using Reprizo.Areas.Admin.ViewModels.Team;
 using Reprizo.Models;
 
@@ -26,6 +27,7 @@ namespace Reprizo.Helpers.Mappings
             CreateMap<Team, TeamVM>();
             CreateMap<BestWorker, BestWorkerVM>();
             CreateMap<Category, CategoryVM>();
+            CreateMap<SubscribeCreateVM, Subscribe>();
 
 
             CreateMap<Product, ProductVM>().ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.Name))

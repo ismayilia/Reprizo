@@ -32,6 +32,7 @@ builder.Services.AddScoped<IRepairService, RepairService>();
 builder.Services.AddScoped<ITeamService, TeamService>();
 builder.Services.AddScoped<IBestWorkerService, BestWorkerService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ISubscribeService, SubscribeService>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 

@@ -1,4 +1,5 @@
-﻿<footer>
+﻿@model FooterVM
+<footer>
 	<div class="container">
 		<div class="footer-top">
 			<div class="row">
@@ -7,10 +8,13 @@
 						<p>
 							Sign up for our newsletter to receive special offers, news and great sales notifications.
 						</p>
-						<form action="">
+						<form asp-controller="Subscribe" asp-action="CreateSubscribe" method="post">
 							<div class="email-subs">
-								<input type="text" placeholder="Email address">
-								<button>Subscribe</button>
+								<input asp-for="@Model.Subscribe.Email" placeholder="Email address">
+								<span class="text-danger" asp-validation-for="@Model.Subscribe.Email"></span>
+
+								<button type="submit">Subscribe</button>
+								
 							</div>
 						</form>
 
