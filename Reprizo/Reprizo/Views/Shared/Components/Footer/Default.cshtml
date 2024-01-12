@@ -10,7 +10,7 @@
 						</p>
 						<form asp-controller="Subscribe" asp-action="CreateSubscribe" method="post">
 							<div class="email-subs">
-								<input asp-for="@Model.Subscribe.Email" placeholder="Email address">
+								<input asp-for="@Model.Subscribe.Email" required placeholder="Email address">
 								<span class="text-danger" asp-validation-for="@Model.Subscribe.Email"></span>
 
 								<button type="submit">Subscribe</button>

@@ -1,17 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Diagnostics;
 using Reprizo.Areas.Admin.ViewModels.Contact;
-using Reprizo.Areas.Admin.ViewModels.Repair;
 using Reprizo.Services.Interfaces;
 
 namespace Reprizo.Controllers
 {
-    public class ContactController : Controller
+	public class ContactController : Controller
     {
         private readonly ISettingService _settingService;
-        public ContactController(ISettingService settingService)
+        private readonly IContactService _contactService;
+        public ContactController(ISettingService settingService, IContactService contactService)
         {
             _settingService = settingService;
+            _contactService = contactService;
+
         }
         public IActionResult Index()
         {
@@ -30,5 +31,16 @@ namespace Reprizo.Controllers
             };
             return View(model);
         }
-    }
+
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> CreateMessage(ContactMessageCreateVM request)
+		{
+
+			await _contactService.CreateAsync(request);
+
+			return RedirectToAction("Index", "Contact");
+
+		}
+	}
 }

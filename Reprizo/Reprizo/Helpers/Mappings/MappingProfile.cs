@@ -3,6 +3,7 @@ using Reprizo.Areas.Admin.ViewModels.BestWorker;
 using Reprizo.Areas.Admin.ViewModels.Blog;
 using Reprizo.Areas.Admin.ViewModels.Category;
 using Reprizo.Areas.Admin.ViewModels.Collection;
+using Reprizo.Areas.Admin.ViewModels.Contact;
 using Reprizo.Areas.Admin.ViewModels.Essence;
 using Reprizo.Areas.Admin.ViewModels.Feature;
 using Reprizo.Areas.Admin.ViewModels.Product;
@@ -28,6 +29,7 @@ namespace Reprizo.Helpers.Mappings
             CreateMap<BestWorker, BestWorkerVM>();
             CreateMap<Category, CategoryVM>();
             CreateMap<SubscribeCreateVM, Subscribe>();
+            CreateMap<ContactMessageCreateVM, ContactMessage>();
 
 
             CreateMap<Product, ProductVM>().ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.Name))

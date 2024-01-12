@@ -22,6 +22,7 @@ namespace Reprizo.Data
         public DbSet<BestWorker> BestWorkers { get; set; }
         public DbSet<Team> Teams { get; set; }
         public DbSet<Subscribe> Subscribes { get; set; }
+        public DbSet<ContactMessage> ContactMessages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -38,6 +39,7 @@ namespace Reprizo.Data
             modelBuilder.Entity<Blog>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<Blog>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<Subscribe>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<ContactMessage>().HasQueryFilter(m => !m.SoftDelete);
         }
     }
 }

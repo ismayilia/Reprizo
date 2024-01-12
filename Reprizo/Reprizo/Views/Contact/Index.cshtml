@@ -64,27 +64,30 @@
 	<section id="messages">
 		<div class="container">
 			<h1>Drop a Line</h1>
-			<div class="message-all">
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="name-email">
-							<input type="text" placeholder="Name">
+			<form asp-action="CreateMessage" method="post" id="message-form">
+				<div class="message-all">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="name-email">
+								<input asp-for="@Model.ContactMessage.Name" type="text" name="name" @*oninvalid="this.setCustomValidity('Salam')"*@ required placeholder="Your Name">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="name-email">
+								<input asp-for="@Model.ContactMessage.Email" type="email" name="email" required placeholder="Your Email">
+							</div>
 						</div>
 					</div>
-					<div class="col-lg-6">
-						<div class="name-email">
-							<input type="email" placeholder="Email">
-						</div>
+					<div class="phone">
+						<input asp-for="@Model.ContactMessage.Phone" type="tel" name="phone" required placeholder="Your Phone">
 					</div>
+					<div class="message">
+						<textarea asp-for="@Model.ContactMessage.Message" name="message" cols="30" rows="10" required placeholder="Your Message"></textarea>
+					</div>
+					<button type="submit" id="message-form">SEND MESSAGE</button>
 				</div>
-				<div class="phone">
-					<input type="tel" placeholder="Phone">
-				</div>
-				<div class="message">
-					<textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
-				</div>
-				<button>SEND MESSAGE</button>
-			</div>
+			</form>
+
 		</div>
 	</section>
 
