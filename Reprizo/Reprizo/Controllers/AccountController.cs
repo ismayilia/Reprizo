@@ -1,13 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Reprizo.Services.Interfaces;
 
 namespace Reprizo.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly ISettingService _settingService;
+
+        public AccountController(ISettingService settingService)
+        {
+			_settingService = settingService;
+
+		}
+
         [HttpGet]
         public IActionResult Register()
         {
-            return View();
+			Dictionary<string, string> settingDatas = _settingService.GetSettings();
+
+			ViewBag.RegisterBanner = settingDatas["RegisterBanner"];
+			return View();
         }
 
         public IActionResult VerifyEmail()
@@ -18,13 +30,19 @@ namespace Reprizo.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            return View();
+			Dictionary<string, string> settingDatas = _settingService.GetSettings();
+
+			ViewBag.LoginBanner = settingDatas["LoginBanner"];
+			return View();
         }
 
         [HttpGet]
         public IActionResult ForgotPassword()
         {
-            return View();
+			Dictionary<string, string> settingDatas = _settingService.GetSettings();
+
+			ViewBag.ForgotBanner = settingDatas["ForgotBanner"];
+			return View();
         }
 
         public IActionResult Logout()
