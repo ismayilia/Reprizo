@@ -95,6 +95,26 @@ $(function () {
     //   $(".button-dropdown").eq(0).text(usdText)
     // })
 
+    // Serarch
+
+    $(document).on("submit", ".hm-searchbox", function (e) {
+        e.preventDefault();
+        let value = $(".input-search").val();
+        let url = `/Shop/Search?searchText=${value}`;
+        window.location.assign(url);
+
+    })
+
+
+
+
+
+
+
+
+
+
+
 
 })
 

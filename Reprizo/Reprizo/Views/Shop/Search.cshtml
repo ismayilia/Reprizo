@@ -1,0 +1,184 @@
+﻿@model ShopVM
+@{
+    ViewData["Title"] = "Search";
+}
+
+@section css{
+
+	<link rel="stylesheet" href="~/assets/css/shop.css">
+	<style>
+		.search-message {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 120px;
+		}
+
+		.title {
+			text-align: center;
+			color: #bdbbc4;
+			font-weight: unset;
+			font-size: 20px;
+		}
+
+		.description {
+			text-align: center;
+			color: #bdbbc4;
+			font-weight: unset;
+			margin-top: 20px;
+		}
+	</style>
+
+}
+
+
+<main>
+
+	<!-- Banners -->
+
+	<section id="banner">
+		<div class="banner-all" style="background-image: url(/assets/img/@ViewBag.ShopBanner);">
+			<h1>Shop</h1>
+		</div>
+	</section>
+
+
+	<section id="shops">
+		<div class="container">
+			<div class="shop-all">
+				<div class="row">
+					<div class="col-lg-8 col-md-12 col-sm-12">
+						<div class="shop-left">
+							@*<div class="category-image"
+								 style="background-image: url(/assets/img/category/@Model.Categories.FirstOrDefault(m=>m.Id==Model.CategoryId).Image);">
+							</div>*@
+							<div class="sort-tool">
+								<div class="sortt">
+
+									<div class="dropdown">
+										<select class="form-select" aria-label="Default select example">
+											<option selected>Sorting</option>
+											<option value="1">Alphabetically, A-Z</option>
+											<option value="2">Alphabetically, Z-A</option>
+											<option value="3">Price, low to high</option>
+											<option value="4">Price, high to low</option>
+										</select>
+									</div>
+
+								</div>
+								<div class="product-count">
+									<span>@Model.Paginate.Datas.Count() products</span>
+								</div>
+							</div>
+							<div class="product-all">
+								<div class="row">
+
+									@if (Model.Paginate.Datas.Count() != 0)
+									{
+										<partial name="_ProductsPartial" model="@Model.Paginate.Datas" />
+									}
+									else
+									{
+										<div class="search-message">
+											<h1 class="title">No Results Found</h1>
+											<p class="description">We couldn't find any results for your search. Please try again with different keywords.</p>
+										</div>
+									}
+									
+
+									<hr>
+									@if (Model.Count > 6)
+									{
+										<div class="pagination-area mt-4">
+											<nav aria-label="...">
+												<ul class="pagination">
+													<li class="page-item @(Model.Paginate.HasPrevios ? "" : "disabled")" style="box-shadow:none!important">
+														<a class="page-link" style="outline:none!important;box-shadow:none!important" asp-action="Search" asp-route-searchText="@Model.SearchText" asp-route-page="@(Model.Paginate.CurrentPage-1)" tabindex="-1">
+															<i class="fa-solid fa-angle-left"></i>
+														</a>
+													</li>
+													@for (int i = 1; i <= Model.Paginate.TotalPage; i++)
+													{
+														<li class="page-item  @(Model.Paginate.CurrentPage==i ? "active" : "")" style="box-shadow:none!important">
+															<a class="page-link" style="outline:none!important;box-shadow:none!important" asp-action="Search" asp-route-searchText="@Model.SearchText" asp-route-page="@i">@i <span class="sr-only">(current)</span></a>
+														</li>
+													}
+
+													<li class="page-item @(Model.Paginate.HasNext ? "" : "disabled")" style="box-shadow:none!important">
+														<a class="page-link" style="outline:none!important;box-shadow:none!important" asp-action="Search" asp-route-searchText="@Model.SearchText" asp-route-page="@(Model.Paginate.CurrentPage + 1)"><i class="fa-solid fa-angle-right"></i></a>
+													</li>
+												</ul>
+											</nav>
+										</div>
+									}
+
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<div class="shop-right">
+							<div class="search-bar">
+								<h1>Search</h1>
+								<form action="#" class="hm-searchbox">
+									<input type="text" class="input-search" placeholder="Search">
+									<button><i class="fa-solid fa-magnifying-glass"></i></button>
+								</form>
+							</div>
+
+							<div class="category-bar">
+								<h1>Categories</h1>
+								<div class="category-all">
+									<a asp-action="Index"><i class="fa-regular fa-window-minimize"></i> ALL</a>
+									@foreach (var category in Model.Categories)
+									{
+										<a asp-action="GetProductsByCatgeory" asp-route-id="@category.Id"><i class="fa-regular fa-window-minimize"></i> @category.Name</a>
+
+									}
+
+								</div>
+							</div>
+
+							<div class="filters-bar">
+								<h2>Filter by price</h2>
+								<div class="filter-price">
+									<div class="range-slider">
+										<span style="color: gray;">
+											Price:
+											<input style="border: none;font-size: 15px;" type="number" value="0"
+												   min="0" max="120000" />
+											<span style="margin-left: -50px;">-</span>
+											<input style="border: none;font-size: 15px;" type="number" value="999"
+												   min="0" max="120000" />
+										</span>
+										<div class="filterBtn">
+											<button>Filter</button>
+										</div>
+
+										<input value="0" min="0" max="999" step="1" type="range" />
+										<input value="999" min="0" max="999" step="1" type="range" />
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+</main>
+
+
+@section script{
+
+	<script src="~/assets/js/shop.js"></script>
+}
+

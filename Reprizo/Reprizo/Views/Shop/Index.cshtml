@@ -55,27 +55,31 @@
 									<partial name="_ProductsPartial" model="@Model.Paginate.Datas" />
 									
 									<hr>
-									<div class="pagination-area mt-4">
-										<nav aria-label="...">
-											<ul class="pagination">
-												<li class="page-item @(Model.Paginate.HasPrevios ? "" : "disabled")">
-													<a class="page-link" style="outline:none!important;box-shadow:none!important" asp-action="Index" asp-route-page="@(Model.Paginate.CurrentPage-1)" tabindex="-1">
-														<i class="fa-solid fa-angle-left"></i>
-													</a>
-												</li>
-												@for (int i = 1; i <= Model.Paginate.TotalPage; i++)
-												{
-													<li class="page-item  @(Model.Paginate.CurrentPage==i ? "active" : "")">
-														<a class="page-link" style="outline:none!important;box-shadow:none!important" asp-action="Index" asp-route-page="@i">@i <span class="sr-only">(current)</span></a>
+									@if (Model.Count > 6)
+									{
+										<div class="pagination-area mt-4">
+											<nav aria-label="...">
+												<ul class="pagination">
+													<li class="page-item @(Model.Paginate.HasPrevios ? "" : "disabled")">
+														<a class="page-link" style="outline:none!important;box-shadow:none!important" asp-action="Index" asp-route-page="@(Model.Paginate.CurrentPage-1)" tabindex="-1">
+															<i class="fa-solid fa-angle-left"></i>
+														</a>
 													</li>
-												}
+													@for (int i = 1; i <= Model.Paginate.TotalPage; i++)
+													{
+														<li class="page-item  @(Model.Paginate.CurrentPage==i ? "active" : "")">
+															<a class="page-link" style="outline:none!important;box-shadow:none!important" asp-action="Index" asp-route-page="@i">@i <span class="sr-only">(current)</span></a>
+														</li>
+													}
 
-												<li class="page-item @(Model.Paginate.HasNext ? "" : "disabled")">
-													<a class="page-link" asp-action="Index" asp-route-page="@(Model.Paginate.CurrentPage + 1)" style="outline:none!important;box-shadow:none!important"><i class="fa-solid fa-angle-right"></i></a>
-												</li>
-											</ul>
-										</nav>
-									</div>
+													<li class="page-item @(Model.Paginate.HasNext ? "" : "disabled")">
+														<a class="page-link" asp-action="Index" asp-route-page="@(Model.Paginate.CurrentPage + 1)" style="outline:none!important;box-shadow:none!important"><i class="fa-solid fa-angle-right"></i></a>
+													</li>
+												</ul>
+											</nav>
+										</div>
+									}
+									
 								</div>
 
 							</div>
@@ -87,8 +91,8 @@
 						<div class="shop-right">
 							<div class="search-bar">
 								<h1>Search</h1>
-								<form action="">
-									<input type="text" placeholder="Search">
+								<form action="#" class="hm-searchbox">
+									<input type="text" class="input-search" placeholder="Search">
 									<button><i class="fa-solid fa-magnifying-glass"></i></button>
 								</form>
 							</div>

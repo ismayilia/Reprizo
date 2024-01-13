@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Reprizo.Areas.Admin.ViewModels.Category;
 using Reprizo.Areas.Admin.ViewModels.Product;
 using Reprizo.Areas.Admin.ViewModels.Shop;
@@ -22,11 +23,12 @@ namespace Reprizo.Controllers
             _settingService = settingService;
             _categoryService = categoryService;
         }
-        public async Task<IActionResult> Index(int page = 1, int take = 5)
+        public async Task<IActionResult> Index(int page = 1, int take = 6)
         {
             List<ProductVM> dbPaginatedDatas = await _productService.GetPaginatedDatasAsync(page, take);
             List<CategoryVM> categories = await _categoryService.GetAllAsync();
 			Dictionary<string, string> shopBanner = _settingService.GetSettings();
+            int count = await _productService.GetCountAsync();
 
 			ViewBag.ShopBanner = shopBanner["ShopBanner"];
 
@@ -38,7 +40,8 @@ namespace Reprizo.Controllers
 			ShopVM model = new()
             {
                 Categories = categories,
-                Paginate = paginatedDatas
+                Paginate = paginatedDatas,
+                Count = count
             };       
 
             return View(model);
@@ -46,7 +49,7 @@ namespace Reprizo.Controllers
 
         
 
-        public async Task<IActionResult> GetProductsByCatgeory(int? id, int page = 1, int take = 5)
+        public async Task<IActionResult> GetProductsByCatgeory(int? id, int page = 1, int take = 6)
         {
             if (id is null)
             {
@@ -60,13 +63,15 @@ namespace Reprizo.Controllers
                 return NotFound();
             }
 
+            var count = await _productService.GetCountByCategoryAsync((int)id);
+
             List<ProductVM> dbPaginatedDatasByCategory = await _productService.GetPaginatedDatasByCategory((int)id,page, take);
 			List<CategoryVM> categories = await _categoryService.GetAllAsync();
 			Dictionary<string, string> categoryBanner = _settingService.GetSettings();
 
 			ViewBag.CategoryBanner = categoryBanner["CategoryBanner"];
 
-			int pageCount = await GetPageCountAsync(take);
+			int pageCount = await GetPageCountByCategoryAsync((int)id,take);
 
 			Paginate<ProductVM> paginatedDatas = new(dbPaginatedDatasByCategory, page, pageCount);
 
@@ -74,7 +79,8 @@ namespace Reprizo.Controllers
 			{
                CategoryId=(int)id,
 				Categories = categories,
-				Paginate = paginatedDatas
+				Paginate = paginatedDatas,
+                Count = count
 			};
 
 			return View(model);
@@ -103,11 +109,65 @@ namespace Reprizo.Controllers
             return View(product);
         }
 
+		
+
+
+        public async Task<IActionResult> Search(string searchText, int page = 1, int take = 6)
+        {
+
+            if (searchText == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            List<ProductVM> dbPaginatedDatasBySearch = await _productService.SearchAsync(searchText, page, take);
+            
+            List<CategoryVM> categories = await _categoryService.GetAllAsync();
+
+            int count = await _productService.GetCountBySearch(searchText);
+            
+            int pageCount = await GetPageCountBySearchAsync(searchText,take);
+            
+            Paginate<ProductVM> paginatedDatas = new(dbPaginatedDatasBySearch, page, pageCount);
+			
+            Dictionary<string, string> shopBanner = _settingService.GetSettings();
+            
+            ViewBag.ShopBanner = shopBanner["ShopBanner"];
+
+			ShopVM model = new()
+            {
+                Categories = categories,
+                Paginate = paginatedDatas,
+                SearchText=searchText,
+                Count = count
+
+            };
+
+            return View(model);
+        }
+
+
 		private async Task<int> GetPageCountAsync(int take)
 		{
 			int productCount = await _productService.GetCountAsync();
 
 			return (int)Math.Ceiling((decimal)(productCount) / take);
 		}
+
+		private async Task<int> GetPageCountByCategoryAsync(int id,int take)
+		{
+			int productCount = await _productService.GetCountByCategoryAsync(id);
+
+			return (int)Math.Ceiling((decimal)(productCount) / take);
+		}
+
+		private async Task<int> GetPageCountBySearchAsync(string searchText, int take)
+		{
+			int productCount = await _productService.GetCountBySearch(searchText);
+
+			return (int)Math.Ceiling((decimal)(productCount) / take);
+		}
+
+
 	}
 }
