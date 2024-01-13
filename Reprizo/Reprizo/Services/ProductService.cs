@@ -79,7 +79,47 @@ namespace Reprizo.Services
 
         }
 
-        public async Task<List<ProductVM>> SearchAsync(string searchText, int page, int take)
+		public async Task<List<ProductVM>> OrderByNameAsc(int page, int take)
+		{
+			var dbProducts = await _context.Products.Include(m => m.Images)
+                                                                            .OrderBy(p => p.Name)
+                                                                            .Skip((page * take) - take)
+			                                                                .Take(take)
+                                                                            .ToListAsync();
+			return _mapper.Map<List<ProductVM>>(dbProducts);
+		}
+
+		public async Task<List<ProductVM>> OrderByNameDesc(int page, int take)
+		{
+			var dbProducts = await _context.Products.Include(m => m.Images)
+																			.OrderByDescending(p => p.Name)
+																			.Skip((page * take) - take)
+																			.Take(take)
+																			.ToListAsync();
+			return _mapper.Map<List<ProductVM>>(dbProducts);
+		}
+
+		public async Task<List<ProductVM>> OrderByPriceAsc(int page, int take)
+		{
+			var dbProducts = await _context.Products.Include(m => m.Images)
+																			.OrderBy(p => p.Price)
+																			.Skip((page * take) - take)
+																			.Take(take)
+																			.ToListAsync();
+			return _mapper.Map<List<ProductVM>>(dbProducts);
+		}
+
+		public async Task<List<ProductVM>> OrderByPriceDesc(int page, int take)
+		{
+			var dbProducts = await _context.Products.Include(m => m.Images)
+																			.OrderByDescending(p => p.Price)
+																			.Skip((page * take) - take)
+																			.Take(take)
+																			.ToListAsync();
+			return _mapper.Map<List<ProductVM>>(dbProducts);
+		}
+
+		public async Task<List<ProductVM>> SearchAsync(string searchText, int page, int take)
         {
             var dbProducts = await _context.Products.Include(m => m.Images)
                                                  .Include(m => m.Category)

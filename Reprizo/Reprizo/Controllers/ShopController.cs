@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Reprizo.Areas.Admin.ViewModels.Category;
 using Reprizo.Areas.Admin.ViewModels.Product;
 using Reprizo.Areas.Admin.ViewModels.Shop;
+using Reprizo.Data;
 using Reprizo.Helpers;
 using Reprizo.Services.Interfaces;
 
@@ -13,6 +14,7 @@ namespace Reprizo.Controllers
         private readonly IProductService _productService;
         private readonly ISettingService _settingService;
         private readonly ICategoryService _categoryService;
+		
 
 
         public ShopController(IProductService productService, 
@@ -22,6 +24,7 @@ namespace Reprizo.Controllers
             _productService = productService;
             _settingService = settingService;
             _categoryService = categoryService;
+			
         }
         public async Task<IActionResult> Index(int page = 1, int take = 6)
         {
@@ -109,9 +112,9 @@ namespace Reprizo.Controllers
             return View(product);
         }
 
+
+
 		
-
-
         public async Task<IActionResult> Search(string searchText, int page = 1, int take = 6)
         {
 
@@ -145,6 +148,56 @@ namespace Reprizo.Controllers
 
             return View(model);
         }
+
+
+		public async Task<IActionResult> Sort(string sortValue, int page = 1, int take = 6)
+		{
+			List<ProductVM> products = new();
+
+			if (sortValue == "1")
+			{
+				return RedirectToAction(nameof(Index));
+			};
+			if (sortValue == "2")
+			{
+				products = await _productService.OrderByNameAsc(page, take);
+
+			};
+			if (sortValue == "3")
+			{
+				products = await _productService.OrderByNameDesc(page, take);
+
+			};
+			if (sortValue == "4")
+			{
+				products = await _productService.OrderByPriceAsc(page, take);
+
+			};
+			
+			if (sortValue == "5")
+			{
+				products = await _productService.OrderByPriceDesc(page, take);
+
+			};
+
+
+			int pageCount = await GetPageCountAsync(take);
+
+			Paginate<ProductVM> paginatedDatas = new(products, page, pageCount);
+
+			List<CategoryVM> categories = await _categoryService.GetAllAsync();
+
+			int count = await _productService.GetCountAsync();
+
+			ShopVM model = new()
+			{
+				Paginate = paginatedDatas,
+				Categories = categories,
+				Count = count,
+				SortValue = sortValue
+			};
+			return View(model);
+		}
 
 
 		private async Task<int> GetPageCountAsync(int take)

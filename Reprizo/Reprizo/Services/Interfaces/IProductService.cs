@@ -14,6 +14,11 @@ namespace Reprizo.Services.Interfaces
         Task<int> GetCountByCategoryAsync(int id);
         Task<int> GetCountBySearch(string searchText);
         Task<List<ProductVM>> SearchAsync(string searchText, int page, int take);
+        Task<List<ProductVM>> OrderByNameAsc(int page, int take);
+        Task<List<ProductVM>> OrderByNameDesc(int page, int take);
+        Task<List<ProductVM>> OrderByPriceAsc(int page, int take);
+        Task<List<ProductVM>> OrderByPriceDesc(int page, int take);
 
-    }
+
+	}
 }

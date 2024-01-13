@@ -10,6 +10,7 @@ namespace Reprizo.Areas.Admin.ViewModels.Shop
         public Paginate<ProductVM> Paginate { get; set; }
         public int CategoryId { get; set; }
         public string SearchText { get; set; }
+        public string SortValue { get; set; }
         public int Count { get; set; }
     }
 }
