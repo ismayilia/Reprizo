@@ -117,7 +117,7 @@ namespace Reprizo.Controllers
 
             if (searchText == null)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Shop");
             }
 
             List<ProductVM> dbPaginatedDatasBySearch = await _productService.SearchAsync(searchText, page, take);
