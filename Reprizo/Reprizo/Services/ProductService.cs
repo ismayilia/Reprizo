@@ -20,7 +20,20 @@ namespace Reprizo.Services
             _context = context;
             _mapper = mapper;
         }
-        public async Task<List<ProductVM>> GetAllAsync()
+
+		public async Task<List<ProductVM>> FilterAsync(int value1, int value2)
+		{
+			List<Product> products = await _context.Products.Include(m=>m.Images).Where(x => x.Price >= value1 && x.Price <= value2).ToListAsync();
+            return _mapper.Map<List<ProductVM>>(products);
+        
+        }
+
+		public async Task<int> FilterCountAsync(int value1, int value2)
+		{
+			return await _context.Products.Include(m => m.Images).Where(x => x.Price >= value1 && x.Price <= value2).CountAsync(); 
+		}
+
+		public async Task<List<ProductVM>> GetAllAsync()
         {
             return _mapper.Map<List<ProductVM>>(await _context.Products.Include(m => m.Category)
                                                                        .Include(m => m.Images)

@@ -18,6 +18,8 @@ namespace Reprizo.Services.Interfaces
         Task<List<ProductVM>> OrderByNameDesc(int page, int take);
         Task<List<ProductVM>> OrderByPriceAsc(int page, int take);
         Task<List<ProductVM>> OrderByPriceDesc(int page, int take);
+        Task<List<ProductVM>> FilterAsync(int value1, int value2);
+        Task<int> FilterCountAsync(int value1, int value2);
 
 
 	}

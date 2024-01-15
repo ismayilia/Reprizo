@@ -107,34 +107,7 @@ $(function () {
 
     })
 
-    //$(document).on("change", "#sort", function (e) {
-    //    e.preventDefault();
-
-    //    // Get the selected value and text
-    //    let sortValue = $(this).val();
-    //    let sortText = $('option:selected', this).text();
-
-    //    // Save the selected value and text to local storage
-    //    localStorage.setItem('savedSortValue', sortValue);
-    //    localStorage.setItem('savedSortText', sortText);
-
-    //    // Construct the URL with the selected value
-    //    let url = `/Shop/Sort?sortValue=${sortValue}`;
-
-    //    // Redirect the user to the new URL
-    //    window.location.assign(url);
-    //});
-
-    //// Retrieve the saved sort value and text from local storage
-    //let savedSortValue = localStorage.getItem('savedSortValue');
-    //let savedSortText = localStorage.getItem('savedSortText');
-
-    //// Set the selected option based on the saved value
-    //if (savedSortValue) {
-    //    $("#sort").val(savedSortValue);
-    //    // Set the text of the select box based on the saved text
-    //    $("#sort").find('option:selected').text(savedSortText);
-    //}
+    // Sort
 
     $(document).on("change", "#sort", function (e) {
         e.preventDefault();
@@ -149,6 +122,39 @@ $(function () {
         //$('option:selected', this).text() = sortText;
 
     });
+
+
+    // Filter
+
+    $(document).on("click", "#filterForm", function (e) {
+        e.preventDefault();
+        let value1 = $(".min-price").val();
+        let value2 = $(".max-price").val();
+        let data = { value1: value1, value2: value2 }
+        let parent = $(".product-list");
+
+        $.ajax({
+            url: "/Shop/Filter",
+            type: "Get",
+            data: data,
+            success: function (res) {
+                $(parent).html(res);
+
+            }
+        })
+
+        let count = $(".product-count .count");
+        console.log(count);
+        $.ajax({
+            url: "/Shop/FilterCount",
+            type: "Get",
+            data: data,
+            success: function (res) {
+                count.text(res);
+                console.log(res)
+            }
+        })
+    })
 
     
 

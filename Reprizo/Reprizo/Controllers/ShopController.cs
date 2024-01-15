@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Reprizo.Areas.Admin.ViewModels.Category;
 using Reprizo.Areas.Admin.ViewModels.Product;
 using Reprizo.Areas.Admin.ViewModels.Shop;
 using Reprizo.Data;
 using Reprizo.Helpers;
+using Reprizo.Models;
 using Reprizo.Services.Interfaces;
 
 namespace Reprizo.Controllers
@@ -197,6 +199,23 @@ namespace Reprizo.Controllers
 				SortValue = sortValue
 			};
 			return View(model);
+		}
+
+		[HttpGet]
+		public async Task<IActionResult> Filter(int value1, int value2)
+		{
+
+			List<ProductVM> productsByFilter = await _productService.FilterAsync(value1, value2);
+			return PartialView("_ProductsPartial", productsByFilter);
+
+		}
+
+		public async Task<IActionResult> FilterCount(int value1, int value2)
+		{
+
+			int filterCount = await _productService.FilterCountAsync(value1, value2);
+			return Ok(filterCount);
+
 		}
 
 
