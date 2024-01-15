@@ -112,16 +112,26 @@ $(function () {
     $(document).on("change", "#sort", function (e) {
         e.preventDefault();
 
+        //// Remove the 'selected' attribute from the currently selected option
+        //$(this).find("option:selected").removeAttr("selected");
+
+        //// Set the 'selected' attribute for the newly selected option
+        //$("#sort").find(":selected").attr("selected", "selected");
+
         let sortValue = $(this).val();
 
         let url = `/Shop/Sort?sortValue=${sortValue}`;
 
         window.location.assign(url);
 
+  
+
+
         //$(this).val() = sortValue;
         //$('option:selected', this).text() = sortText;
 
     });
+
 
 
     // Filter
@@ -144,14 +154,12 @@ $(function () {
         })
 
         let count = $(".product-count .count");
-        console.log(count);
         $.ajax({
             url: "/Shop/FilterCount",
             type: "Get",
             data: data,
             success: function (res) {
                 count.text(res);
-                console.log(res)
             }
         })
     })
