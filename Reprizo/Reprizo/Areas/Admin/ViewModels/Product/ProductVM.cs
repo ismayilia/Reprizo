@@ -10,6 +10,7 @@ namespace Reprizo.Areas.Admin.ViewModels.Product
         public decimal Price { get; set; }
         public string Image { get; set; }
         public string CategoryName { get; set; }
+        public DateTime CreateDate { get; set; }
 
     }
 }

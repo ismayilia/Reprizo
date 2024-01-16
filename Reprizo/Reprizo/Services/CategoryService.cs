@@ -81,7 +81,6 @@ namespace Reprizo.Services
 
             dbCategory.Image = fileName;
 
-
             _context.Categories.Update(dbCategory);
 
             await _context.SaveChangesAsync();

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using Reprizo.Areas.Admin.ViewModels.Category;
 using Reprizo.Areas.Admin.ViewModels.Product;
 using Reprizo.Models;
 
@@ -8,8 +9,10 @@ namespace Reprizo.Services.Interfaces
     {
         Task<List<ProductVM>> GetAllAsync();
         Task<ProductVM> GetByIdWithIncludesAsync(int id);
-        Task<List<ProductVM>> GetPaginatedDatasByCategory(int id,int page, int take);
+		Task<ProductDetailVM> GetByIdWithIncludesWithoutTrackingAsync(int id);
+		Task<List<ProductVM>> GetPaginatedDatasByCategory(int id,int page, int take);
         Task<List<ProductVM>> GetPaginatedDatasAsync(int page, int take);
+        Task<ProductVM> GetByNameWithoutTrackingAsync(string name);
         Task<int> GetCountAsync();
         Task<int> GetCountByCategoryAsync(int id);
         Task<int> GetCountBySearch(string searchText);
@@ -20,6 +23,10 @@ namespace Reprizo.Services.Interfaces
         Task<List<ProductVM>> OrderByPriceDesc(int page, int take);
         Task<List<ProductVM>> FilterAsync(int value1, int value2);
         Task<int> FilterCountAsync(int value1, int value2);
+        Task CreateAsync(ProductCreateVM product);
+        Task DeleteAsync(int id);
+		Task DeleteProductImageAsync(int id);
+		Task EditAsync(ProductEditVM product);
 
 
 	}

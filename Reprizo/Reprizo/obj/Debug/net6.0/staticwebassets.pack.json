@@ -3657,10 +3657,6 @@
       "PackagePath": "staticwebassets\\assets\\img\\bloglates2.jpg"
     },
     {
-      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\category\\5b9d91da-5a51-4a10-b33d-6c36bcf1a36d-evade.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\category\\5b9d91da-5a51-4a10-b33d-6c36bcf1a36d-evade.jpg"
-    },
-    {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\category\\aff.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\category\\aff.jpg"
     },
@@ -3695,6 +3691,10 @@
     {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\logo.png",
       "PackagePath": "staticwebassets\\assets\\img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\product\\b7f292d8-7f3a-46a6-89f0-bf45c036256b-espoir1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\product\\b7f292d8-7f3a-46a6-89f0-bf45c036256b-espoir1.jpg"
     },
     {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\product\\elegant.jpg",
@@ -3799,6 +3799,10 @@
     {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\js\\wishlist.js",
       "PackagePath": "staticwebassets\\assets\\js\\wishlist.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\product.js",
+      "PackagePath": "staticwebassets\\product.js"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Reprizo.Microsoft.AspNetCore.StaticWebAssets.props",
