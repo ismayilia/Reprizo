@@ -20,7 +20,7 @@
     <!-- Layout styles -->
     <link rel="stylesheet" href="~/admin/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    @await RenderSectionAsync("Css", required: false)
+    @RenderSection("css", required:false)
     <!-- End layout styles -->
 </head>
 <body>
@@ -281,12 +281,12 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#ui-basicc" aria-expanded="false" aria-controls="ui-basic">
                             <span class="icon-bg"><i class="mdi mdi-crosshairs-gps menu-icon"></i></span>
-                            <span class="menu-title">About</span>
+                            <span class="menu-title">Shop</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="ui-basicc">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" asp-controller="Wrapper" asp-action="Index">Wrapper</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-controller="Category" asp-action="Index">Categories</a></li>
                                 <li class="nav-item"> <a class="nav-link" asp-controller="AutobiographyThree" asp-action="Index">AutobiographyThree</a></li>
                                 <li class="nav-item"> <a class="nav-link" asp-controller="AutobiographyFour" asp-action="Index">AutobiographyFour</a></li>
                                 <li class="nav-item"> <a class="nav-link" asp-controller="Promo" asp-action="Index">Promo</a></li>

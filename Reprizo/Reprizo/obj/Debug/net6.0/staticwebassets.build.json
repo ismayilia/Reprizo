@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QwTGtLHVWiQbox1wat5bMk5MjywjEfCJiVotnH6KFCY=",
+  "Hash": "+NM/WHvnbSq2NZIIcXfMRm7v/FqP3P5eNPvF9YupYPY=",
   "Source": "Reprizo",
   "BasePath": "_content/Reprizo",
   "Mode": "Default",
@@ -15570,6 +15570,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\bloglates2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\category\\5b9d91da-5a51-4a10-b33d-6c36bcf1a36d-evade.jpg",
+      "SourceId": "Reprizo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\",
+      "BasePath": "_content/Reprizo",
+      "RelativePath": "assets/img/category/5b9d91da-5a51-4a10-b33d-6c36bcf1a36d-evade.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\category\\5b9d91da-5a51-4a10-b33d-6c36bcf1a36d-evade.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\category\\aff.jpg",

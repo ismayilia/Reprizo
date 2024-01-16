@@ -28,6 +28,9 @@ namespace Reprizo.Helpers.Mappings
             CreateMap<Team, TeamVM>();
             CreateMap<BestWorker, BestWorkerVM>();
             CreateMap<Category, CategoryVM>();
+            CreateMap<CategoryCreateVM, Category>();
+            CreateMap<CategoryVM, CategoryEditVM>();
+            CreateMap<CategoryEditVM, Category>();
             CreateMap<SubscribeCreateVM, Subscribe>();
             CreateMap<ContactMessageCreateVM, ContactMessage>();
 
