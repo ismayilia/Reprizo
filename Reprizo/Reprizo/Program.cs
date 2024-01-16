@@ -2,9 +2,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Reprizo.Data;
 using Reprizo.Models;
-using Reprizo.Services.Interfaces;
 using Reprizo.Services;
-using Reprizo.Areas.Admin.ViewModels.BestWorker;
+using Reprizo.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 

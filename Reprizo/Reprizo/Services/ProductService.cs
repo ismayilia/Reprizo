@@ -121,6 +121,8 @@ namespace Reprizo.Services
 
 			_mapper.Map(product, dbProduct);
 
+			_context.Products.Update(dbProduct);
+
 			await _context.SaveChangesAsync();
 		}
 
@@ -145,7 +147,7 @@ namespace Reprizo.Services
 
         public async Task<ProductVM> GetByIdWithIncludesAsync(int id)
         {
-            Product data = await _context.Products.AsNoTracking().Include(m => m.Category)
+            Product data = await _context.Products.Include(m => m.Category)
                                                    .Include(m => m.Images)
                                                    .FirstOrDefaultAsync(m => m.Id == id);
 

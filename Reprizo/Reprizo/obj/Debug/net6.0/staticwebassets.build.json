@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cu9NEo2UJ1dx2IZCc4aOr2wMXsJ1PPtVN75x1Q3u5H8=",
+  "Hash": "6RmOE2BKGKyT68Mz0l06ZNQ1cYvCRPFI5NN3xNXi1bw=",
   "Source": "Reprizo",
   "BasePath": "_content/Reprizo",
   "Mode": "Default",
@@ -4758,6 +4758,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\js\\typeahead.js"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\admin\\product.js",
+      "SourceId": "Reprizo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\",
+      "BasePath": "_content/Reprizo",
+      "RelativePath": "admin/product.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\product.js"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\admin\\scss\\_auth.scss",
@@ -15725,12 +15742,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\logo.png"
     },
     {
-      "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\product\\b7f292d8-7f3a-46a6-89f0-bf45c036256b-espoir1.jpg",
+      "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\product\\1038a6bb-0415-471a-ab5e-dc3e8fdb85eb-giani1.jpg",
       "SourceId": "Reprizo",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\",
       "BasePath": "_content/Reprizo",
-      "RelativePath": "assets/img/product/b7f292d8-7f3a-46a6-89f0-bf45c036256b-espoir1.jpg",
+      "RelativePath": "assets/img/product/1038a6bb-0415-471a-ab5e-dc3e8fdb85eb-giani1.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -15739,7 +15756,58 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\product\\b7f292d8-7f3a-46a6-89f0-bf45c036256b-espoir1.jpg"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\product\\1038a6bb-0415-471a-ab5e-dc3e8fdb85eb-giani1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\product\\1d22e2e5-882f-40b2-9318-b4673efe0804-fossil1.jpg",
+      "SourceId": "Reprizo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\",
+      "BasePath": "_content/Reprizo",
+      "RelativePath": "assets/img/product/1d22e2e5-882f-40b2-9318-b4673efe0804-fossil1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\product\\1d22e2e5-882f-40b2-9318-b4673efe0804-fossil1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\product\\380be256-b1b1-4588-aab3-23c327aacba0-fast1.jpg",
+      "SourceId": "Reprizo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\",
+      "BasePath": "_content/Reprizo",
+      "RelativePath": "assets/img/product/380be256-b1b1-4588-aab3-23c327aacba0-fast1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\product\\380be256-b1b1-4588-aab3-23c327aacba0-fast1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\product\\e8ae41ad-3cba-4ad4-97bc-c0317d595554-espoir1.jpg",
+      "SourceId": "Reprizo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\",
+      "BasePath": "_content/Reprizo",
+      "RelativePath": "assets/img/product/e8ae41ad-3cba-4ad4-97bc-c0317d595554-espoir1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\product\\e8ae41ad-3cba-4ad4-97bc-c0317d595554-espoir1.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\product\\elegant.jpg",
@@ -16182,23 +16250,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\js\\wishlist.js"
-    },
-    {
-      "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\product.js",
-      "SourceId": "Reprizo",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\",
-      "BasePath": "_content/Reprizo",
-      "RelativePath": "product.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\product.js"
     }
   ]
 }

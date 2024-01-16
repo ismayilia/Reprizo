@@ -37,7 +37,7 @@ namespace Reprizo.Services
 
         public async Task DeleteAsync(int id)
         {
-            Category category = await _context.Categories.Where(m => m.Id == id).FirstOrDefaultAsync();
+            Category category = await _context.Categories.Include(m=>m.Products).ThenInclude(m=>m.Images).Where(m => m.Id == id).FirstOrDefaultAsync();
             _context.Categories.Remove(category);
             await _context.SaveChangesAsync();
 
@@ -47,7 +47,21 @@ namespace Reprizo.Services
             {
                 File.Delete(path);
             }
-        }
+			foreach (var product in category.Products)
+			{
+				foreach (var image in product.Images)
+				{
+					string productImagePath = _env.GetFilePath("assets/img/product", image.Image);
+
+					if (File.Exists(productImagePath))
+					{
+						File.Delete(productImagePath);
+					}
+
+				}
+
+			}
+		}
 
         public async Task EditAsync(CategoryEditVM request)
         {

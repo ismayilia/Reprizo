@@ -123,8 +123,22 @@ namespace Reprizo.Areas.Admin.Controllers
 
             }
 
+			if (request.Photo is not null)
+			{
+				if (!request.Photo.CheckFileType("image/"))
+				{
+					ModelState.AddModelError("Photo", "File can be only image format");
+					return View(request);
+				}
+				if (!request.Photo.CheckFileSize(200))
+				{
+					ModelState.AddModelError("Photo", "File size can be max 200 kb");
+					return View(request);
+				}
+			}
 
-            CategoryVM existCategory = await _categoryService.GetByNameWithoutTrackingAsync(request.Name);
+
+			CategoryVM existCategory = await _categoryService.GetByNameWithoutTrackingAsync(request.Name);
 
             if (existCategory != null)
             {
@@ -137,23 +151,6 @@ namespace Reprizo.Areas.Admin.Controllers
 
                 ModelState.AddModelError("Name", "This Tag already exists");
                 return View(request);
-            }
-
-
-
-
-            if (request.Photo is not null)
-            {
-                if (!request.Photo.CheckFileType("image/"))
-                {
-                    ModelState.AddModelError("Photo", "File can be only image format");
-                    return View(request);
-                }
-                if (!request.Photo.CheckFileSize(200))
-                {
-                    ModelState.AddModelError("Photo", "File size can be max 200 kb");
-                    return View(request);
-                }
             }
 
 

@@ -102,15 +102,14 @@ namespace Reprizo.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(int id)
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> Delete(int id)
         {
             await _productService.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
 
 		[HttpGet]
-
-
         public async Task<IActionResult> Edit(int? id)
         {
             ViewBag.categories = await GetCategoriesAsync();
@@ -135,7 +134,6 @@ namespace Reprizo.Areas.Admin.Controllers
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-
 		public async Task<IActionResult> Edit(int? id, ProductEditVM request)
 		{
 			ViewBag.categories = await GetCategoriesAsync();

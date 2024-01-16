@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Reprizo.Models;
-using System.Reflection.Emit;
 
 namespace Reprizo.Data
 {
-    public class AppDbContext : IdentityDbContext<AppUser>
+	public class AppDbContext : IdentityDbContext<AppUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
