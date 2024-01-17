@@ -115,7 +115,7 @@ namespace Reprizo.Services
 			newImages.AddRange(product.Images);
 
 
-			Product dbProduct = await _context.Products.FirstOrDefaultAsync(m => m.Id == product.Id);
+			Product dbProduct = await _context.Products.AsNoTracking().FirstOrDefaultAsync(m => m.Id == product.Id);
 
 			product.Images = newImages;
 
@@ -157,10 +157,9 @@ namespace Reprizo.Services
 		public async Task<ProductDetailVM> GetByIdWithIncludesWithoutTrackingAsync(int id)
 		{
 			Product dbProduct = await _context.Products.AsNoTracking()
-													  .Where(m => m.Id == id)
 													  .Include(m => m.Images)
 													  .Include(m => m.Category)
-													  .FirstOrDefaultAsync();
+													  .FirstOrDefaultAsync(m => m.Id == id);
 
 			return _mapper.Map<ProductDetailVM>(dbProduct);
 		}

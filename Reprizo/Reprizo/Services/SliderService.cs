@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Reprizo.Areas.Admin.ViewModels.Category;
 using Reprizo.Areas.Admin.ViewModels.Slider;
 using Reprizo.Data;
 using Reprizo.Models;
@@ -25,5 +26,11 @@ namespace Reprizo.Services
 
             return _mapper.Map<List<SliderVM>>(datas);
         }
+
+        public async Task<SliderVM> GetByIdAsync(int id)
+        {
+			Slider data = await _context.Sliders.FirstOrDefaultAsync(m => m.Id == id);
+			return _mapper.Map<SliderVM>(data);
+		}
     }
 }
