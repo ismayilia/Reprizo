@@ -1,0 +1,62 @@
+﻿@model List<EssenceVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container my-5">
+    <h1 class="text-center mt-3 mb-3">Essences</h1>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Created Date
+                    </th>
+                    <th>
+                        Operations
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var essence in Model)
+                {
+                    <tr data-id="@essence.Id">
+                        <td class="py-1">
+                            <img src="~/assets/img/@essence.Image" style="width:183px;height:182px;border-radius:0" alt="image" />
+                        </td>
+                        <td>
+                            @essence.Title
+                        </td>
+                        <td style="white-space:normal">
+                            @essence.Description.Substring(0, (int)Math.Ceiling(essence.Description.Length * 0.09))
+
+                        </td>
+                        <td>
+                            @essence.CreateDate.ToString("dd/MM/yyyy")
+                        </td>
+
+                        <td>
+                            <a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@essence.Id">Detail</a>
+                            <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@essence.Id">Edit</a>
+                            
+                        </td>
+
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+

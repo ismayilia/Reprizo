@@ -86,8 +86,6 @@ namespace Reprizo.Services
                 fileName = request.Image;
             }
 
-
-
             Category dbCategory = await _context.Categories.AsNoTracking().FirstOrDefaultAsync(m => m.Id == request.Id);
 
 

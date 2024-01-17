@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Pif+wLjeONiw7pNw3Qv/Bw99+16wGGYmogN+As8jlCc=",
+  "Hash": "t+9Kb/zuOlEI0tx0AEbAdaIFTMsP3wuRBda7v9gsfCw=",
   "Source": "Reprizo",
   "BasePath": "_content/Reprizo",
   "Mode": "Default",
@@ -15402,6 +15402,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\wishlist.scss"
     },
     {
+      "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\76bc5c15-1c2e-495b-99a7-1d64e2e1a2ff-swiss.jpg",
+      "SourceId": "Reprizo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\",
+      "BasePath": "_content/Reprizo",
+      "RelativePath": "assets/img/76bc5c15-1c2e-495b-99a7-1d64e2e1a2ff-swiss.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\76bc5c15-1c2e-495b-99a7-1d64e2e1a2ff-swiss.jpg"
+    },
+    {
       "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\about\\team1.jpg",
       "SourceId": "Reprizo",
       "SourceType": "Discovered",
@@ -15587,23 +15604,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\bloglates2.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\category\\47936643-d2a6-4d17-b7c6-7b582f94ea09-slider3.jpg",
-      "SourceId": "Reprizo",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\",
-      "BasePath": "_content/Reprizo",
-      "RelativePath": "assets/img/category/47936643-d2a6-4d17-b7c6-7b582f94ea09-slider3.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\category\\47936643-d2a6-4d17-b7c6-7b582f94ea09-slider3.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\category\\aff.jpg",
@@ -16046,23 +16046,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\slider\\slider3.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\swiss.jpg",
-      "SourceId": "Reprizo",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\",
-      "BasePath": "_content/Reprizo",
-      "RelativePath": "assets/img/swiss.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\swiss.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\js\\about.js",

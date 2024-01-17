@@ -1,0 +1,72 @@
+﻿@model FeatureVM
+@{
+	ViewData["Title"] = "Index";
+}
+
+<div class="container my-5">
+	<h1 class="text-center mt-3 mb-3">Feature</h1>
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>
+						Image
+					</th>
+					<th>
+						Title Left
+					</th>
+					<th>
+						Description Left
+					</th>
+					<th>
+						Title Right
+					</th>
+					<th>
+						Description Right
+					</th>
+					<th>
+						Create Date
+					</th>
+					<th>
+						Operations
+					</th>
+
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr data-id="@Model.Id">
+					<td class="py-1">
+						<img src="~/assets/img/@Model.Image" style="width:155px;height:182px;border-radius:0" alt="image" />
+					</td>
+					<td>
+						@Model.TitleLeft
+					</td>
+					<td style="white-space:normal">
+						@Model.DescriptionLeft.Substring(0, (int)Math.Ceiling(Model.DescriptionLeft.Length * 0.09))
+					</td>
+					<td>
+						@Model.TitleRight
+					</td>
+					<td style="white-space:normal">
+						@Model.DescriptionRight.Substring(0, (int)Math.Ceiling(Model.DescriptionRight.Length * 0.09))
+					</td>
+					<td>
+						@Model.CreateDate.ToString("dd/MM/yyyy")
+					</td>
+
+					<td>
+						<a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@Model.Id">Detail</a>
+						<a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+
+					</td>
+
+				</tr>
+
+
+
+			</tbody>
+		</table>
+	</div>
+</div>
+

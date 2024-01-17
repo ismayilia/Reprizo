@@ -44,6 +44,10 @@ namespace Reprizo.Helpers.Mappings
 			CreateMap<SliderCreateVM, Slider>();
 			CreateMap<SliderEditVM, Slider>();
 			CreateMap<SliderVM, SliderEditVM>();
+			CreateMap<EssenceVM, EssenceEditVM>();
+			CreateMap<EssenceEditVM, Essence>();
+			CreateMap<FeatureVM, FeatureEditVM>();
+			CreateMap<FeatureEditVM, Feature>();
 		}
     }
 }

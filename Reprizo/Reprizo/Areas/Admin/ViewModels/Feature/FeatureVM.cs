@@ -8,5 +8,6 @@
         public string DescriptionLeft { get; set; }
         public string TitleRight { get; set; }
         public string DescriptionRight { get; set; }
+        public DateTime CreateDate { get; set; }
     }
 }

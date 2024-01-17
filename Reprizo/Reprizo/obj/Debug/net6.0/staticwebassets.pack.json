@@ -3617,6 +3617,10 @@
       "PackagePath": "staticwebassets\\assets\\css\\wishlist.scss"
     },
     {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\76bc5c15-1c2e-495b-99a7-1d64e2e1a2ff-swiss.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\76bc5c15-1c2e-495b-99a7-1d64e2e1a2ff-swiss.jpg"
+    },
+    {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\about\\team1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\about\\team1.jpg"
     },
@@ -3659,10 +3663,6 @@
     {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\bloglates2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\bloglates2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\category\\47936643-d2a6-4d17-b7c6-7b582f94ea09-slider3.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\category\\47936643-d2a6-4d17-b7c6-7b582f94ea09-slider3.jpg"
     },
     {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\category\\aff.jpg",
@@ -3767,10 +3767,6 @@
     {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\slider\\slider3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\slider\\slider3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\swiss.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\swiss.jpg"
     },
     {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\js\\about.js",
