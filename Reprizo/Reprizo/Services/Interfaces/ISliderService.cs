@@ -6,5 +6,8 @@ namespace Reprizo.Services.Interfaces
     {
         Task<List<SliderVM>> GetAllAsync();
         Task<SliderVM> GetByIdAsync(int id);
+        Task CreateAsync(SliderCreateVM request);
+        Task DeleteAsync(int id);
+        Task EditAsync(SliderEditVM request);
     }
 }

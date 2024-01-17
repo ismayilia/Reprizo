@@ -12,12 +12,14 @@
             <div class="slider">
                 <div id="carouselExampleDark" class="carousel carousel-dark slide">
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
-                                class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
+
+                        @for (int i = 0; i < Model.Sliders.Count; i++)
+                        {
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="@i"
+                                    class="active" aria-label="Slide @(i+1)"></button>
+                        }
+                        
+                        
                     </div>
                     <div class="carousel-inner">
                         @foreach (var item in Model.Sliders)

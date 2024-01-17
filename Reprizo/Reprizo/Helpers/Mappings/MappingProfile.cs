@@ -41,6 +41,9 @@ namespace Reprizo.Helpers.Mappings
 							  .ForMember(dest => dest.Images, opt => opt.MapFrom(src => src.Images));
 			CreateMap<ProductCreateVM, Product>();
 			CreateMap<ProductEditVM, Product>();
+			CreateMap<SliderCreateVM, Slider>();
+			CreateMap<SliderEditVM, Slider>();
+			CreateMap<SliderVM, SliderEditVM>();
 		}
     }
 }

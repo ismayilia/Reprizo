@@ -1,0 +1,38 @@
+﻿@model SliderEditVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@section css{
+    <style>
+
+
+        input {
+            font-size: 18px !important;
+            font-weight: 600 !important;
+        }
+    </style>
+}
+
+<div class="container my-5">
+    <h1 class="text-center mt-3 mb-3">Edit</h1>
+    <div class="slider-content" style="width:35%;height:35%">
+        <img style="width:67%;height:100%;" src="~/assets/img/slider/@Model.Image" />
+    </div>
+    <form style="width: 70%;" class="forms-sample" asp-action="Edit" method="post" enctype="multipart/form-data">
+        <label style="padding-left:6px;" for="formFile" class="form-label my-2">Choose an image</label>
+        <input class="form-control" id="customFile" asp-for="Photo" />
+        <span class="text-danger" asp-validation-for="Photo"></span>
+        <div class="form-group">
+            <label style="padding-left:6px;" for="formFile" class="form-label my-2">Add Title</label>
+            <input class="form-control" id="customFile" asp-for="Title" />
+            <span class="text-danger" asp-validation-for="Title"></span>
+        </div>
+
+        <div class="buttons my-3">
+            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+            <a class="btn btn-light" asp-action="Index">Cancel</a>
+        </div>
+    </form>
+</div>
+
