@@ -1,13 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic;
 using Reprizo.Areas.Admin.ViewModels.Collection;
-using Reprizo.Areas.Admin.ViewModels.Slider;
+using Reprizo.Areas.Admin.ViewModels.Essence;
 using Reprizo.Data;
 using Reprizo.Models;
 using Reprizo.Services.Interfaces;
-using System.Collections.ObjectModel;
-using System.Data;
 
 namespace Reprizo.Services
 {
@@ -22,7 +19,26 @@ namespace Reprizo.Services
             _mapper = mapper;
 
         }
-        public async Task<CollectionVM> GetDataAsync()
+
+        public async Task EditAsync(CollectionEditVM request)
+        {
+
+            var dbCollection = await _context.Collections.FirstOrDefaultAsync(m => m.Id == request.Id);
+
+            _mapper.Map(request, dbCollection);
+
+            _context.Collections.Update(dbCollection);
+
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<CollectionVM> GetByIdAsync(int id)
+		{
+			var data = await _context.Collections.FirstOrDefaultAsync(m => m.Id == id);
+			return _mapper.Map<CollectionVM>(data);
+		}
+
+		public async Task<CollectionVM> GetDataAsync()
         {
             var data = await _context.Collections.FirstOrDefaultAsync();
 

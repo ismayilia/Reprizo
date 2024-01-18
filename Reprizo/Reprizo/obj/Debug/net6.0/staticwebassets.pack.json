@@ -3617,6 +3617,10 @@
       "PackagePath": "staticwebassets\\assets\\css\\wishlist.scss"
     },
     {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\16165b12-a681-486a-8cdd-88c74f86a0af-featured.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\16165b12-a681-486a-8cdd-88c74f86a0af-featured.jpg"
+    },
+    {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\76bc5c15-1c2e-495b-99a7-1d64e2e1a2ff-swiss.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\76bc5c15-1c2e-495b-99a7-1d64e2e1a2ff-swiss.jpg"
     },
@@ -3687,10 +3691,6 @@
     {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\evade.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\evade.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\featured.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\featured.jpg"
     },
     {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\icon.png",

@@ -48,6 +48,8 @@ namespace Reprizo.Helpers.Mappings
 			CreateMap<EssenceEditVM, Essence>();
 			CreateMap<FeatureVM, FeatureEditVM>();
 			CreateMap<FeatureEditVM, Feature>();
+			CreateMap<CollectionVM, CollectionEditVM>();
+			CreateMap<CollectionEditVM, Collection>();
 		}
     }
 }

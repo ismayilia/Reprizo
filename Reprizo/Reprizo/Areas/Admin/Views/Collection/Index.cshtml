@@ -1,0 +1,58 @@
+﻿@model CollectionVM
+@{
+	ViewData["Title"] = "Index";
+}
+
+
+<div class="container my-5">
+	<h1 class="text-center mt-3 mb-3">Collection</h1>
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					
+					<th>
+						Title
+					</th>
+					<th>
+						Description
+					</th>
+					<th>
+						Created Date
+					</th>
+					<th>
+						Operations
+					</th>
+
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr data-id="@Model.Id">
+					
+					<td>
+						@Model.Title
+					</td>
+					<td style="white-space:normal">
+						@Model.Description.Substring(0, (int)Math.Ceiling(Model.Description.Length * 0.09)) ...
+
+					</td>
+					<td>
+						@Model.CreateDate.ToString("dd/MM/yyyy")
+					</td>
+
+					<td>
+						<a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@Model.Id">Detail</a>
+						<a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+
+					</td>
+
+				</tr>
+
+
+
+			</tbody>
+		</table>
+	</div>
+</div>
+
