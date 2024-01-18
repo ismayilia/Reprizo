@@ -3625,6 +3625,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\76bc5c15-1c2e-495b-99a7-1d64e2e1a2ff-swiss.jpg"
     },
     {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\86ded67f-d685-4c90-810e-1cb010af231a-service.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\86ded67f-d685-4c90-810e-1cb010af231a-service.jpg"
+    },
+    {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\about\\team1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\about\\team1.jpg"
     },
@@ -3751,10 +3755,6 @@
     {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\product\\skmei1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\skmei1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\service.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\service.jpg"
     },
     {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\slider\\slider1.jpg",

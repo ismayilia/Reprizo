@@ -55,6 +55,10 @@ namespace Reprizo.Helpers.Mappings
 			CreateMap<BlogEditVM, Blog>();
 			CreateMap<RepairVM, RepairEditVM>();
 			CreateMap<RepairEditVM, Repair>();
+			CreateMap<BestWorkerVM, BestWorkerEditVM>();
+			CreateMap<BestWorkerEditVM, BestWorker>();
+			CreateMap<TeamVM, TeamEditVM>();
+			CreateMap<TeamEditVM, Team>();
 		}
     }
 }

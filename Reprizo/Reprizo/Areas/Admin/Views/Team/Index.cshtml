@@ -1,0 +1,61 @@
+﻿@model List<TeamVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container my-5">
+    <h1 class="text-center mt-3 mb-3">Teams</h1>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        FullName
+                    </th>
+                    <th>
+                        Position
+                    </th>
+                    <th>
+                        Created Date
+                    </th>
+                    <th>
+                        Operations
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var team in Model)
+                {
+                    <tr data-id="@team.Id">
+                        <td class="py-1">
+                            <img src="~/assets/img/about/@team.Image" style="width:183px;height:182px;border-radius:0" alt="image" />
+                        </td>
+                        <td>
+                            @team.FullName
+                        </td>
+                        <td style="white-space:normal">
+                            @team.Position
+
+                        </td>
+                        <td>
+                            @team.CreateDate.ToString("dd/MM/yyyy")
+                        </td>
+
+                        <td>
+                            <a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@team.Id">Detail</a>
+                            <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@team.Id">Edit</a>
+                        </td>
+
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
