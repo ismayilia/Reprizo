@@ -1,10 +1,11 @@
-﻿using Reprizo.Areas.Admin.ViewModels.Collection;
-using Reprizo.Areas.Admin.ViewModels.Repair;
+﻿using Reprizo.Areas.Admin.ViewModels.Repair;
 
 namespace Reprizo.Services.Interfaces
 {
     public interface IRepairService
     {
         Task<RepairVM> GetDataAsync();
+		Task<RepairVM> GetByIdAsync(int id);
+        Task EditAsync(RepairEditVM request);
     }
 }

@@ -53,6 +53,8 @@ namespace Reprizo.Helpers.Mappings
 			CreateMap<BlogCreateVM, Blog>();
 			CreateMap<BlogVM, BlogEditVM>();
 			CreateMap<BlogEditVM, Blog>();
+			CreateMap<RepairVM, RepairEditVM>();
+			CreateMap<RepairEditVM, Repair>();
 		}
     }
 }
