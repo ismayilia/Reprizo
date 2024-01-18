@@ -1,0 +1,55 @@
+﻿@model BlogCreateVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+@section css{
+    <style>
+
+
+        input {
+            font-size: 18px !important;
+            font-weight: 600 !important;
+        }
+
+        textarea {
+            height: 200px !important;
+            font-size: 17px !important;
+        }
+    </style>
+}
+
+<div class="container mt-5 mb-5">
+    <h1 class="text-center mt-3 mb-3">Create</h1>
+
+    <form class="forms-sample" method="post" asp-action="Create" enctype="multipart/form-data">
+
+        <div class="form-group">
+            <label asp-for="Title">Add Title</label>
+            <input asp-for="Title" class="form-control">
+            <span class="text-danger" asp-validation-for="Title"></span>
+        </div>
+
+        <div class="form-group">
+            <label style="padding-left:6px;" for="formFile" class="form-label my-2">Add Description</label>
+            <textarea class="form-control" id="customFile" asp-for="Description"></textarea>
+            <span class="text-danger" asp-validation-for="Description"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Writer">Writer</label>
+            <input asp-for="Writer" class="form-control">
+            <span class="text-danger" asp-validation-for="Writer"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Photo">Image</label>
+            <input asp-for="Photo" class="form-control">
+            <span class="text-danger" asp-validation-for="Photo"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+        <a class="btn btn-light" asp-action="Index">Back</a>
+    </form>
+</div>
+

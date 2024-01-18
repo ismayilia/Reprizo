@@ -50,6 +50,9 @@ namespace Reprizo.Helpers.Mappings
 			CreateMap<FeatureEditVM, Feature>();
 			CreateMap<CollectionVM, CollectionEditVM>();
 			CreateMap<CollectionEditVM, Collection>();
+			CreateMap<BlogCreateVM, Blog>();
+			CreateMap<BlogVM, BlogEditVM>();
+			CreateMap<BlogEditVM, Blog>();
 		}
     }
 }

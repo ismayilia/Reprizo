@@ -1,0 +1,81 @@
+﻿@model List<BlogVM>
+@{
+	ViewData["Title"] = "Index";
+}
+
+@section css{
+	<style>
+
+		td{
+			line-height:22px !important;
+		}
+	</style>
+}
+
+<div class="container my-5">
+	<h1 class="text-center mt-3 mb-3">Blogs</h1>
+	<a class="btn btn-success text-white" asp-action="Create" style="float:right">Create</a>
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>
+						Image
+					</th>
+					<th>
+						Title
+					</th>
+					<th>
+						Description
+					</th>
+					<th>
+						Writer
+					</th>
+					<th>
+						Created Date
+					</th>
+					<th>
+						Operations
+					</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var blog in Model)
+				{
+					<tr data-id="@blog.Id">
+						<td class="py-1">
+							<img src="~/assets/img/blog/@blog.Image" style="width:183px;height:182px;border-radius:0" alt="image" />
+						</td>
+						<td style="white-space:normal">
+							@blog.Title
+						</td>
+						<td style="white-space:normal">
+							@blog.Description.Substring(0, (int)Math.Ceiling(blog.Description.Length * 0.03))...
+
+						</td>
+						<td>
+							@blog.Writer
+						</td>
+						<td>
+							@blog.CreateDate.ToString("dd/MM/yyyy")
+						</td>
+
+						<td>
+							<a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@blog.Id">Detail</a>
+							<a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@blog.Id">Edit</a>
+							<form class="d-inline-block" method="post" asp-action="Delete" asp-route-id="@blog.Id">
+								<button type="submit" class="btn btn-outline-danger">Delete</button>
+							</form>
+
+						</td>
+
+					</tr>
+				}
+
+
+			</tbody>
+		</table>
+	</div>
+</div>
+

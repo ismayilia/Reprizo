@@ -1,5 +1,4 @@
 ﻿using Reprizo.Areas.Admin.ViewModels.Blog;
-using Reprizo.Areas.Admin.ViewModels.Product;
 
 namespace Reprizo.Services.Interfaces
 {
@@ -9,5 +8,8 @@ namespace Reprizo.Services.Interfaces
         Task<List<BlogVM>> GetAllAsync();
         Task<int> GetCountAsync();
         Task<BlogVM> GetByIdAsync(int id);
+        Task CreateAsync(BlogCreateVM request);
+		Task DeleteAsync(int id);
+        Task EditAsync(BlogEditVM request);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Reprizo.Services.Interfaces
 {
-    public interface IEssenceService
+	public interface IEssenceService
     {
         Task<List<EssenceVM>> GetAllAsync();
         Task<EssenceVM> GetByIdAsync(int id);

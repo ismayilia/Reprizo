@@ -1,14 +1,11 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Reprizo.Areas.Admin.ViewModels.Collection;
-using Reprizo.Areas.Admin.ViewModels.Essence;
-using Reprizo.Helpers.Extensions;
-using Reprizo.Services;
 using Reprizo.Services.Interfaces;
 
 namespace Reprizo.Areas.Admin.Controllers
 {
-    public class CollectionController : MainController
+	public class CollectionController : MainController
     {
         private readonly ICollectionService _collectionService;
 		private readonly IMapper _mapper;

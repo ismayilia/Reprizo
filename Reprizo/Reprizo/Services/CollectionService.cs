@@ -1,14 +1,12 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Reprizo.Areas.Admin.ViewModels.Collection;
-using Reprizo.Areas.Admin.ViewModels.Essence;
 using Reprizo.Data;
-using Reprizo.Models;
 using Reprizo.Services.Interfaces;
 
 namespace Reprizo.Services
 {
-    public class CollectionService : ICollectionService
+	public class CollectionService : ICollectionService
     {
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
