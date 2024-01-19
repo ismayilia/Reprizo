@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Reprizo.Areas.Admin.ViewModels.Subscribe;
 using Reprizo.Data;
 using Reprizo.Models;
@@ -24,5 +25,19 @@ namespace Reprizo.Services
 
             await _context.SaveChangesAsync();
         }
-    }
+
+		public async Task DeleteAsync(int id)
+		{
+			Subscribe subscribe = await _context.Subscribes.Where(m => m.Id == id).FirstOrDefaultAsync();
+			_context.Subscribes.Remove(subscribe);
+			await _context.SaveChangesAsync();
+		}
+
+		public async Task<List<SubscribeVM>> GetAllAsync()
+		{
+			List<Subscribe> subscribes = await _context.Subscribes.ToListAsync();
+
+			return _mapper.Map<List<SubscribeVM>>(subscribes);
+		}
+	}
 }

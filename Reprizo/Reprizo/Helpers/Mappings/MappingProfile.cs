@@ -62,6 +62,7 @@ namespace Reprizo.Helpers.Mappings
 			CreateMap<TeamEditVM, Team>();
 			CreateMap<SettingEditVM, Setting>();
 			CreateMap<ContactMessage, ContactMessageVM>();
+			CreateMap<Subscribe, SubscribeVM>();
 		}
     }
 }

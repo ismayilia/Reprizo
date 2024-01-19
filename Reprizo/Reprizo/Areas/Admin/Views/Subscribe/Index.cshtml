@@ -1,0 +1,49 @@
+﻿@model List<SubscribeVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h1 class="text-center mt-3 mb-3">Subscribe</h1>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Apply Time
+                    </th>
+                    <th>
+                        Operations
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.Email
+                        </td>
+                        <td>
+                            @item.CreateDate.ToString("MM/dd/yyyy")
+                        </td>
+                        <td>
+                            <form class="d-inline-block" method="post">
+                                <button type="submit" class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+
+
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
