@@ -323,13 +323,12 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#ui-basiccccc" aria-expanded="false" aria-controls="ui-basic">
                             <span class="icon-bg"><i class="mdi mdi-crosshairs-gps menu-icon"></i></span>
-                            <span class="menu-title">Blog</span>
+                            <span class="menu-title">Contact Page</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="ui-basiccccc">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" asp-controller="Blog" asp-action="Index">Blog</a></li>
-                                <li class="nav-item"> <a class="nav-link" asp-controller="BlogComment" asp-action="Index">BlogComment</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-controller="ContactMessage" asp-action="Index">Contact Message</a></li>
                             </ul>
                         </div>
                     </li>
@@ -354,7 +353,7 @@
                     </li>
                     <li class="nav-item sidebar-user-actions">
                         <div class="sidebar-user-menu">
-                            <a href="#" class="nav-link">
+                            <a asp-controller="Setting" asp-action="Index" class="nav-link">
                                 <i class="mdi mdi-settings menu-icon"></i>
                                 <span class="menu-title">Settings</span>
                             </a>

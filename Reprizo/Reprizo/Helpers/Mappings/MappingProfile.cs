@@ -8,6 +8,7 @@ using Reprizo.Areas.Admin.ViewModels.Essence;
 using Reprizo.Areas.Admin.ViewModels.Feature;
 using Reprizo.Areas.Admin.ViewModels.Product;
 using Reprizo.Areas.Admin.ViewModels.Repair;
+using Reprizo.Areas.Admin.ViewModels.Setting;
 using Reprizo.Areas.Admin.ViewModels.Slider;
 using Reprizo.Areas.Admin.ViewModels.Subscribe;
 using Reprizo.Areas.Admin.ViewModels.Team;
@@ -59,6 +60,8 @@ namespace Reprizo.Helpers.Mappings
 			CreateMap<BestWorkerEditVM, BestWorker>();
 			CreateMap<TeamVM, TeamEditVM>();
 			CreateMap<TeamEditVM, Team>();
+			CreateMap<SettingEditVM, Setting>();
+			CreateMap<ContactMessage, ContactMessageVM>();
 		}
     }
 }

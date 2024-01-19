@@ -3629,20 +3629,16 @@
       "PackagePath": "staticwebassets\\assets\\img\\86ded67f-d685-4c90-810e-1cb010af231a-service.jpg"
     },
     {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\about\\c16a7068-2a03-423d-8c71-caf942cb2711-team3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\about\\c16a7068-2a03-423d-8c71-caf942cb2711-team3.jpg"
+    },
+    {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\about\\team1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\about\\team1.jpg"
     },
     {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\about\\team2.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\about\\team2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\about\\team3.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\about\\team3.jpg"
-    },
-    {
-      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\banner.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\banner.jpg"
     },
     {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\blog\\blog1.jpg",
@@ -3701,10 +3697,6 @@
       "PackagePath": "staticwebassets\\assets\\img\\icon.png"
     },
     {
-      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\logo.png",
-      "PackagePath": "staticwebassets\\assets\\img\\logo.png"
-    },
-    {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\product\\048e85ed-bb0a-476f-8fb8-13277d3a8a90 - giani1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\048e85ed-bb0a-476f-8fb8-13277d3a8a90 - giani1.jpg"
     },
@@ -3755,6 +3747,58 @@
     {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\product\\skmei1.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product\\skmei1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\settings\\aboutbanner.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\settings\\aboutbanner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\settings\\blogbanner.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\settings\\blogbanner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\settings\\blogdetailbanner.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\settings\\blogdetailbanner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\settings\\cartbanner.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\settings\\cartbanner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\settings\\categorybanner.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\settings\\categorybanner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\settings\\contactbanner.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\settings\\contactbanner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\settings\\forgotbanner.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\settings\\forgotbanner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\settings\\loginbanner.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\settings\\loginbanner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\settings\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\settings\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\settings\\productdetailbanner.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\settings\\productdetailbanner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\settings\\registerbanner.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\settings\\registerbanner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\settings\\shopbanner.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\settings\\shopbanner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\settings\\wishlistbanner.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\settings\\wishlistbanner.jpg"
     },
     {
       "Id": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\slider\\slider1.jpg",

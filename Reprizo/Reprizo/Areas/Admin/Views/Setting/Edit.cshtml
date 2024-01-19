@@ -1,0 +1,37 @@
+﻿@model SettingEditVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container mt-5" style="margin-left:30px">
+
+
+
+    <form class="forms-sample mb-5" method="post" asp-action="Edit" enctype="multipart/form-data">
+        @if (Model.Value.Contains("jpg") || Model.Value.Contains("png") || Model.Value.Contains("jpeg"))
+        {
+            <label asp-for="Photo">@Model.Key</label>
+            <div class="image mt-2 mb-2">
+                <img src="~/assets/img/settings/@Model.Value" style="width:50%" />
+            </div>
+            <div class="form-group">
+                <input asp-for="Photo" class="form-control">
+                <span class="text-danger" asp-validation-for="Photo"></span>
+
+            </div>
+        }
+        else
+        {
+            <div class="form-group">
+                <label asp-for="Value">@Model.Key</label>
+                <input asp-for="Value" class="form-control" />
+                <span class="text-danger" asp-validation-for="Value"></span>
+            </div>
+        }
+
+        <button type="submit" class="btn btn-primary mr-4">Submit</button>
+        <a class="btn btn-light" asp-action="Index">Back</a>
+    </form>
+
+</div>
+
