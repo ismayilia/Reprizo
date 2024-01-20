@@ -39,5 +39,10 @@ namespace Reprizo.Services
 
 			return _mapper.Map<List<SubscribeVM>>(subscribes);
 		}
-	}
+
+        public async Task<SubscribeVM> GetByEmailAsync(string email)
+        {
+            return _mapper.Map<SubscribeVM>(await _context.Subscribes.FirstOrDefaultAsync(m => m.Email.Trim().ToLower() == email.Trim().ToLower()));
+        }
+    }
 }

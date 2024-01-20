@@ -16,6 +16,11 @@ namespace Reprizo.Controllers
             return View();
         }
 
+        public IActionResult ExistEmail()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateSubscribe(SubscribeCreateVM subscribe)
@@ -24,6 +29,14 @@ namespace Reprizo.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
+
+            var existEmail = await _subscribeService.GetByEmailAsync(subscribe.Email);
+
+            if (existEmail is not null)
+            {
+                return RedirectToAction(nameof(ExistEmail));
+            }
+            
             await _subscribeService.CreateAsync(subscribe);
             return RedirectToAction(nameof(Index));
         }

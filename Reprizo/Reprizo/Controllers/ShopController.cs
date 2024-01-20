@@ -190,8 +190,11 @@ namespace Reprizo.Controllers
 			List<CategoryVM> categories = await _categoryService.GetAllAsync();
 
 			int count = await _productService.GetCountAsync();
+            Dictionary<string, string> shopBanner = _settingService.GetSettings();
 
-			ShopVM model = new()
+            ViewBag.ShopBanner = shopBanner["ShopBanner"];
+
+            ShopVM model = new()
 			{
 				Paginate = paginatedDatas,
 				Categories = categories,

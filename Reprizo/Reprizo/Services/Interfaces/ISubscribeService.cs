@@ -6,6 +6,7 @@ namespace Reprizo.Services.Interfaces
     {
         Task CreateAsync(SubscribeCreateVM subscribe);
 		Task<List<SubscribeVM>> GetAllAsync();
+		Task<SubscribeVM> GetByEmailAsync(string email);
 		Task DeleteAsync(int id);
 	}
 }
