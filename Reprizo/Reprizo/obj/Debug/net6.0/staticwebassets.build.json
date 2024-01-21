@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YKUxhSiqzynCfk4IUtqDzxRDzJiyFYfUQBuy5AfwaBw=",
+  "Hash": "8IF7SzWCWzqpKfn7mHW0EkiPYypmVFSDcJmwS+X/F/k=",
   "Source": "Reprizo",
   "BasePath": "_content/Reprizo",
   "Mode": "Default",
@@ -15742,12 +15742,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\icon.png"
     },
     {
-      "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\product\\048e85ed-bb0a-476f-8fb8-13277d3a8a90 - giani1.jpg",
+      "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\product\\32e17b3b-0463-4ca9-b418-32d805c39d0a - team3.jpg",
       "SourceId": "Reprizo",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\",
       "BasePath": "_content/Reprizo",
-      "RelativePath": "assets/img/product/048e85ed-bb0a-476f-8fb8-13277d3a8a90 - giani1.jpg",
+      "RelativePath": "assets/img/product/32e17b3b-0463-4ca9-b418-32d805c39d0a - team3.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -15756,24 +15756,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\product\\048e85ed-bb0a-476f-8fb8-13277d3a8a90 - giani1.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\product\\0850cdfa-3f67-4d77-bb9b-8a77de3916d0 - fogg1.jpg",
-      "SourceId": "Reprizo",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\",
-      "BasePath": "_content/Reprizo",
-      "RelativePath": "assets/img/product/0850cdfa-3f67-4d77-bb9b-8a77de3916d0 - fogg1.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\product\\0850cdfa-3f67-4d77-bb9b-8a77de3916d0 - fogg1.jpg"
+      "OriginalItemSpec": "wwwroot\\assets\\img\\product\\32e17b3b-0463-4ca9-b418-32d805c39d0a - team3.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\assets\\img\\product\\e8ae41ad-3cba-4ad4-97bc-c0317d595554-espoir1.jpg",

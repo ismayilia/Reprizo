@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Reprizo.Areas.Admin.Controllers
 {
-	[Area("Admin")]
-	public class MainController : Controller
+    [Area("Admin")]
+    [Authorize(Roles = "SuperAdmin")]
+    public class MainController : Controller
 	{
 	
 	}

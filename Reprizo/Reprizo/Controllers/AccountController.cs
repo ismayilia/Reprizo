@@ -88,7 +88,54 @@ namespace Reprizo.Controllers
 			return View();
         }
 
-        [HttpGet]
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginVM request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            AppUser dbUser = await _userManager.FindByEmailAsync(request.EmailOrUsername);
+
+            if (dbUser is null)
+            {
+                dbUser = await _userManager.FindByNameAsync(request.EmailOrUsername);
+            }
+
+            if (dbUser is null)
+            {
+                ModelState.AddModelError(string.Empty, "Login informations is wrong");
+                return View();
+            }
+
+            var result = await _signInManager.PasswordSignInAsync(dbUser, request.Password, request.IsRememberMe,false);
+            
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError(string.Empty, "Login informations is wrong");
+                return View();
+
+            }
+
+
+            return RedirectToAction("Index", "Home");
+        }
+
+
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> Logout()
+		{
+			await _signInManager.SignOutAsync();
+
+			return RedirectToAction("Index", "Home");
+		}
+
+		[HttpGet]
         public IActionResult ForgotPassword()
         {
 			Dictionary<string, string> settingDatas = _settingService.GetSettings();
@@ -97,10 +144,7 @@ namespace Reprizo.Controllers
 			return View();
         }
 
-        public IActionResult Logout()
-        {
-            return RedirectToAction("Index", "Home");
-        }
+        
 
 		//Create Roles Method
 
