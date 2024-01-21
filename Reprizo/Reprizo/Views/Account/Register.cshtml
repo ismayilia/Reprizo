@@ -1,4 +1,4 @@
-﻿
+﻿@model RegisterVM
 @{
     ViewData["Title"] = "Register";
 }
@@ -24,7 +24,7 @@
             <div class="register-all">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                        <div class="card  text-black" style="border-radius: 1rem;height:567px">
+                        <div class="card  text-black" style="border-radius: 1rem;">
                             <div class="card-body p-5 text-center">
 
                                 <div class="mb-md-2 mt-md-2 pb-1">
@@ -33,31 +33,31 @@
                                     <div style="color:red" ; asp-validation-summary="All"></div>
                                     <form method="post" asp-controller="Account" asp-action="Register">
                                         <div class="form-outline form-white mb-2">
-                                            <label @*asp-for="FullName"*@>Full name:</label>
-                                            <input class="form-control form-control-sm" @*asp-for="FullName"*@>
-                                            <span style="color:red; margin-bottom:10px" @*asp-validation-for="FullName"*@></span>
+                                            <label asp-for="FullName">Full name:</label>
+                                            <input class="form-control form-control-sm" asp-for="FullName">
+                                            <span style="color:red; margin-bottom:10px" asp-validation-for="FullName"></span>
                                         </div>
 
                                         <div class="form-outline form-white mb-2">
-                                            <label @*asp-for="UserName"*@>Username:</label>
-                                            <input class="form-control form-control-sm" @*asp-for="UserName"*@>
-                                            <span style="color:red; margin-bottom:10px" @*asp-validation-for="UserName"*@></span>
+                                            <label asp-for="UserName">Username:</label>
+                                            <input class="form-control form-control-sm" asp-for="UserName">
+                                            <span style="color:red; margin-bottom:10px" asp-validation-for="UserName"></span>
                                         </div>
                                         <div class="form-outline form-white mb-2">
-                                            <label @*asp-for="Email"*@>Email:</label>
-                                            <input class="form-control form-control-sm" @*asp-for="Email"*@>
-                                            <span style="color:red; margin-bottom:10px" @*asp-validation-for="Email"*@></span>
+                                            <label asp-for="Email">Email:</label>
+                                            <input class="form-control form-control-sm" asp-for="Email">
+                                            <span style="color:red; margin-bottom:10px" asp-validation-for="Email"></span>
                                         </div>
 
                                         <div class="form-outline form-white mb-2">
-                                            <label @*asp-for="Password"*@>Password:</label>
-                                            <input class="form-control form-control-sm" @*asp-for="Password"*@>
-                                            <span style="color:red; margin-bottom:10px" @*asp-validation-for="Password"*@></span>
+                                            <label asp-for="Password">Password:</label>
+                                            <input class="form-control form-control-sm" asp-for="Password">
+                                            <span style="color:red; margin-bottom:10px" asp-validation-for="Password"></span>
                                         </div>
                                         <div class="form-outline form-white mb-2">
-                                            <label @*asp-for="ConfirmPassword"*@>Confirm password:</label>
-                                            <input class="form-control form-control-sm" @*asp-for="ConfirmPassword"*@>
-                                            <span style="color:red; margin-bottom:10px" @*asp-validation-for="ConfirmPassword"*@></span>
+                                            <label asp-for="ConfirmPassword">Confirm password:</label>
+                                            <input class="form-control form-control-sm" asp-for="ConfirmPassword">
+                                            <span style="color:red; margin-bottom:10px" asp-validation-for="ConfirmPassword"></span>
                                         </div>
 
 
@@ -87,6 +87,10 @@
 
 </main>
 
+@section script{
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/assets/js/register.js"></script>
 
-<script src="~/assets/js/register.js"></script>
+    }
+
 

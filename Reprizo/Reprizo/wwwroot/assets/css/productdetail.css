@@ -169,6 +169,30 @@ footer .footer-down h6 {
 #product-detail .detail .cart span:hover {
   background-color: #af7f66;
 }
+
+
+
+    #product-detail .detail .cart a {
+        font-size: 14px;
+        background-color: black;
+        color: white;
+        padding: 14px 51px;
+        cursor: pointer;
+        transition: all 0.5s;
+        letter-spacing: 2px;
+    }
+
+        #product-detail .detail .cart a:nth-child(1) {
+            padding: 14px 67px;
+        }
+
+        #product-detail .detail .cart a:hover {
+            background-color: #af7f66;
+        }
+
+
+
+
 #product-detail .detail .image {
   width: 100%;
   background-color: #F8F7F6;

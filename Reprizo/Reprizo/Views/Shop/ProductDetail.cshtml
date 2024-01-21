@@ -1,85 +1,98 @@
 ﻿@model ProductVM
 @{
-    ViewData["Title"] = "ProductDetail";
+	ViewData["Title"] = "ProductDetail";
 }
 
 @section css{
-    <link rel="stylesheet" href="~/assets/css/productdetail.css">
+	<link rel="stylesheet" href="~/assets/css/productdetail.css">
 }
 
 <main>
 
 
-    <!-- Banner -->
+	<!-- Banner -->
 
-    <section id="banner">
-        <div class="banner-all" style="background-image: url(/assets/img/settings/@ViewBag.ProductDetailBanner);">
-            <h1>Product Detail</h1>
-        </div>
-    </section>
+	<section id="banner">
+		<div class="banner-all" style="background-image: url(/assets/img/settings/@ViewBag.ProductDetailBanner);">
+			<h1>Product Detail</h1>
+		</div>
+	</section>
 
-    <!-- Product detail -->
+	<!-- Product detail -->
 
-    <section id="product-detail">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-sm-12 col-md-12">
-                    <div class="detail">
-                        <div class="image">
-                            <img src="~/assets/img/product/@Model.Image" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-12 col-md-12">
-                    <div class="detail">
-                        <div class="title">
-                            <h1>@Model.Name</h1>
-                            <h6>$@Model.Price</h6>
-                            <p>
-                                @Model.Description
-                            </p>
-                        </div>
-                        <div class="cart">
-                            <span>ADD TO CART</span>
-                            <span>ADD TO WISHLIST</span>
+	<section id="product-detail">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-12 col-md-12">
+					<div class="detail">
+						<div class="image">
+							<img src="~/assets/img/product/@Model.Image" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-sm-12 col-md-12">
+					<div class="detail">
+						<div class="title">
+							<h1>@Model.Name</h1>
+							<h6>$@Model.Price</h6>
+							<p>
+								@Model.Description
+							</p>
+						</div>
 
-                        </div>
-                        <!-- <div class="wishlist">
-                        </div> -->
-                        <div class="social">
-                            <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=966242223397117&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fsharer.php%3Fu%3Dhttps%253A%252F%252Fnew-reprizo.shopify.axiomthemes.com%252Fblogs%252Fwatches%252Fwhat-type-of-metal-will-you-choose&cancel_url=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Fclose_window%2F%3Fapp_id%3D966242223397117%26connect%3D0%23_%3D_&display=popup&locale=en_US">
-                                <i class="fa-brands fa-square-facebook"></i> SHARE
-                            </a>
-                            <a href="https://twitter.com/intent/tweet?text=What%20Type%20of%20Metal%20Will%20You%20Choose%3F&url=https%3A%2F%2Fnew-reprizo.shopify.axiomthemes.com%2Fblogs%2Fwatches%2Fwhat-type-of-metal-will-you-choose">
-                                <i class="fa-brands fa-twitter"></i> TWEET
-                            </a>
-                            <a href="https://www.pinterest.com/pin/create/button/?url=https://new-reprizo.shopify.axiomthemes.com/blogs/watches/what-type-of-metal-will-you-choose&media=//new-reprizo.shopify.axiomthemes.com/cdn/shop/articles/image-2-copyright_1024x1024.jpg?v=1624457678&description=What%20Type%20of%20Metal%20Will%20You%20Choose?">
-                                <i class="fa-brands fa-pinterest"></i> PIN IT
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+						@if (User.Identity.IsAuthenticated)
+						{
+							<div class="cart d-none">
+								<span>ADD TO CART</span>
+								<span>ADD TO WISHLIST</span>
 
-    <!-- Description -->
+							</div>
+						}
+						else
+						{
+							<div class="cart">
+								<a asp-controller="Account" asp-action="Login">ADD TO CART</a>
+								<a asp-controller="Account" asp-action="Login">ADD TO WISHLIST</a>
 
-    <section id="descriptions">
-        <div class="container">
-            <div class="description">
-                <h1>Description</h1>
-                <p>
-                    @Model.Description
-                </p>
+							</div>
+						}
 
-            </div>
-        </div>
-    </section>
+						<!-- <div class="wishlist">
+						</div> -->
+						<div class="social">
+							<a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=966242223397117&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fsharer.php%3Fu%3Dhttps%253A%252F%252Fnew-reprizo.shopify.axiomthemes.com%252Fblogs%252Fwatches%252Fwhat-type-of-metal-will-you-choose&cancel_url=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Fclose_window%2F%3Fapp_id%3D966242223397117%26connect%3D0%23_%3D_&display=popup&locale=en_US">
+								<i class="fa-brands fa-square-facebook"></i> SHARE
+							</a>
+							<a href="https://twitter.com/intent/tweet?text=What%20Type%20of%20Metal%20Will%20You%20Choose%3F&url=https%3A%2F%2Fnew-reprizo.shopify.axiomthemes.com%2Fblogs%2Fwatches%2Fwhat-type-of-metal-will-you-choose">
+								<i class="fa-brands fa-twitter"></i> TWEET
+							</a>
+							<a href="https://www.pinterest.com/pin/create/button/?url=https://new-reprizo.shopify.axiomthemes.com/blogs/watches/what-type-of-metal-will-you-choose&media=//new-reprizo.shopify.axiomthemes.com/cdn/shop/articles/image-2-copyright_1024x1024.jpg?v=1624457678&description=What%20Type%20of%20Metal%20Will%20You%20Choose?">
+								<i class="fa-brands fa-pinterest"></i> PIN IT
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Description -->
+
+	<section id="descriptions">
+		<div class="container">
+			<div class="description">
+				<h1>Description</h1>
+				<p>
+					@Model.Description
+				</p>
+
+			</div>
+		</div>
+	</section>
 
 </main>
 
 @section script{
-    <script src="./assets/js/productdetail.js"></script>
+	<script src="./assets/js/productdetail.js"></script>
 }
 

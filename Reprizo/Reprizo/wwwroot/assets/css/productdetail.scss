@@ -224,6 +224,25 @@ footer {
                     ;
                 }
             }
+
+            a {
+                font-size: 14px;
+                background-color: black;
+                color: white;
+                padding: 14px 51px;
+                cursor: pointer;
+                transition: all 0.5s;
+                letter-spacing: 2px;
+
+                &:nth-child(1) {
+                    padding: 14px 67px;
+                }
+
+                &:hover {
+                    background-color: #af7f66;
+                    
+                }
+            }
         }
 
         .image {
@@ -251,7 +270,6 @@ footer {
                 color: #A7A7A7;
                 margin: 60px 0;
                 line-height: 28px;
-
             }
         }
     }

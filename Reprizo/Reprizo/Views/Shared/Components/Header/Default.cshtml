@@ -23,15 +23,16 @@
 					<div class="header-right">
 						@if (Model.UserFullName is not null) @*User.Identity.IsAuthenticated*@
 						{
-							<a href="#" class="d-none">@Model.UserFullName</a>
+							<a href="#">@Model.UserFullName</a>
+							<form asp-controller="Account" asp-action="Logout" style="display: inline;">
+								<input type="submit" value="Logout" style="background-color:brown; color:white;border:none" />
+							</form>
 
 						}
-						<form asp-controller="Account" asp-action="Logout" class="d-none" style="display: inline;">
-							<input type="submit" value="Logout" style="background-color:brown; color:white;border:none" />
-						</form>
+
 						<a asp-controller="Account" asp-action="Login">Login</a>
 						<a asp-controller="Account" asp-action="Register">Register</a>
-						<a asp-controller="Wishlist" asp-action="Index"><i class="fa-regular fa-heart"></i> Wishlist</a>
+						<a asp-controller="Wishlist" asp-action="Index"><i class="fa-regular fa-heart"></i> Wishlist <span>(0)</span></a>
 						<a asp-controller="Cart" asp-action="Index"><i class="fa-solid fa-cart-shopping"></i> Cart <span>(0)</span></a>
 					</div>
 				</div>

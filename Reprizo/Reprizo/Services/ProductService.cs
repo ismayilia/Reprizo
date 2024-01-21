@@ -115,7 +115,7 @@ namespace Reprizo.Services
 			newImages.AddRange(product.Images);
 
 
-			Product dbProduct = await _context.Products.AsNoTracking().FirstOrDefaultAsync(m => m.Id == product.Id);
+			Product dbProduct = await _context.Products.FirstOrDefaultAsync(m => m.Id == product.Id);
 
 			product.Images = newImages;
 
