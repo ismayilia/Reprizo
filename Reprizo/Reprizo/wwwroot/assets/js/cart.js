@@ -1,15 +1,14 @@
 $(function () {
 
-    $(document).on("click", ".cart-add", function (e) {
+    $(document).on("click", ".cart-add", function () {
 
-        e.preventDefault();
-        console.log(e)
+        
         let id = $(this).parent().parent().attr("data-id");;
         console.log(id)
         let count = $(".basket-count").text();
         console.log(count)
         $.ajax({
-            url: `shop/addbasket?id=${id}`,
+            url: `/shop/addbasket?id=${id}`,
             type: "Post",
             success: function (res) {
 

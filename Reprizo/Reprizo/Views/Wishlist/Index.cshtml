@@ -1,4 +1,4 @@
-﻿
+﻿@model List<WishlistDetailVM>
 @{
     ViewData["Title"] = "Index";
 }
@@ -22,18 +22,18 @@
     <section id="wishlists">
         <div class="container">
             <div class="wishlist-all">
-                <div class="empty">
+                <div class="empty @(Model.Count == 0 ? "":"d-none")">
                     <h1>Your Wishlist</h1>
                     <p>Your wishlist is currently empty.</p>
                     <a asp-controller="Shop" asp-action="Index">CONTINUE SHOPPING</a>
                 </div>
 
-                <div class="wishlist-table d-none">
+                <div class="wishlist-table @(Model.Count == 0 ? "d-none":"")">
                     <h1>Your Wishlist</h1>
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Product</th>
+                                <th>Image</th>
                                 <th>Name</th>
                                 <th>Price</th>
                                 <th>Add to Cart</th>
@@ -41,17 +41,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <img src="~/assets/img/product/fast1.jpg">
-                                </td>
-                                <td>Saat1</td>
-                                <td>$110.00</td>
-                                <td><i class="fa-solid fa-cart-shopping"></i></td>
-                                <td>
-                                    <button type="submit" class="btn btn-outline-danger delete-basket-item">Delete</button>
-                                </td>
-                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="~/assets/img/product/@item.Image">
+                                    </td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Price $</td>
+                                    <td data-id="@item.Id"><i class="fa-solid fa-cart-shopping cart-add-basket"></i></td>
+                                    <td>
+                                        <button type="submit" data-id="@item.Id" class="btn btn-outline-danger delete-wishlist-item">Delete</button>
+                                    </td>
+                                </tr>
+                            }
+                            
 
                         </tbody>
                     </table>
@@ -64,7 +68,5 @@
 
 </main>
 
-@section script{
-    <script src="~/assets/js/wishlist.js"></script>
-}
+
 

@@ -19,20 +19,10 @@ namespace Reprizo.Controllers
 			Dictionary<string, string> cartBanner = _settingService.GetSettings();
 			ViewBag.CartBanner = cartBanner["CartBanner"];
 
-
-
-
 			return View(await _basketService.GetBasketDatasAsync());
         }
 
 
-		//[HttpPost]
-		//public async Task<IActionResult> Delete(int id)
-		//{
-		//	var data = await _basketService.DeleteItem(id);
-
-		//	return Ok(data);
-		//}
 
 		[HttpPost]
 		public async Task<IActionResult> PlusIcon(int id)

@@ -54,6 +54,7 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ISubscribeService, SubscribeService>();
 builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.AddScoped<IBasketService, BasketService>();
+builder.Services.AddScoped<IWishlistService, WishlistService>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 

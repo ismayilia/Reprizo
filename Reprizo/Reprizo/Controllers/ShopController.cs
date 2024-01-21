@@ -17,6 +17,7 @@ namespace Reprizo.Controllers
         private readonly ISettingService _settingService;
         private readonly ICategoryService _categoryService;
         private readonly IBasketService _basketService;
+        private readonly IWishlistService _wishlistService;
 
 		
 
@@ -24,12 +25,14 @@ namespace Reprizo.Controllers
         public ShopController(IProductService productService, 
                                                             ISettingService settingService,
                                                             ICategoryService categoryService,
-															IBasketService basketService)
+															IBasketService basketService,
+															IWishlistService wishlistService)
         {
             _productService = productService;
             _settingService = settingService;
             _categoryService = categoryService;
 			_basketService = basketService;
+			_wishlistService = wishlistService;
         }
         public async Task<IActionResult> Index(int page = 1, int take = 6)
         {
@@ -264,6 +267,23 @@ namespace Reprizo.Controllers
 
 
 			return Ok();
+		}
+
+		[HttpPost]
+
+		public async Task<IActionResult> AddWishlist(int? id)
+		{
+
+
+			if (id is null) return BadRequest();
+
+			ProductVM product = await _productService.GetByIdWithIncludesAsync((int)id);
+
+			if (product is null) return NotFound();
+
+			int a =_wishlistService.AddWishlist((int)id, product);
+
+			return Ok(a);
 		}
 
 

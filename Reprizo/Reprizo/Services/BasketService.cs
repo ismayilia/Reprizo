@@ -46,36 +46,36 @@ namespace Reprizo.Services
 			_httpContextAccessor.HttpContext.Response.Cookies.Append("basket", JsonConvert.SerializeObject(basket));
 		}
 
-        public async Task<DeleteBasketItemResponse> DeleteItem(int id)
-        {
-            List<decimal> grandTotal = new();
+		public async Task<DeleteBasketItemResponse> DeleteItem(int id)
+		{
+			List<decimal> grandTotal = new();
 
-            List<BasketVM> basket = JsonConvert.DeserializeObject<List<BasketVM>>(_httpContextAccessor.HttpContext.Request.Cookies["basket"]);
+			List<BasketVM> basket = JsonConvert.DeserializeObject<List<BasketVM>>(_httpContextAccessor.HttpContext.Request.Cookies["basket"]);
 
-            BasketVM basketItem = basket.FirstOrDefault(m => m.Id == id);
+			BasketVM basketItem = basket.FirstOrDefault(m => m.Id == id);
 
-            basket.Remove(basketItem);
+			basket.Remove(basketItem);
 
-            foreach (var item in basket)
-            {
-                var product = await _productService.GetByIdWithIncludesAsync(item.Id);
+			foreach (var item in basket)
+			{
+				var product = await _productService.GetByIdWithIncludesAsync(item.Id);
 
 
-                decimal total = item.Count * product.Price;
+				decimal total = item.Count * product.Price;
 
-                grandTotal.Add(total);
-            }
+				grandTotal.Add(total);
+			}
 
-            _httpContextAccessor.HttpContext.Response.Cookies.Append("basket", JsonConvert.SerializeObject(basket));
+			_httpContextAccessor.HttpContext.Response.Cookies.Append("basket", JsonConvert.SerializeObject(basket));
 
-            return new DeleteBasketItemResponse
-            {
-                Count = basket.Sum(m => m.Count),
-                GrandTotal = grandTotal.Sum()
-            };
-        }
+			return new DeleteBasketItemResponse
+			{
+				Count = basket.Sum(m => m.Count),
+				GrandTotal = grandTotal.Sum()
+			};
+		}
 
-        public async Task<List<BasketDetailVM>> GetBasketDatasAsync()
+		public async Task<List<BasketDetailVM>> GetBasketDatasAsync()
 		{
 			List<BasketVM> basket;
 
@@ -125,78 +125,78 @@ namespace Reprizo.Services
 			return basket.Sum(m => m.Count);
 		}
 
-        public async Task<CountPlusAndMinus> MinusIcon(int id)
-        {
-            List<decimal> grandTotal = new();
+		public async Task<CountPlusAndMinus> MinusIcon(int id)
+		{
+			List<decimal> grandTotal = new();
 
-            List<BasketVM> basket = JsonConvert.DeserializeObject<List<BasketVM>>(_httpContextAccessor.HttpContext.Request.Cookies["basket"]);
-            BasketVM existProduct = basket.FirstOrDefault(m => m.Id == id);
-
-
-            if (existProduct.Count > 1)
-            {
-
-                existProduct.Count--;
-
-
-            }
-            foreach (var item in basket)
-            {
-
-                var product = await _productService.GetByIdWithIncludesAsync(item.Id);
-
-                decimal total = item.Count * product.Price;
-
-                grandTotal.Add(total);
-            }
-
-            _httpContextAccessor.HttpContext.Response.Cookies.Append("basket", JsonConvert.SerializeObject(basket));
-
-            var basketItem = await _productService.GetByIdWithIncludesAsync(id);
-            var productTotalPrice = existProduct.Count * basketItem.Price;
-            return new CountPlusAndMinus
-            {
-                CountItem = existProduct.Count,
-                GrandTotal = grandTotal.Sum(),
-                ProductTotalPrice = productTotalPrice,
-                CountBasket = basket.Sum(m => m.Count)
-            };
-        }
-
-        public async Task<CountPlusAndMinus> PlusIcon(int id)
-        {
-            List<decimal> grandTotal = new();
-
-            List<BasketVM> basket = JsonConvert.DeserializeObject<List<BasketVM>>(_httpContextAccessor.HttpContext.Request.Cookies["basket"]);
-            
+			List<BasketVM> basket = JsonConvert.DeserializeObject<List<BasketVM>>(_httpContextAccessor.HttpContext.Request.Cookies["basket"]);
 			BasketVM existProduct = basket.FirstOrDefault(m => m.Id == id);
-            
-			existProduct.Count++;
-            
+
+
+			if (existProduct.Count > 1)
+			{
+
+				existProduct.Count--;
+
+
+			}
+			foreach (var item in basket)
+			{
+
+				var product = await _productService.GetByIdWithIncludesAsync(item.Id);
+
+				decimal total = item.Count * product.Price;
+
+				grandTotal.Add(total);
+			}
+
+			_httpContextAccessor.HttpContext.Response.Cookies.Append("basket", JsonConvert.SerializeObject(basket));
+
 			var basketItem = await _productService.GetByIdWithIncludesAsync(id);
-            
+			var productTotalPrice = existProduct.Count * basketItem.Price;
+			return new CountPlusAndMinus
+			{
+				CountItem = existProduct.Count,
+				GrandTotal = grandTotal.Sum(),
+				ProductTotalPrice = productTotalPrice,
+				CountBasket = basket.Sum(m => m.Count)
+			};
+		}
+
+		public async Task<CountPlusAndMinus> PlusIcon(int id)
+		{
+			List<decimal> grandTotal = new();
+
+			List<BasketVM> basket = JsonConvert.DeserializeObject<List<BasketVM>>(_httpContextAccessor.HttpContext.Request.Cookies["basket"]);
+
+			BasketVM existProduct = basket.FirstOrDefault(m => m.Id == id);
+
+			existProduct.Count++;
+
+			var basketItem = await _productService.GetByIdWithIncludesAsync(id);
+
 			var productTotalPrice = existProduct.Count * basketItem.Price;
 
-            foreach (var item in basket)
-            {
+			foreach (var item in basket)
+			{
 
-                var product = await _productService.GetByIdWithIncludesAsync(item.Id);
+				var product = await _productService.GetByIdWithIncludesAsync(item.Id);
 
-                decimal total = item.Count * product.Price;
+				decimal total = item.Count * product.Price;
 
-                grandTotal.Add(total);
-            }
+				grandTotal.Add(total);
+			}
 
-            _httpContextAccessor.HttpContext.Response.Cookies.Append("basket", JsonConvert.SerializeObject(basket));
+			_httpContextAccessor.HttpContext.Response.Cookies.Append("basket", JsonConvert.SerializeObject(basket));
 
-            return new CountPlusAndMinus
-            {
-                CountItem = existProduct.Count,
-                GrandTotal = grandTotal.Sum(),
-                ProductTotalPrice = productTotalPrice,
-				CountBasket = basket.Sum(m=>m.Count)
+			return new CountPlusAndMinus
+			{
+				CountItem = existProduct.Count,
+				GrandTotal = grandTotal.Sum(),
+				ProductTotalPrice = productTotalPrice,
+				CountBasket = basket.Sum(m => m.Count)
 
-            };
-        }
-    }
+			};
+		}
+	}
 }
