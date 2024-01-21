@@ -31,7 +31,7 @@
 					</div>
 				</div>
 				<div class="col-lg-6 col-sm-12 col-md-12">
-					<div class="detail">
+					<div class="detail" data-id="@Model.Id">
 						<div class="title">
 							<h1>@Model.Name</h1>
 							<h6>$@Model.Price</h6>
@@ -43,7 +43,7 @@
 						@if (User.Identity.IsAuthenticated)
 						{
 							<div class="cart">
-								<span>ADD TO CART</span>
+								<span class="add-cart">ADD TO CART</span>
 								<span>ADD TO WISHLIST</span>
 
 							</div>
@@ -93,6 +93,6 @@
 </main>
 
 @section script{
-	<script src="./assets/js/productdetail.js"></script>
+	<script src="~/assets/js/productdetail.js"></script>
 }
 

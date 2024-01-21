@@ -4,6 +4,6 @@
 	{
 		public string Logo { get; set; }
 		public string UserFullName { get; set; }
-		//public int BasketCount { get; set; }
+		public int BasketCount { get; set; }
 	}
 }

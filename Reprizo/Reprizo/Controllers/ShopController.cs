@@ -16,17 +16,20 @@ namespace Reprizo.Controllers
         private readonly IProductService _productService;
         private readonly ISettingService _settingService;
         private readonly ICategoryService _categoryService;
+        private readonly IBasketService _basketService;
+
 		
 
 
         public ShopController(IProductService productService, 
                                                             ISettingService settingService,
-                                                            ICategoryService categoryService)
+                                                            ICategoryService categoryService,
+															IBasketService basketService)
         {
             _productService = productService;
             _settingService = settingService;
             _categoryService = categoryService;
-			
+			_basketService = basketService;
         }
         public async Task<IActionResult> Index(int page = 1, int take = 6)
         {
@@ -241,6 +244,26 @@ namespace Reprizo.Controllers
 			int productCount = await _productService.GetCountBySearch(searchText);
 
 			return (int)Math.Ceiling((decimal)(productCount) / take);
+		}
+
+
+
+		[HttpPost]
+
+		public async Task<IActionResult> AddBasket(int? id)
+		{
+
+
+			if (id is null) return BadRequest();
+
+			ProductVM product = await _productService.GetByIdWithIncludesAsync((int)id);
+
+			if (product is null) return NotFound();
+
+			_basketService.AddBasket((int)id, product);
+
+
+			return Ok();
 		}
 
 

@@ -1,6 +1,7 @@
-﻿
+﻿@model List<BasketDetailVM>
 @{
     ViewData["Title"] = "Index";
+    decimal grandTotal = Model.Sum(m => m.Total);
 }
 
 @section css{
@@ -22,13 +23,13 @@
     <section id="carts">
         <div class="container">
             <div class="cart-all">
-                <div class="empty">
+                <div class="empty  @(Model.Count == 0 ? "":"d-none")">
                     <h1>Your Cart</h1>
                     <p>Your cart is currently empty.</p>
                     <a asp-controller="Shop" asp-action="Index">CONTINUE SHOPPING</a>
                 </div>
 
-                <div class="cart-table d-none">
+                <div class="cart-table basket-table @(Model.Count == 0 ? "d-none":"")">
                     <h1>Your Cart</h1>
                     <table class="table">
                         <thead>
@@ -42,24 +43,29 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <img src="~/assets/img/product/fast1.jpg">
-                                </td>
-                                <td>Saat1</td>
-                                <td><i class="fa-solid fa-minus"></i> <span>1</span> <i class="fa-solid fa-plus"></i></td>
-                                <td>110$</td>
-                                <td>110$</td>
-                                <td>
-                                    <button type="submit" class="btn btn-outline-danger delete-basket-item">Delete</button>
-                                </td>
-                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="~/assets/img/product/@item.Image">
+                                    </td>
+                                    <td>@item.Name</td>
+                                    <td><i class="fa-solid fa-minus" data-id="@item.Id"></i> <span>@item.Count</span> <i class="fa-solid fa-plus" data-id="@item.Id"></i></td>
+                                    <td>@item.Price $</td>
+                                    <td>
+                                        <span>@item.Total</span> $</td>
+                                    <td>
+                                        <button type="submit" class="btn btn-outline-danger delete-basket-item" data-id="@item.Id">Delete</button>
+                                    </td>
+                                </tr>
+                            }
+                            
 
                         </tbody>
 
                     </table>
                     <div class="grand-total mt-5">
-                        <span>Grand total: 110 $</span>
+                        <span>Grand total: <span class="grandtotal">@grandTotal</span> $</span>
                     </div>
                 </div>
 
@@ -71,6 +77,6 @@
 </main>
 
 
-@section script{
+@*@section script{
     <script src="~/assets/js/cart.js"></script>
-}
+}*@

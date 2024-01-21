@@ -35,7 +35,7 @@
 						}
 						
 						<a asp-controller="Wishlist" asp-action="Index"><i class="fa-regular fa-heart"></i> Wishlist <span>(0)</span></a>
-						<a asp-controller="Cart" asp-action="Index"><i class="fa-solid fa-cart-shopping"></i> Cart <span>(0)</span></a>
+						<a asp-controller="Cart" asp-action="Index"><i class="fa-solid fa-cart-shopping"></i> Cart <span>(<span class="basket-count">@Model.BasketCount</span>)</span></a>
 					</div>
 				</div>
 			</div>

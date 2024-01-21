@@ -19,7 +19,6 @@
                                     class="active" aria-label="Slide @(i+1)"></button>
                         }
                         
-                        
                     </div>
                     <div class="carousel-inner">
                         @foreach (var item in Model.Sliders)
@@ -98,12 +97,16 @@
                     @foreach (var product in Model.Products.Take(3))
                     {
                         <div class="col-lg-4 col-md-6 col-sm-12">
-                            <div class="product">
-                                <div class="product-icons">
-                                    <i class="fa-regular fa-heart"></i>
-                                    <i class="fa-solid fa-heart d-none"></i>
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                </div>
+                            <div class="product" data-id="@product.Id">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <div class="product-icons">
+                                        @*<i class="fa-regular fa-heart"></i>*@
+                                        <i class="fa-solid fa-heart"></i>
+                                        <i class="fa-solid fa-cart-shopping cart-add"></i>
+                                    </div>
+                                }
+                                
                                 <div class="product-image">
                                     <a asp-controller="Shop" asp-action="ProductDetail" asp-route-id="@product.Id">
                                         <img src="~/assets/img/product/@product.Image" alt="">
@@ -222,12 +225,15 @@
                     @foreach (var product in Model.Products.Take(4))
                     {
                         <div class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="product">
-                                <div class="product-icons">
-                                    <i class="fa-regular fa-heart"></i>
-                                    <i class="fa-solid fa-heart d-none"></i>
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                </div>
+                            <div class="product" data-id="@product.Id">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <div class="product-icons">
+                                        @*<i class="fa-regular fa-heart"></i>*@
+                                        <i class="fa-solid fa-heart"></i>
+                                        <i class="fa-solid fa-cart-shopping cart-add"></i>
+                                    </div>
+                                }
                                 <div class="product-image">
                                     <a asp-controller="Shop" asp-action="ProductDetail" asp-route-id="@product.Id">
                                         <img src="~/assets/img/product/@product.Image" alt="">

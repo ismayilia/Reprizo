@@ -94,7 +94,11 @@ namespace Reprizo.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginVM request)
         {
-            if (!ModelState.IsValid)
+			Dictionary<string, string> settingDatas = _settingService.GetSettings();
+
+			ViewBag.LoginBanner = settingDatas["LoginBanner"];
+
+			if (!ModelState.IsValid)
             {
                 return View();
             }
