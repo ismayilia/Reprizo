@@ -17,6 +17,7 @@ namespace Reprizo.Controllers
         private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IWishlistService _wishlistService;
+        private readonly IBasketService _basketService;
         private readonly AppDbContext _context;
 
 
@@ -25,7 +26,8 @@ namespace Reprizo.Controllers
                                  SignInManager<AppUser> signInManager,
                                  RoleManager<IdentityRole> roleManager,
                                  IWishlistService wishlistService,
-                                 AppDbContext context)
+                                 AppDbContext context,
+                                 IBasketService basketService)
         {
             _settingService = settingService;
             _userManager = userManager;
@@ -33,6 +35,7 @@ namespace Reprizo.Controllers
             _roleManager = roleManager;
             _wishlistService = wishlistService;
             _context = context;
+            _basketService = basketService;
         }
 
         [HttpGet]
@@ -136,10 +139,29 @@ namespace Reprizo.Controllers
             }
 
             List<WishlistVM> wishlist = new();
-
             Wishlist dbWishlist = await _wishlistService.GetByUserIdAsync(dbUser.Id);
 
-            if (dbWishlist is not null)
+			List<BasketVM> basket = new();
+			Basket dbBasket = await _basketService.GetByUserIdAsync(dbUser.Id);
+
+			if (dbBasket is not null)
+			{
+				List<BasketProduct> basketProducts = await _basketService.GetAllByBasketIdAsync(dbBasket.Id);
+
+				foreach (var item in basketProducts)
+				{
+					basket.Add(new BasketVM
+					{
+						Id = item.ProductId,
+                        Count = item.Count
+					});
+				}
+
+				Response.Cookies.Append("basket", JsonConvert.SerializeObject(basket));
+
+			}
+
+			if (dbWishlist is not null)
             {
                 List<WishlistProduct> wishlistProducts = await _wishlistService.GetAllByWishlistIdAsync(dbWishlist.Id);
 
@@ -167,6 +189,59 @@ namespace Reprizo.Controllers
 
             List<WishlistVM> wishlist = _wishlistService.GetDatasFromCoockies();
 			Wishlist dbWishlist = await _wishlistService.GetByUserIdAsync(userId);
+
+			List<BasketVM> basket = _basketService.GetDatasFromCoockies();
+			Basket dbBasket = await _basketService.GetByUserIdAsync(userId);
+
+            if (basket.Count != 0)
+            {
+                if (dbBasket == null)
+                {
+                    dbBasket = new()
+                    {
+                        AppUserId = userId,
+                        BasketProducts = new List<BasketProduct>()
+                    };
+
+                    foreach (var item in basket)
+                    {
+                        dbBasket.BasketProducts.Add(new BasketProduct()
+                        {
+                           ProductId = item.Id,
+                           BasketId = dbBasket.Id,
+                           Count = item.Count
+                        });
+                    }
+					await _context.Baskets.AddAsync(dbBasket);
+					await _context.SaveChangesAsync();
+
+				}
+                else
+                {
+                    List<BasketProduct> basketProducts = new();
+
+                    foreach (var item in basket)
+                    {
+                        basketProducts.Add(new BasketProduct()
+                        {
+                            ProductId = item.Id,
+                            BasketId = dbBasket.Id,
+                            Count = item.Count
+                        });
+                    }
+
+					dbBasket.BasketProducts = basketProducts;
+					_context.SaveChanges();
+				}
+
+				Response.Cookies.Delete("basket");
+			}
+            else
+            {
+				_context.Baskets.Remove(dbBasket);
+			}
+
+
 
 			if (wishlist.Count != 0)
             {

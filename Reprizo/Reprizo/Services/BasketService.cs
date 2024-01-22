@@ -1,6 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using Reprizo.Areas.Admin.ViewModels.Product;
 using Reprizo.Areas.Admin.ViewModels.Shop;
+using Reprizo.Data;
 using Reprizo.Helpers.Responses;
 using Reprizo.Models;
 using Reprizo.Services.Interfaces;
@@ -11,11 +13,14 @@ namespace Reprizo.Services
 	{
 		private readonly IHttpContextAccessor _httpContextAccessor;
 		private readonly IProductService _productService;
+		private readonly AppDbContext _context;
 
-		public BasketService(IHttpContextAccessor httpContextAccessor, IProductService productService)
+		public BasketService(IHttpContextAccessor httpContextAccessor, IProductService productService,
+																		AppDbContext context)
 		{
 			_httpContextAccessor = httpContextAccessor;
 			_productService = productService;
+			_context = context;
 
 		}
 		public void AddBasket(int id, ProductVM product)
@@ -197,6 +202,36 @@ namespace Reprizo.Services
 				CountBasket = basket.Sum(m => m.Count)
 
 			};
+		}
+
+
+		// new methods
+
+		public List<BasketVM> GetDatasFromCoockies()
+		{
+			var data = _httpContextAccessor.HttpContext.Request.Cookies["basket"];
+
+			if (data is not null)
+			{
+				var basket = JsonConvert.DeserializeObject<List<BasketVM>>(data);
+				return basket;
+			}
+			else
+			{
+				return new List<BasketVM>();
+			}
+
+		}
+
+
+		public async Task<Basket> GetByUserIdAsync(string userId)
+		{
+			return await _context.Baskets.Include(m => m.BasketProducts).FirstOrDefaultAsync(m => m.AppUserId == userId);
+		}
+
+		public async Task<List<BasketProduct>> GetAllByBasketIdAsync(int? basketId)
+		{
+			return await _context.BasketProducts.Where(m => m.BasketId == basketId).ToListAsync();
 		}
 	}
 }
