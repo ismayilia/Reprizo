@@ -24,9 +24,9 @@ namespace Reprizo.Controllers
         }
 
 		[HttpPost]
-		public async Task<IActionResult> Delete(int id)
+		public IActionResult Delete(int id)
 		{
-			var data = await _wishlistService.DeleteItem(id);
+			var data =  _wishlistService.DeleteItem(id);
 
 			return Ok(data);
 		}

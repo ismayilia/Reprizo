@@ -1,8 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using Reprizo.Areas.Admin.ViewModels.Product;
 using Reprizo.Areas.Admin.ViewModels.Shop;
+using Reprizo.Data;
 using Reprizo.Helpers.Responses;
+using Reprizo.Models;
 using Reprizo.Services.Interfaces;
+
 
 namespace Reprizo.Services
 {
@@ -10,10 +14,13 @@ namespace Reprizo.Services
 	{
 		private readonly IHttpContextAccessor _httpContextAccessor;
 		private readonly IProductService _productService;
-        public WishlistService(IHttpContextAccessor httpContextAccessor, IProductService productService)
+		private readonly AppDbContext	_context;
+        public WishlistService(IHttpContextAccessor httpContextAccessor, IProductService productService,
+																		  AppDbContext context)
         {
             _httpContextAccessor = httpContextAccessor;
 			_productService = productService;
+			_context = context;
         }
 
         public int AddWishlist(int id, ProductVM product)
@@ -44,7 +51,7 @@ namespace Reprizo.Services
 			return wishlist.Count();
 		}
 
-		public async Task<DeleteWishlistItemResponse> DeleteItem(int id)
+		public DeleteWishlistItemResponse DeleteItem(int id)
 		{
 
 			List<WishlistVM> wishlist = JsonConvert.DeserializeObject<List<WishlistVM>>(_httpContextAccessor.HttpContext.Request.Cookies["wishlist"]);
@@ -107,5 +114,48 @@ namespace Reprizo.Services
             }
             return wishlistDetails;
         }
+
+		// new methods
+
+		public List<WishlistVM> GetDatasFromCoockies()
+		{
+			var data = _httpContextAccessor.HttpContext.Request.Cookies["wishlist"];
+
+			if (data is not null)
+			{
+				var wishlist = JsonConvert.DeserializeObject<List<WishlistVM>>(data);
+				return wishlist;
+            }
+			else
+			{
+				return new List<WishlistVM>();
+			}
+
+        }
+
+		public void SetDatasToCookies(List<WishlistVM> wishlist, Product dbProduct, WishlistVM existProduct)
+		{
+			if (existProduct==null)
+			{
+				wishlist.Add(new WishlistVM
+				{
+					Id = dbProduct.Id
+				});
+			}
+
+            _httpContextAccessor.HttpContext.Response.Cookies.Append("wishlist", JsonConvert.SerializeObject(wishlist));
+        }
+
+		public async Task<Wishlist> GetByUserIdAsync(string userId)
+		{
+			return await _context.Wishlists.Include(m => m.WishlistProducts).FirstOrDefaultAsync(m => m.AppUserId == userId);
+		}
+
+		public async Task<List<WishlistProduct>> GetAllByWishlistIdAsync(int? wishlistId)
+		{
+			return await _context.WishlistProducts.Where(m=>m.WishlistId == wishlistId).ToListAsync();
+		}
+
+
     }
 }

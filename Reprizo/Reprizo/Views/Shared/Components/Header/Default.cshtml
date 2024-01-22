@@ -1,4 +1,9 @@
-﻿@model HeaderVM
+﻿@*@using Reprizo.Models;*@
+@model HeaderVM
+@*@inject UserManager<AppUser> userManager;
+@(
+     Reprizo.Models.AppUser user = userManager.Users.FirstOrDefault(m => m.UserName == User.Identity.Name);
+)*@
 
 <header>
 	<div class="container">
@@ -24,7 +29,7 @@
 						@if (Model.UserFullName is not null) @*User.Identity.IsAuthenticated*@
 						{
 							<a href="#">@Model.UserFullName</a>
-							<form asp-controller="Account" asp-action="Logout" style="display: inline;">
+							<form asp-controller="Account" asp-action="Logout" asp-route-userId="@Model.UserId" style="display: inline;">
 								<input type="submit" value="Logout" style="background-color:brown; color:white;border:none" />
 							</form>
 						}

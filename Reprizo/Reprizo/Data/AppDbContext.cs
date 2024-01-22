@@ -22,6 +22,8 @@ namespace Reprizo.Data
         public DbSet<Team> Teams { get; set; }
         public DbSet<Subscribe> Subscribes { get; set; }
         public DbSet<ContactMessage> ContactMessages { get; set; }
+        public DbSet<Wishlist> Wishlists { get; set; }
+        public DbSet<WishlistProduct> WishlistProducts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
