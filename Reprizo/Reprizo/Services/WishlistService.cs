@@ -51,7 +51,7 @@ namespace Reprizo.Services
 			return wishlist.Count();
 		}
 
-		public DeleteWishlistItemResponse DeleteItem(int id)
+		public void DeleteItem(int id)
 		{
 
 			List<WishlistVM> wishlist = JsonConvert.DeserializeObject<List<WishlistVM>>(_httpContextAccessor.HttpContext.Request.Cookies["wishlist"]);
@@ -62,10 +62,6 @@ namespace Reprizo.Services
 
 			_httpContextAccessor.HttpContext.Response.Cookies.Append("wishlist", JsonConvert.SerializeObject(wishlist));
 
-			return new DeleteWishlistItemResponse
-			{
-				Count = wishlist.Count()
-			};
 		}
 
 		public int GetCount()

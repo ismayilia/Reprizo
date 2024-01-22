@@ -9,11 +9,12 @@ $(function () {
             url: `/shop/addwishlist?id=${id}`,
             type: "Post",
             success: function (res) {
-
+                
                 $(".wishlist-count").text(res);
 
             }
         })
+        
 
     })
 
@@ -47,9 +48,9 @@ $(function () {
             url: `wishlist/delete?id=${id}`,
             type: "Post",
             success: function (res) {
+                res--
 
-
-                $(".wishlist-count").text(res.count);
+                $(".wishlist-count").text(res);
                 $(e.target).closest("tr").remove();
 
                 if (res.count === 0) {
@@ -60,6 +61,7 @@ $(function () {
 
             }
         })
+       
 
     })
 })

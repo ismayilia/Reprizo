@@ -166,9 +166,10 @@ namespace Reprizo.Controllers
             await _signInManager.SignOutAsync();
 
             List<WishlistVM> wishlist = _wishlistService.GetDatasFromCoockies();
-            if (wishlist.Count() != 0)
+			Wishlist dbWishlist = await _wishlistService.GetByUserIdAsync(userId);
+
+			if (wishlist.Count != 0)
             {
-                Wishlist dbWishlist = await _wishlistService.GetByUserIdAsync(userId);
                 if (dbWishlist == null)
                 {
                     dbWishlist = new()
@@ -178,10 +179,9 @@ namespace Reprizo.Controllers
                         
                     };
 
-
                     foreach (var item in wishlist)
                     {
-                        dbWishlist.WishlistProducts.Add(new WishlistProduct
+                        dbWishlist.WishlistProducts.Add(new WishlistProduct()
                         {
                             ProductId = item.Id,
                             WishlistId = dbWishlist.Id
@@ -196,7 +196,7 @@ namespace Reprizo.Controllers
                 {
                     List<WishlistProduct> wishlistProducts = new();
 
-                    foreach (var item in wishlistProducts)
+                    foreach (var item in wishlist)
                     {
                         wishlistProducts.Add(new WishlistProduct()
                         {
@@ -212,6 +212,10 @@ namespace Reprizo.Controllers
                 }
 
                 Response.Cookies.Delete("wishlist");
+            }
+            else
+            {
+                _context.Wishlists.Remove(dbWishlist);
             }
 
             return RedirectToAction("Index", "Home");

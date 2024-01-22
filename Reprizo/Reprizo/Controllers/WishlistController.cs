@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Reprizo.Areas.Admin.ViewModels.Shop;
 using Reprizo.Services;
 using Reprizo.Services.Interfaces;
 
@@ -26,9 +27,10 @@ namespace Reprizo.Controllers
 		[HttpPost]
 		public IActionResult Delete(int id)
 		{
-			var data =  _wishlistService.DeleteItem(id);
+			_wishlistService.DeleteItem(id);
+            List<WishlistVM> wishlist = _wishlistService.GetDatasFromCoockies();
 
-			return Ok(data);
+			return Ok(wishlist.Count);
 		}
 	}
 }
