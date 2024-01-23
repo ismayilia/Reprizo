@@ -238,7 +238,12 @@ namespace Reprizo.Controllers
 			}
             else
             {
-				_context.Baskets.Remove(dbBasket);
+                if (dbBasket is not null)
+                {
+					_context.Baskets.Remove(dbBasket);
+					_context.SaveChanges();
+				}
+				
 			}
 
 
@@ -290,8 +295,13 @@ namespace Reprizo.Controllers
             }
             else
             {
-                _context.Wishlists.Remove(dbWishlist);
-            }
+                if (dbWishlist is not null)
+                {
+					_context.Wishlists.Remove(dbWishlist);
+					_context.SaveChanges();
+				}
+                
+			}
 
             return RedirectToAction("Index", "Home");
         }

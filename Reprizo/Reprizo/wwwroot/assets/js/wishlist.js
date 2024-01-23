@@ -53,7 +53,7 @@ $(function () {
                 $(".wishlist-count").text(res);
                 $(e.target).closest("tr").remove();
 
-                if (res.count === 0) {
+                if (res === 0) {
                     $(".empty").removeClass("d-none");
                     $(".wishlist-table").addClass("d-none");
                 }
