@@ -1,5 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Humanizer;
+using MailKit.Security;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit.Text;
+using MimeKit;
 using Newtonsoft.Json;
 using Reprizo.Areas.Admin.ViewModels.Account;
 using Reprizo.Areas.Admin.ViewModels.Shop;
@@ -7,6 +11,7 @@ using Reprizo.Data;
 using Reprizo.Helpers.Enums;
 using Reprizo.Models;
 using Reprizo.Services.Interfaces;
+using MailKit.Net.Smtp;
 
 namespace Reprizo.Controllers
 {
@@ -19,6 +24,7 @@ namespace Reprizo.Controllers
         private readonly IWishlistService _wishlistService;
         private readonly IBasketService _basketService;
         private readonly AppDbContext _context;
+        private readonly IEmailService _emailService;
 
 
         public AccountController(ISettingService settingService,
@@ -27,7 +33,8 @@ namespace Reprizo.Controllers
                                  RoleManager<IdentityRole> roleManager,
                                  IWishlistService wishlistService,
                                  AppDbContext context,
-                                 IBasketService basketService)
+                                 IBasketService basketService,
+                                 IEmailService emailService)
         {
             _settingService = settingService;
             _userManager = userManager;
@@ -36,6 +43,7 @@ namespace Reprizo.Controllers
             _wishlistService = wishlistService;
             _context = context;
             _basketService = basketService;
+            _emailService = emailService;
         }
 
         [HttpGet]
@@ -84,13 +92,50 @@ namespace Reprizo.Controllers
 
             await _userManager.AddToRoleAsync(createdUser, Roles.Member.ToString());
 
-            return RedirectToAction(nameof(Login));
-        }
+			// emzp pbfz kvac cpwg
 
-        public IActionResult VerifyEmail()
+			//emailconfirm
+
+
+			string token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+
+			var url = Url.Action(nameof(ConfirmEmail), "Account", new { userId = user.Id, token }, Request.Scheme, Request.Host.ToString());
+
+			string subject = "Welcome to Fiorello";
+			string emailHtml = string.Empty;
+
+			using (StreamReader reader = new("wwwroot/templates/register-confirm.html"))
+			{
+				emailHtml = reader.ReadToEnd();
+			}
+
+			emailHtml = emailHtml.Replace("{{link}}", url);
+			emailHtml = emailHtml.Replace("{{fullName}}", user.FullName);
+
+			_emailService.Send(user.Email, subject, emailHtml);
+
+			return RedirectToAction(nameof(VerifyEmail));
+		}
+
+        public  IActionResult VerifyEmail()
         {
             return View();
         }
+
+        public async Task<IActionResult> ConfirmEmail(string userId, string token) 
+        {
+			if (userId is null || token is null) return BadRequest();
+
+			AppUser user = await _userManager.FindByIdAsync(userId);
+
+			if (user is null) return NotFound();
+
+			await _userManager.ConfirmEmailAsync(user, token);
+
+			await _signInManager.SignInAsync(user, false);
+
+			return RedirectToAction("Index", "Home");
+		}
 
         [HttpGet]
         public IActionResult Login()

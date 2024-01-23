@@ -1,13 +1,19 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Reprizo.Data;
+using Reprizo.Helpers;
 using Reprizo.Models;
 using Reprizo.Services;
 using Reprizo.Services.Interfaces;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddAutoMapper(typeof(Program));
+
+// map emailconfig to emailsettings
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailConfig"));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -31,6 +37,8 @@ builder.Services.Configure<IdentityOptions>(option =>
 	option.Password.RequiredLength = 6; //minimum 6 
 
 	option.User.RequireUniqueEmail = true;
+
+	option.SignIn.RequireConfirmedEmail = true;
 	//Default lockout  settings
 
 	option.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
@@ -55,6 +63,7 @@ builder.Services.AddScoped<ISubscribeService, SubscribeService>();
 builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.AddScoped<IBasketService, BasketService>();
 builder.Services.AddScoped<IWishlistService, WishlistService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 
@@ -67,6 +76,14 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+var supportedCultures = new[] { new CultureInfo("en-US") }; // Adjust as needed
+app.UseRequestLocalization(new RequestLocalizationOptions
+{
+	DefaultRequestCulture = new RequestCulture("en-US"),
+	SupportedCultures = supportedCultures,
+	SupportedUICultures = supportedCultures
+});
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
