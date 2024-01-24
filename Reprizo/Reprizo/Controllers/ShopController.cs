@@ -19,8 +19,6 @@ namespace Reprizo.Controllers
         private readonly IBasketService _basketService;
         private readonly IWishlistService _wishlistService;
 
-		
-
 
         public ShopController(IProductService productService, 
                                                             ISettingService settingService,

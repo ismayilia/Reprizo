@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "t2a90XLuXtEqaV8xIT5rOU7UmzbLdsKJTsTh7n+b0lg=",
+  "Hash": "ceSauWgdPMJhOpaKbFHnjKWPlqR7TjASBnfH7HiXFBA=",
   "Source": "Reprizo",
   "BasePath": "_content/Reprizo",
   "Mode": "Default",
@@ -16556,6 +16556,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\templates\\register-confirm.html"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\templates\\reset-password.html",
+      "SourceId": "Reprizo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\wwwroot\\",
+      "BasePath": "_content/Reprizo",
+      "RelativePath": "templates/reset-password.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\templates\\reset-password.html"
     }
   ]
 }

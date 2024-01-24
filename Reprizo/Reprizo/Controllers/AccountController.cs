@@ -101,7 +101,7 @@ namespace Reprizo.Controllers
 
 			var url = Url.Action(nameof(ConfirmEmail), "Account", new { userId = user.Id, token }, Request.Scheme, Request.Host.ToString());
 
-			string subject = "Welcome to Fiorello";
+			string subject = "Welcome to Reprizo";
 			string emailHtml = string.Empty;
 
 			using (StreamReader reader = new("wwwroot/templates/register-confirm.html"))
@@ -351,6 +351,16 @@ namespace Reprizo.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+
+
+
+
+
+
+
+
+
+
         [HttpGet]
         public IActionResult ForgotPassword()
         {
@@ -361,20 +371,99 @@ namespace Reprizo.Controllers
         }
 
 
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> ForgotPassword(ForgotPasswordVM model)
+		{
 
-        //Create Roles Method
+			Dictionary<string, string> settingDatas = _settingService.GetSettings();
 
-        //[HttpGet]
-        //public async Task<IActionResult> CreateRoles()
-        //{
-        //	foreach (var role in Enum.GetValues(typeof(Roles)))
-        //	{
-        //		if (!await _roleManager.RoleExistsAsync(role.ToString()))
-        //		{
-        //			await _roleManager.CreateAsync(new IdentityRole { Name = role.ToString() });
-        //		}
-        //	}
-        //	return Ok();
-        //}
-    }
+			ViewBag.ForgotBanner = settingDatas["ForgotBanner"];
+
+			if (!ModelState.IsValid)
+			{
+				return View();
+			}
+
+			AppUser existUser = await _userManager.FindByEmailAsync(model.Email);
+
+			if (existUser is null)
+			{
+				ModelState.AddModelError("Email", "User is not found.");
+
+				return View();
+			}
+
+			TempData["Email"] = existUser.Email;
+
+			string token = await _userManager.GeneratePasswordResetTokenAsync(existUser);
+			string link = Url.Action(nameof(ResetPassword), "Account", new { userId = existUser.Id, token }, Request.Scheme, Request.Host.ToString());
+			string subject = "Reset Password";
+			string html;
+
+			using (StreamReader reader = new StreamReader("wwwroot/templates/reset-password.html"))
+			{
+				html = reader.ReadToEnd();
+			}
+
+			string fullName = existUser.FullName;
+
+			html = html.Replace("{{fullName}}", fullName);
+			html = html.Replace("{{link}}", link);
+
+			_emailService.Send(existUser.Email, subject, html);
+
+			return RedirectToAction(nameof(VerifyResetPassword));
+		}
+
+		[HttpGet]
+		public IActionResult VerifyResetPassword()
+		{
+			return View();
+		}
+
+
+		[HttpGet]
+		public IActionResult ResetPassword(string userId, string token)
+		{
+			return View(new ResetPasswordVM { Token = token, UserId = userId });
+		}
+
+
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> ResetPassword(ResetPasswordVM resetPassword)
+		{
+			
+				if (!ModelState.IsValid) return View(resetPassword);
+				AppUser existUser = await _userManager.FindByIdAsync(resetPassword.UserId);
+				if (existUser == null) return NotFound();
+
+				if (await _userManager.CheckPasswordAsync(existUser, resetPassword.Password))
+				{
+					ModelState.AddModelError("", "New password cant be same with old password");
+					return View(resetPassword);
+				}
+				await _userManager.ResetPasswordAsync(existUser, resetPassword.Token, resetPassword.Password);
+				return RedirectToAction(nameof(Login));
+			
+		}
+
+
+
+		//Create Roles Method
+
+		//[HttpGet]
+		//public async Task<IActionResult> CreateRoles()
+		//{
+		//	foreach (var role in Enum.GetValues(typeof(Roles)))
+		//	{
+		//		if (!await _roleManager.RoleExistsAsync(role.ToString()))
+		//		{
+		//			await _roleManager.CreateAsync(new IdentityRole { Name = role.ToString() });
+		//		}
+		//	}
+		//	return Ok();
+		//}
+	}
 }
