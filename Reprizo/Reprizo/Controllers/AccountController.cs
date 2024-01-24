@@ -115,7 +115,7 @@ namespace Reprizo.Controllers
 			_emailService.Send(user.Email, subject, emailHtml);
 
 			return RedirectToAction(nameof(VerifyEmail));
-		}
+		 }
 
         public  IActionResult VerifyEmail()
         {
