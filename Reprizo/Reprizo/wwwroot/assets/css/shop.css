@@ -191,9 +191,10 @@ footer .footer-down h6 {
   opacity: 0;
   transition: 0.5s;
 }
-#shops .shop-all .shop-left .product-all .product .product-icons .fa-solid {
-  color: black;
-}
+    #shops .shop-all .shop-left .product-all .product .product-icons .fa-solid {
+        color:#af7f66;
+        
+    }
 #shops .shop-all .shop-left .product-all .product .product-icons .fa-cart-shopping {
   margin-top: 50px;
 }
