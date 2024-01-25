@@ -58,7 +58,7 @@
 									<partial name="_ProductsPartial" model="@Model.Paginate.Datas" />
 
 									<hr>
-									@if (Model.Count > 6)
+									@if (Model.Count > 6 && Model.Paginate.Datas.Count !=0)
 									{
 										<div class="pagination-area mt-4">
 											<nav aria-label="...">

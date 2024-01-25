@@ -124,11 +124,11 @@ namespace Reprizo.Controllers
 
         public async Task<IActionResult> ConfirmEmail(string userId, string token) 
         {
-			if (userId is null || token is null) return BadRequest();
+			if (userId is null || token is null) return RedirectToAction("Index", "Error"); ;
 
 			AppUser user = await _userManager.FindByIdAsync(userId);
 
-			if (user is null) return NotFound();
+			if (user is null) return RedirectToAction("Index", "Error"); ;
 
 			await _userManager.ConfirmEmailAsync(user, token);
 
@@ -437,7 +437,7 @@ namespace Reprizo.Controllers
 			
 				if (!ModelState.IsValid) return View(resetPassword);
 				AppUser existUser = await _userManager.FindByIdAsync(resetPassword.UserId);
-				if (existUser == null) return NotFound();
+				if (existUser == null) return RedirectToAction("Index", "Error");
 
 				if (await _userManager.CheckPasswordAsync(existUser, resetPassword.Password))
 				{

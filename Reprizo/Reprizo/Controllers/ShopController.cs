@@ -62,14 +62,14 @@ namespace Reprizo.Controllers
         {
             if (id is null)
             {
-                return BadRequest();
+                return RedirectToAction("Index", "Error"); ;
             }
 
             CategoryVM existCategory = await _categoryService.GetByIdAsync((int)id);
 
             if (existCategory == null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "Error"); ;
             }
 
             var count = await _productService.GetCountByCategoryAsync((int)id);
@@ -101,14 +101,14 @@ namespace Reprizo.Controllers
 
 			if (id is null)
 			{
-				return BadRequest();
+				return RedirectToAction("Index", "Error"); ;
 			}
 
 			ProductVM existProduct = await _productService.GetByIdWithIncludesAsync((int)id);
 
 			if (existProduct == null)
 			{
-				return NotFound();
+				return RedirectToAction("Index", "Error"); ;
 			}
 			Dictionary<string, string> detailBanner = _settingService.GetSettings();
             ProductVM product = await _productService.GetByIdWithIncludesAsync((int)id);
@@ -255,11 +255,11 @@ namespace Reprizo.Controllers
 		{
 
 
-			if (id is null) return BadRequest();
+			if (id is null) return RedirectToAction("Index", "Error"); ;
 
 			ProductVM product = await _productService.GetByIdWithIncludesAsync((int)id);
 
-			if (product is null) return NotFound();
+			if (product is null) return RedirectToAction("Index", "Error"); ;
 
 			_basketService.AddBasket((int)id, product);
 
@@ -273,11 +273,11 @@ namespace Reprizo.Controllers
 		{
 
 
-			if (id is null) return BadRequest();
+			if (id is null) return RedirectToAction("Index", "Error"); ;
 
 			ProductVM product = await _productService.GetByIdWithIncludesAsync((int)id);
 
-			if (product is null) return NotFound();
+			if (product is null) return RedirectToAction("Index", "Error"); ;
 
 			int a =_wishlistService.AddWishlist((int)id, product);
 

@@ -15,6 +15,7 @@ namespace Reprizo.Controllers
             _settingService = settingService;
             _wishlistService = wishlistService;
         }
+
         public async Task<IActionResult> Index()
         {
             Dictionary<string, string> wishlistBanner = _settingService.GetSettings();
