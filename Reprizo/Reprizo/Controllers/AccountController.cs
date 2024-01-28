@@ -387,7 +387,7 @@ namespace Reprizo.Controllers
 
 			AppUser existUser = await _userManager.FindByEmailAsync(model.Email);
 
-			if (existUser is null)
+			if (existUser is null || !existUser.EmailConfirmed)
 			{
 				ModelState.AddModelError("Email", "User is not found.");
 

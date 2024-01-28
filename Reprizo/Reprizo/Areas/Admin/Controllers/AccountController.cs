@@ -38,7 +38,8 @@ namespace Reprizo.Areas.Admin.Controllers
                     FullName = user.FullName,
                     UserName = user.UserName,
                     Email = user.Email,
-                    RoleName = roles
+                    RoleName = roles,
+                    EmailConfirm = user.EmailConfirmed
                 });
             }
 
