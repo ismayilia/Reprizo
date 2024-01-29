@@ -26,11 +26,11 @@ namespace Reprizo.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Detail(int? id)
         {
-            if (id is null) return BadRequest();
+            if (id is null) return RedirectToAction("Index", "Error");
 
             EssenceVM essence = await _essenceService.GetByIdAsync((int)id);
 
-            if (essence is null) return NotFound();
+            if (essence is null) return RedirectToAction("Index", "Error");
 
             return View(essence);
         }
@@ -38,11 +38,11 @@ namespace Reprizo.Areas.Admin.Controllers
 		[HttpGet]
 		public async Task<IActionResult> Edit(int? id)
 		{
-			if (id is null) return BadRequest();
+			if (id is null) return RedirectToAction("Index", "Error");
 
 			EssenceVM essence = await _essenceService.GetByIdAsync((int)id);
 
-			if (essence is null) return NotFound();
+			if (essence is null) return RedirectToAction("Index", "Error");
 
 			EssenceEditVM essenceEditVM = _mapper.Map<EssenceEditVM>(essence);
 
@@ -53,11 +53,11 @@ namespace Reprizo.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int? id, EssenceEditVM request)
         {
-            if (id is null) return BadRequest();
+            if (id is null) return RedirectToAction("Index", "Error");
 
             EssenceVM dbEssence = await _essenceService.GetByIdAsync((int)id);
 
-            if (dbEssence is null) return NotFound();
+            if (dbEssence is null) return RedirectToAction("Index", "Error");
 
 
             request.Image = dbEssence.Image;
@@ -75,9 +75,9 @@ namespace Reprizo.Areas.Admin.Controllers
                     ModelState.AddModelError("Photo", "File can be only image format");
                     return View(request);
                 }
-                if (!request.Photo.CheckFileSize(200))
+                if (!request.Photo.CheckFileSize(500))
                 {
-                    ModelState.AddModelError("Photo", "File size can be max 200 kb");
+                    ModelState.AddModelError("Photo", "File size can be max 500 kb");
                     return View(request);
                 }
             }

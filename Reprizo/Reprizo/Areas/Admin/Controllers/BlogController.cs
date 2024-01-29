@@ -23,11 +23,11 @@ namespace Reprizo.Areas.Admin.Controllers
 		[HttpGet]
 		public async Task<IActionResult> Detail(int? id)
 		{
-			if (id is null) return BadRequest();
+			if (id is null) return RedirectToAction("Index", "Error");
 
 			BlogVM blog = await _blogService.GetByIdAsync((int)id);
 
-			if (blog is null) return NotFound();
+			if (blog is null) return RedirectToAction("Index", "Error");
 
 			return View(blog);
 		}
@@ -55,9 +55,9 @@ namespace Reprizo.Areas.Admin.Controllers
                 return View();
             }
 
-            if (!request.Photo.CheckFileSize(200))
+            if (!request.Photo.CheckFileSize(500))
             {
-                ModelState.AddModelError("Photo", "File size can be max 200 kb");
+                ModelState.AddModelError("Photo", "File size can be max 500 kb");
                 return View();
             }
 
@@ -78,11 +78,11 @@ namespace Reprizo.Areas.Admin.Controllers
 		[HttpGet]
 		public async Task<IActionResult> Edit(int? id)
 		{
-			if (id is null) return BadRequest();
+			if (id is null) return RedirectToAction("Index", "Error");
 
 			BlogVM blog = await _blogService.GetByIdAsync((int)id);
 
-			if (blog is null) return NotFound();
+			if (blog is null) return RedirectToAction("Index", "Error");
 
 			BlogEditVM blogEditVM = _mapper.Map<BlogEditVM>(blog);
 
@@ -94,11 +94,11 @@ namespace Reprizo.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int? id, BlogEditVM request)
         {
-            if (id is null) return BadRequest();
+            if (id is null) return RedirectToAction("Index", "Error");
 
             BlogVM dbBlog = await _blogService.GetByIdAsync((int)id);
 
-            if (dbBlog is null) return NotFound();
+            if (dbBlog is null) return RedirectToAction("Index", "Error");
 
 
             request.Image = dbBlog.Image;
@@ -116,9 +116,9 @@ namespace Reprizo.Areas.Admin.Controllers
                     ModelState.AddModelError("Photo", "File can be only image format");
                     return View(request);
                 }
-                if (!request.Photo.CheckFileSize(200))
+                if (!request.Photo.CheckFileSize(500))
                 {
-                    ModelState.AddModelError("Photo", "File size can be max 200 kb");
+                    ModelState.AddModelError("Photo", "File size can be max 500 kb");
                     return View(request);
                 }
             }

@@ -25,11 +25,11 @@ namespace Reprizo.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Detail(int? id)
         {
-            if (id is null) return BadRequest();
+            if (id is null) return RedirectToAction("Index", "Error");
 
             TeamVM team = await _teamService.GetByIdAsync((int)id);
 
-            if (team is null) return NotFound();
+            if (team is null) return RedirectToAction("Index", "Error");
 
             return View(team);
         }
@@ -37,11 +37,11 @@ namespace Reprizo.Areas.Admin.Controllers
 		[HttpGet]
 		public async Task<IActionResult> Edit(int? id)
 		{
-			if (id is null) return BadRequest();
+			if (id is null) return RedirectToAction("Index", "Error");
 
 			TeamVM team = await _teamService.GetByIdAsync((int)id);
 
-			if (team is null) return NotFound();
+			if (team is null) return RedirectToAction("Index", "Error");
 
 			TeamEditVM teamEditVM = _mapper.Map<TeamEditVM>(team);
 
@@ -52,11 +52,11 @@ namespace Reprizo.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int? id, TeamEditVM request)
         {
-            if (id is null) return BadRequest();
+            if (id is null) return RedirectToAction("Index", "Error");
 
             TeamVM dbTeam = await _teamService.GetByIdAsync((int)id);
 
-            if (dbTeam is null) return NotFound();
+            if (dbTeam is null) return RedirectToAction("Index", "Error");
 
 
             request.Image = dbTeam.Image;
@@ -74,9 +74,9 @@ namespace Reprizo.Areas.Admin.Controllers
                     ModelState.AddModelError("Photo", "File can be only image format");
                     return View(request);
                 }
-                if (!request.Photo.CheckFileSize(200))
+                if (!request.Photo.CheckFileSize(500))
                 {
-                    ModelState.AddModelError("Photo", "File size can be max 200 kb");
+                    ModelState.AddModelError("Photo", "File size can be max 500 kb");
                     return View(request);
                 }
             }

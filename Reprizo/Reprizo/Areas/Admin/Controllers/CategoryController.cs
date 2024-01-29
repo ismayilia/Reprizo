@@ -29,11 +29,11 @@ namespace Reprizo.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Detail(int? id)
         {
-            if (id is null) return BadRequest();
+            if (id is null) return RedirectToAction("Index", "Error");
 
             CategoryVM category = await _categoryService.GetByIdAsync((int)id);
 
-            if (category is null) return NotFound();
+            if (category is null) return RedirectToAction("Index", "Error");
 
             return View(category);
         }
@@ -69,9 +69,9 @@ namespace Reprizo.Areas.Admin.Controllers
                 return View();
             }
 
-            if (!request.Photo.CheckFileSize(200))
+            if (!request.Photo.CheckFileSize(500))
             {
-                ModelState.AddModelError("Photo", "File size can be max 200 kb");
+                ModelState.AddModelError("Photo", "File size can be max 500 kb");
                 return View();
             }
 
@@ -91,11 +91,11 @@ namespace Reprizo.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id is null) return BadRequest();
+            if (id is null) return RedirectToAction("Index", "Error");
 
             CategoryVM category = await _categoryService.GetByIdAsync((int)id);
 
-            if (category is null) return NotFound();
+            if (category is null) return RedirectToAction("Index", "Error");
 
             CategoryEditVM categoryEditVM = _mapper.Map<CategoryEditVM>(category);
 
@@ -108,11 +108,11 @@ namespace Reprizo.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int? id, CategoryEditVM request)
         {
-            if (id is null) return BadRequest();
+            if (id is null) return RedirectToAction("Index", "Error");
 
             CategoryVM dbCategory = await _categoryService.GetByIdAsync((int)id);
 
-            if (dbCategory is null) return NotFound();
+            if (dbCategory is null) return RedirectToAction("Index", "Error");
 
 
             request.Image = dbCategory.Image;
@@ -130,9 +130,9 @@ namespace Reprizo.Areas.Admin.Controllers
 					ModelState.AddModelError("Photo", "File can be only image format");
 					return View(request);
 				}
-				if (!request.Photo.CheckFileSize(200))
+				if (!request.Photo.CheckFileSize(500))
 				{
-					ModelState.AddModelError("Photo", "File size can be max 200 kb");
+					ModelState.AddModelError("Photo", "File size can be max 500 kb");
 					return View(request);
 				}
 			}

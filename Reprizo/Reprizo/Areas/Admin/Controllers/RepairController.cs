@@ -25,11 +25,11 @@ namespace Reprizo.Areas.Admin.Controllers
 		[HttpGet]
 		public async Task<IActionResult> Detail(int? id)
 		{
-			if (id is null) return BadRequest();
+			if (id is null) return RedirectToAction("Index", "Error");
 
 			RepairVM repair = await _repairService.GetByIdAsync((int)id);
 
-			if (repair is null) return NotFound();
+			if (repair is null) return RedirectToAction("Index", "Error");
 
 			return View(repair);
 		}
@@ -37,11 +37,11 @@ namespace Reprizo.Areas.Admin.Controllers
 		[HttpGet]
 		public async Task<IActionResult> Edit(int? id)
 		{
-			if (id is null) return BadRequest();
+			if (id is null) return RedirectToAction("Index", "Error");
 
 			RepairVM repair = await _repairService.GetByIdAsync((int)id);
 
-			if (repair is null) return NotFound();
+			if (repair is null) return RedirectToAction("Index", "Error");
 
 			RepairEditVM repairEditVM = _mapper.Map<RepairEditVM>(repair);
 
@@ -52,11 +52,11 @@ namespace Reprizo.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int? id, RepairEditVM request)
         {
-            if (id is null) return BadRequest();
+            if (id is null) return RedirectToAction("Index", "Error");
 
             RepairVM dbRepair = await _repairService.GetByIdAsync((int)id);
 
-            if (dbRepair is null) return NotFound();
+            if (dbRepair is null) return RedirectToAction("Index", "Error");
 
 
             request.Image = dbRepair.Image;
@@ -74,9 +74,9 @@ namespace Reprizo.Areas.Admin.Controllers
                     ModelState.AddModelError("Photo", "File can be only image format");
                     return View(request);
                 }
-                if (!request.Photo.CheckFileSize(200))
+                if (!request.Photo.CheckFileSize(500))
                 {
-                    ModelState.AddModelError("Photo", "File size can be max 200 kb");
+                    ModelState.AddModelError("Photo", "File size can be max 500 kb");
                     return View(request);
                 }
             }

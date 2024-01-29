@@ -22,11 +22,11 @@ namespace Reprizo.Areas.Admin.Controllers
 
 		public async Task<IActionResult> Detail(int? id)
 		{
-			if (id is null) return BadRequest();
+			if (id is null) return RedirectToAction("Index", "Error");
 
 			CollectionVM collection = await _collectionService.GetByIdAsync((int)id);
 
-			if (collection is null) return NotFound();
+			if (collection is null) return RedirectToAction("Index", "Error");
 
 			return View(collection);
 		}
@@ -34,11 +34,11 @@ namespace Reprizo.Areas.Admin.Controllers
 		[HttpGet]
 		public async Task<IActionResult> Edit(int? id)
 		{
-			if (id is null) return BadRequest();
+			if (id is null) return RedirectToAction("Index", "Error");
 
 			CollectionVM collection = await _collectionService.GetByIdAsync((int)id);
 
-			if (collection is null) return NotFound();
+			if (collection is null) return RedirectToAction("Index", "Error");
 
 			CollectionEditVM collectionEditVM = _mapper.Map<CollectionEditVM>(collection);
 
@@ -49,11 +49,11 @@ namespace Reprizo.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int? id, CollectionEditVM request)
         {
-            if (id is null) return BadRequest();
+            if (id is null) return RedirectToAction("Index", "Error");
 
             CollectionVM dbCollection = await _collectionService.GetByIdAsync((int)id);
 
-            if (dbCollection is null) return NotFound();
+            if (dbCollection is null) return RedirectToAction("Index", "Error");
 
             if (!ModelState.IsValid)
             {

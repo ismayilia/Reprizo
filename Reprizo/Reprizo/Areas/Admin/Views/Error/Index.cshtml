@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+
+<main>
+    <div class="d-flex align-items-center justify-content-center vh-100" @*style="padding:10rem 0"*@>
+        <div class="text-center">
+            <h1 class="display-1 fw-bold">404</h1>
+            <p class="fs-3"> <span class="text-danger">Opps!</span> Page not found.</p>
+            <p class="lead">
+                The page you’re looking for doesn’t exist.
+            </p>
+            <a asp-controller="Dashboard" asp-action="Index" class="btn btn-primary">Try Again</a>
+        </div>
+    </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+

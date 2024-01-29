@@ -40,11 +40,11 @@ namespace Reprizo.Areas.Admin.Controllers
 		[HttpGet]
 		public async Task<IActionResult> Detail(int? id)
 		{
-			if (id is null) return BadRequest();
+			if (id is null) return RedirectToAction("Index", "Error");
 
 			ProductDetailVM product = await _productService.GetByIdWithIncludesWithoutTrackingAsync((int)id);
 
-			if (product is null) return NotFound();
+			if (product is null) return RedirectToAction("Index", "Error");
 
 			return View(product);
 		}
@@ -88,9 +88,9 @@ namespace Reprizo.Areas.Admin.Controllers
                     return View(request);
                 }
 
-                if (!photo.CheckFileSize(200))
+                if (!photo.CheckFileSize(500))
                 {
-                    ModelState.AddModelError("Photos", "File size can be max 200 kb");
+                    ModelState.AddModelError("Photos", "File size can be max 500 kb");
                     return View(request);
                 }
             }
@@ -115,11 +115,11 @@ namespace Reprizo.Areas.Admin.Controllers
             ViewBag.categories = await GetCategoriesAsync();
 
 
-            if (id is null) return BadRequest();
+            if (id is null) return RedirectToAction("Index", "Error");
 
             ProductDetailVM dbProduct = await _productService.GetByIdWithIncludesWithoutTrackingAsync((int)id);
 
-            if (dbProduct is null) NotFound();
+            if (dbProduct is null) RedirectToAction("Index", "Error");
 
             return View(new ProductEditVM
             {
@@ -138,11 +138,11 @@ namespace Reprizo.Areas.Admin.Controllers
 		{
 			ViewBag.categories = await GetCategoriesAsync();
 
-			if (id is null) return BadRequest();
+			if (id is null) return RedirectToAction("Index", "Error");
 
 			ProductDetailVM dbProduct = await _productService.GetByIdWithIncludesWithoutTrackingAsync((int)id);
 
-			if (dbProduct is null) return NotFound();
+			if (dbProduct is null) return RedirectToAction("Index", "Error");
 
 			request.Images = dbProduct.Images;
 
@@ -165,9 +165,9 @@ namespace Reprizo.Areas.Admin.Controllers
 
 					}
 
-					if (!photo.CheckFileSize(200))
+					if (!photo.CheckFileSize(500))
 					{
-						ModelState.AddModelError("Photos", "File size can be max 200 kb");
+						ModelState.AddModelError("Photos", "File size can be max 500 kb");
 						return View(request);
 					}
 				}

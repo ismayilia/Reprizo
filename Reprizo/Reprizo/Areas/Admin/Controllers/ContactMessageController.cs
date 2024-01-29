@@ -21,11 +21,11 @@ namespace Reprizo.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Detail(int? id)
         {
-            if (id is null) return BadRequest();
+            if (id is null) return RedirectToAction("Index", "Error");
 
             ContactMessageVM dbMessage = await _contactService.GetMessageByIdAsync((int)id);
 
-            if (dbMessage is null) return NotFound();
+            if (dbMessage is null) return RedirectToAction("Index", "Error");
 
             return View(dbMessage);
         }

@@ -21,11 +21,11 @@ namespace Reprizo.Areas.Admin.Controllers
 
         public async Task<IActionResult> Detail(int? id)
         {
-            if (id is null) return BadRequest();
+            if (id is null) return RedirectToAction("Index", "Error");
 
             BestWorkerVM bestWorker = await _bestWorkerService.GetByIdAsync((int)id);
 
-            if (bestWorker is null) return NotFound();
+            if (bestWorker is null) return RedirectToAction("Index", "Error");
 
             return View(bestWorker);
         }
@@ -33,11 +33,11 @@ namespace Reprizo.Areas.Admin.Controllers
 		[HttpGet]
 		public async Task<IActionResult> Edit(int? id)
 		{
-			if (id is null) return BadRequest();
+			if (id is null) return RedirectToAction("Index", "Error");
 
 			BestWorkerVM bestWorker = await _bestWorkerService.GetByIdAsync((int)id);
 
-			if (bestWorker is null) return NotFound();
+			if (bestWorker is null) return RedirectToAction("Index", "Error");
 
 			BestWorkerEditVM bestWorkerEditVM = _mapper.Map<BestWorkerEditVM>(bestWorker);
 
@@ -48,11 +48,11 @@ namespace Reprizo.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int? id, BestWorkerEditVM request)
         {
-            if (id is null) return BadRequest();
+            if (id is null) return RedirectToAction("Index", "Error");
 
             BestWorkerVM dbBestWorker = await _bestWorkerService.GetByIdAsync((int)id);
 
-            if (dbBestWorker is null) return NotFound();
+            if (dbBestWorker is null) return RedirectToAction("Index", "Error");
 
             if (!ModelState.IsValid)
             {

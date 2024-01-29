@@ -24,11 +24,11 @@ namespace Reprizo.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id is null) return BadRequest();
+            if (id is null) return RedirectToAction("Index", "Error");
 
             Setting setting = await _settingService.GetByIdAsync((int)id);
 
-            if (setting is null) return NotFound();
+            if (setting is null) return RedirectToAction("Index", "Error");
 
             SettingEditVM model = new()
             {
@@ -45,11 +45,11 @@ namespace Reprizo.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int? id, SettingEditVM setting)
         {
-            if (id is null) return BadRequest();
+            if (id is null) return RedirectToAction("Index", "Error");
 
             Setting dbSetting = await _settingService.GetByIdAsync((int)id);
 
-            if (dbSetting is null) return NotFound();
+            if (dbSetting is null) return RedirectToAction("Index", "Error");
 
             if (dbSetting.Value.Contains("png") || dbSetting.Value.Contains("jpeg") || dbSetting.Value.Contains("jpg"))
             {
@@ -68,20 +68,20 @@ namespace Reprizo.Areas.Admin.Controllers
                     return View(setting);
                 }
 
-                if (!setting.Photo.CheckFileSize(200))
+                if (!setting.Photo.CheckFileSize(500))
                 {
-                    ModelState.AddModelError("Photo", "File size can be max 200 kb");
+                    ModelState.AddModelError("Photo", "File size can be max 500 kb");
                     return View(setting);
                 }
 
             }
             else
             {
-                if (id is null) return BadRequest();
+                if (id is null) return RedirectToAction("Index", "Error");
 
                 Setting dbsetting = await _settingService.GetByIdAsync((int)id);
 
-                if (dbSetting is null) return NotFound();
+                if (dbSetting is null) return RedirectToAction("Index", "Error");
 
                 setting.Key = dbSetting.Key;
 
