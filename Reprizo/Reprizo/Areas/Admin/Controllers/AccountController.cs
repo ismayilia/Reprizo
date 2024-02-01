@@ -40,6 +40,7 @@ namespace Reprizo.Areas.Admin.Controllers
                     Email = user.Email,
                     RoleName = roles,
                     EmailConfirm = user.EmailConfirmed
+                    
                 });
             }
 

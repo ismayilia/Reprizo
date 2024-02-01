@@ -1,0 +1,154 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 10;
+}
+header .header-top {
+  padding: 30px 0 0;
+  align-items: center;
+}
+header .header-top a {
+  transition: all 0.3s;
+}
+header .header-top a:hover {
+  color: #af7f66;
+}
+header .header-top nav a {
+  margin-right: 35px;
+  font-size: 18px;
+}
+header .header-top .logo {
+  width: 80%;
+}
+header .header-top .header-right {
+  text-align: end;
+}
+header .header-top .header-right a {
+  font-size: 18px;
+  margin-left: 35px;
+}
+header .header-top .header-right a i {
+  color: #af7f66;
+}
+header .header-top .header-right a span {
+  font-size: 15px;
+}
+
+footer {
+  padding: 100px 0 35px;
+  background-color: #272626;
+}
+footer a {
+  color: white;
+}
+footer h6,
+footer p {
+  color: white;
+}
+footer .footer-top .left p {
+  font-size: 25px;
+  width: 80%;
+  margin-bottom: 34px;
+}
+footer .footer-top .left .email-subs {
+  border: 1px solid white;
+  width: 82%;
+}
+footer .footer-top .left .email-subs input {
+  width: 70%;
+  height: 50px;
+  border: none;
+  outline: none;
+}
+footer .footer-top .left .email-subs button {
+  padding: 12px 40px;
+  color: white;
+  background-color: #272626;
+  border: none;
+  text-align: center;
+}
+footer .footer-top .right {
+  margin-left: 70px;
+}
+footer .footer-top .right .information-footer {
+  position: relative;
+  z-index: 1;
+}
+footer .footer-top .right .information-footer::before {
+  background-color: #43403f;
+  content: "";
+  position: absolute;
+  left: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 190px;
+  width: 1px;
+  z-index: -1;
+}
+footer .footer-top .right a {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+footer .footer-top .right h6 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+footer hr {
+  border-color: #989898;
+  height: 3px;
+  margin: 66px 0 35px;
+}
+footer .footer-down {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+footer .footer-down h6 {
+  color: rgba(255, 255, 255, 0.199);
+}
+
+#banner {
+  padding-top: 54px;
+}
+#banner .banner-all {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}
+#banner .banner-all h1 {
+  color: white;
+  font-size: 52px;
+  text-align: center;
+  padding-top: 120px;
+}
+
+#login {
+  padding: 6rem 0;
+}
+#login .login-all input {
+  accent-color: black;
+}
+#login .login-all button {
+  color: black;
+  background-color: white !important;
+  border: 1px solid;
+  margin-top: 20px !important;
+}
+#login .login-all button:hover {
+  color: white;
+  background-color: black !important;
+}/*# sourceMappingURL=login.css.map */

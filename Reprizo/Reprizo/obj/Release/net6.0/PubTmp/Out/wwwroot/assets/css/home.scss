@@ -1,0 +1,423 @@
+@media only screen and (max-width: 768px) {}
+
+@media all and (min-width: 768px) and (max-width: 992px) {}
+
+@media all and (min-width: 992px) and (max-width: 1200px) {}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+}
+
+// Header
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+
+    .header-top {
+        padding: 30px 0 0;
+        align-items: center;
+
+        
+
+        a{
+            transition: all 0.3s;
+            &:hover{
+                color:#af7f66;
+            }
+        }
+
+        nav {
+            a {
+                margin-right: 35px;
+                font-size: 18px;
+            }
+        }
+
+        .logo {
+            width: 80%;
+        }
+
+        .header-right {
+            text-align: end;
+
+            a {
+                font-size: 18px;
+                margin-left: 35px;
+                i{
+                    color: #af7f66;
+                }
+
+                span {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+}
+
+// Footer
+
+footer {
+    padding: 100px 0 35px;
+    background-color: #272626;
+
+    a {
+        color: white;
+    }
+
+    h6,
+    p {
+        color: white;
+    }
+
+    .footer-top {
+        .left {
+            p {
+                font-size: 25px;
+                width: 80%;
+                margin-bottom: 34px;
+            }
+
+
+
+            .email-subs {
+                border: 1px solid white;
+                width: 82%;
+
+                input {
+                    width: 70%;
+                    height: 50px;
+                    border: none;
+                    outline: none;
+                }
+
+                button {
+                    padding: 12px 40px;
+                    color: white;
+                    background-color: #272626;
+                    border: none;
+                    text-align: center;
+                }
+            }
+        }
+
+        .right {
+            margin-left: 70px;
+
+            .information-footer {
+                position: relative;
+                z-index: 1;
+
+                &::before {
+                    background-color: #43403f;
+                    content: "";
+                    position: absolute;
+                    left: -80px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    height: 190px;
+                    width: 1px;
+                    z-index: -1;
+                }
+            }
+
+            a {
+                display: block;
+                margin-bottom: 7px;
+                font-size: 14px;
+                text-transform: uppercase;
+            }
+
+            h6 {
+                margin-bottom: 20px;
+                text-transform: uppercase;
+            }
+        }
+
+    }
+
+    hr {
+        border-color: #989898;
+        height: 3px;
+        margin: 66px 0 35px
+    }
+
+    .footer-down {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        h6 {
+            color: rgba(255, 255, 255, 0.199);
+        }
+    }
+
+}
+
+//Slider
+#slider {
+    margin-top: 70px;
+
+    .carousel-inner {
+        background-color: #F8F7F6;
+        height: 500px;
+
+        .slider-image {
+            position: relative;
+
+            .image {
+                position: absolute;
+                display: inline-block;
+                top: 17%;
+                left: 39%;
+                width: 20%;
+
+                // .firefly {
+                //     animation-name: firefly;
+                //     animation-duration: 10s;
+                //     animation-timing-function: ease-in-out;
+                //     animation-direction: alternate;
+                //     animation-iteration-count: infinite;
+                // }
+            }
+
+            .text {
+                margin-top: 166px;
+                text-align: center;
+
+                h1 {
+                    font-size: 110px;
+                    color: #d9d3cf;
+                    word-spacing: 2.3em;
+                }
+            }
+        }
+    }
+}
+
+//Collection
+
+#collection {
+    padding: 6rem 0;
+    text-align: center;
+
+    .lawson-collection {
+        p {
+            line-height: 1.72em;
+            color: #9C9C9C;
+            font-size: 16px;
+            width: 59%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 44px;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+
+// Product start
+
+#products {
+    margin-bottom: 20px;
+
+
+    h1 {
+        text-align: center;
+        font-size: 44px;
+        margin-bottom: 4rem;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .button {
+        margin: 35px 0 100px;
+        text-align: center;
+
+        a {
+            display: inline-block;
+            border: 3px solid #2d2d2d5b;
+            font-size: 14px;
+            padding: 15px 48px;
+            margin-top: 15px;
+            transition: all 0.5s;
+            text-transform: uppercase;
+
+            &:hover {
+                background-color: black;
+                color: white;
+            }
+        }
+    }
+
+    .product-all {
+        .product {
+
+            background-color: #F8F7F6;
+
+            
+
+            .product-icons {
+                margin-left: 10px;
+                position: relative;
+                opacity: 0;
+                transition:0.5s;
+                .fa-solid {
+                    color: black;
+
+                }
+
+                .fa-cart-shopping {
+                    margin-top: 50px;
+                }
+
+                i {
+
+                    margin-top: 15px;
+                    font-size: 25px;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    cursor: pointer;
+                }
+            }
+
+            &:hover {
+                .product-icons {
+                    opacity: 1;
+                }
+            }
+
+
+
+            .product-content {
+                text-align: center;
+                margin-top: -64px;
+                padding-bottom: 32px;
+
+                h6 {
+                    font-size: 14px;
+                    line-height: 2rem;
+                    text-transform: uppercase;
+                }
+
+                a {
+                    display: inline-block;
+                    border: 3px solid #2d2d2d5b;
+                    font-size: 14px;
+                    padding: 11px 22px;
+                    margin-top: 15px;
+                    transition: all 0.5s;
+
+                    &:hover {
+                        background-color: black;
+                        color: white;
+                    }
+                }
+            }
+
+            .product-image {
+                margin-top: -5px;
+
+            }
+        }
+    }
+}
+
+// Swiss Essence
+
+#swiss {
+    margin: 6rem 0;
+
+    .swiss-all {
+        .text {
+            margin-top: 3rem;
+
+            h1 {
+                font-size: 44px;
+            }
+
+            a {
+                display: inline-block;
+                border: 3px solid #2d2d2d5b;
+                font-size: 14px;
+                padding: 11px 22px;
+                margin-top: 15px;
+                transition: all 0.5s;
+                text-transform: uppercase;
+
+                &:hover {
+                    background-color: black;
+                    color: white;
+                }
+            }
+
+            p {
+                line-height: 2rem;
+                margin: 25px 0;
+                font-size: 16px;
+                color: rgba(0, 0, 0, 0.452);
+                width: 82%;
+            }
+        }
+
+        .image {
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// Featured 
+
+#featured {
+    .featured-all {
+        background-color: #F8F7F6;
+
+        h6 {
+            color: rgba(0, 0, 0, 0.301);
+        }
+
+        h2 {
+            font-size: 25px;
+        }
+
+        p {
+            line-height: 30px;
+            margin-top: 25px;
+        }
+
+        .left {
+            padding: 90px 35px 47px;
+        }
+
+        .middle {
+            margin: -30px 0 -30px;
+
+            img {
+                width: 100%;
+
+            }
+        }
+
+        .right {
+            padding: 90px 70px 47px 0;
+        }
+    }
+}
