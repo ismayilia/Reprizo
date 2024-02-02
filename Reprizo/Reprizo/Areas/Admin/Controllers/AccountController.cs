@@ -68,6 +68,26 @@ namespace Reprizo.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [HttpGet]
+        public async Task<IActionResult> RemoveRoleFromUser()
+        {
+            ViewBag.roles = await GetRolesAsync();
+            ViewBag.users = await GetUsersAsync();
+            return View();
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RemoveRoleFromUser(UserRoleVM request)
+        {
+            AppUser user = await _userManager.FindByIdAsync(request.UserId);
+            IdentityRole role = await _roleManager.FindByIdAsync(request.RoleId);
+
+            await _userManager.RemoveFromRoleAsync(user, role.Name);
+            return RedirectToAction(nameof(Index));
+        }
+
         private async Task<SelectList> GetRolesAsync()
         {
             List<IdentityRole> roles = await _roleManager.Roles.ToListAsync();
