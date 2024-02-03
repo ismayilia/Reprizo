@@ -43,9 +43,13 @@
                         <td>
                             <a class="btn btn-outline-info" asp-action="Detail" asp-route-id="@slider.Id">Detail</a>
                             <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@slider.Id">Edit</a>
-                            <form class="d-inline-block" method="post" asp-action="Delete" asp-route-id="@slider.Id">
-                                <button type="submit" class="btn btn-outline-danger">Delete</button>
-                            </form>
+                            @if (!slider.IsMain)
+                            {
+                                <form class="d-inline-block" method="post" asp-action="Delete" asp-route-id="@slider.Id">
+                                    <button type="submit" class="btn btn-outline-danger">Delete</button>
+                                </form>
+                            }
+                            
                         </td>
 
                     </tr>

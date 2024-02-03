@@ -11067,11 +11067,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\Reprizo.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Desktop\\Reprizo\\Reprizo\\Reprizo\\Reprizo.csproj",
       "projectName": "Reprizo",
-      "projectPath": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\Reprizo.csproj",
+      "projectPath": "C:\\Users\\HP\\Desktop\\Reprizo\\Reprizo\\Reprizo\\Reprizo.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Desktop\\Reprizo\\Reprizo\\Reprizo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

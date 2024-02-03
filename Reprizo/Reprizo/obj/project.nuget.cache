@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ltGJL8NcipOw2IriVJEwfZl/tcomPTB48RkGpAMPzujXQ74h5QwmhaTrOZVl7QU4XewwJs1KJ7LUF3xxvp7wcg==",
+  "dgSpecHash": "vC4WkeKLf7SwIb6kC/CkQNdmZ23XBcv7EdKJBrLLS0/M+fqZubkj6rzQ2II2DXwH5ZlpdLEGHkf86HkRL3KCuw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\Desktop\\Reprizo-BackEnd\\Reprizo\\Reprizo\\Reprizo.csproj",
+  "projectFilePath": "C:\\Users\\HP\\Desktop\\Reprizo\\Reprizo\\Reprizo\\Reprizo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
