@@ -1,9 +1,5 @@
-﻿@*@using Reprizo.Models;*@
-@model HeaderVM
-@*@inject UserManager<AppUser> userManager;
-@(
-     Reprizo.Models.AppUser user = userManager.Users.FirstOrDefault(m => m.UserName == User.Identity.Name);
-)*@
+﻿@model HeaderVM
+
 
 <header>
 	<div class="container">

@@ -1,3 +1,8 @@
+@media only screen and (max-width: 768px) {
+    #products .product-all .product .product-icons.product-icons {
+        opacity: 1;
+    }
+}
 a {
     text-decoration: none;
     color: black;
